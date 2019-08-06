@@ -47,8 +47,8 @@ It's **abandoned** rather than **completed**, but you never know.\
 The project requires a bit of effort to bring layout and styles to current standards. But the advantage is to do without the ubiquitous templates and processing the DOM structure in browsers - there are no slowdowns by JavaScript.\
 Several holes were also patched to be able to continue testing reservations in years younger than 2009. The whole PHP was also converted to UTF-8.
 
-Author / Architect / "Programmer" / Graphic Designer / Tester / Director: ** T. M **. \
-The project was also created thanks to mental support and exchange of knowledge with ** P. T ** and ** R S **.
+Author / Architect / "Programmer" / Graphic Designer / Tester / Director: **T. M.**\
+The project was also created thanks to mental support and exchange of knowledge with **P. T.** and **R. S.**
 
 #### Me vs. MarkDown: First Encounter 
 Trying to add right shape of this synopsis. Styling and decorations in progress... more of English contenst goes here.
@@ -72,7 +72,7 @@ Pracownik | zatwierdzanie/odrzucanie rezerwacji, wypożyczanie aut, rozliczanie 
 Administrator | **wprowadzanie i edycja aut**, **tworzenie/modyfikacja promocji**, **tworzenie/modyfikacja powiadomień serwisu**, **zarządzanie użytkownikami**, ...
 
 ### Funkcjonująca wersja testowa 
-Funkcjonalność dostępna do przetestowania po zalogowaniu z najniższym poziomem uprawnień jako przykładowe **konto Klienta** pod adresem [WSO](http://wso.tohm.cba.pl).
+Funkcjonalność dostępna do przetestowania po zalogowaniu z najniższym poziomem uprawnień jako przykładowe **konto klienta** pod adresem [WSO](http://wso.tohm.cba.pl).
 > Użytkownik: **klient**\
 > Hasło: **klient!1**
 
