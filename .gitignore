@@ -8,3 +8,7 @@
 ehthumbs.db
 Thumbs.db
 desktop.ini
+
+# my PHP CONFIG FILE with passwords #
+#####################################
+/config/konfiguracja_tajna.php
