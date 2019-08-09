@@ -18,6 +18,12 @@
 </tr>
 
 <tr>
+ <td align="right"><h3 class="nazwa_male">administrator</h3></td>
+ <td>email: <a href="mailto:admin@wso.kom.pl">admin@wso.kom.pl</a>
+ </td>
+</tr>
+
+<tr>
  <td align="right"><h3 class="nazwa_male">wypo¿yczenia</h3></td>
  <td>tel. 071/ 44 444 44<br />
 	tel. bezprzewodowy +48 444 444 444<br />
