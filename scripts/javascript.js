@@ -1,33 +1,33 @@
-function sprawdz_formularz_dodaj_auto(f)       <!-- sprawdzenie poprawnosci wpisanych danych do formularzy -->
+function sprawdz_formularz_dodaj_auto(f)       // sprawdzenie poprawnosci wpisanych danych do formularzy
 {
  if ( (f.marka.value == '') || (f.model.value == '') || (f.rok_produkcji.value == '') || (f.kategoria.value == '0') )
  {
  alert('Proszê wype³niæ obowi±zkowe pola: Model, Markê, Rok produkcji oraz Kategoriê pojazdu.');
- return false;    <!-- gdy jeden lub oba pola adresowe sa puste - ostrzezenie -->
+ return false;    // gdy jeden lub oba pola adresowe sa puste - ostrzezenie
  }
 
  if ( f.rok_produkcji.value <= 0 )
  {
  alert('Podane adresy s± identyczne! Proszê skorygowaæ dane wej¶ciowe.');
- return false;    <!-- gdy wpisano to samo do jednego lub obu pol adresowych - ostrzezenie -->
+ return false;    // gdy wpisano to samo do jednego lub obu pol adresowych - ostrzezenie
  }
 
  if ( (f.rok_produkcji.value <= 1900) || (f.rok_produkcji.value >= 2009) )
  {
  alert('Podano b³êdny rok produkcji pojazdu. Proszê skorygowaæ wpis.');
- return false;    <!-- gdy czas oczekiwanie nie jest w przedziale od 1 do 20 sekund - ostrzezenie -->
+ return false;    // gdy czas oczekiwanie nie jest w przedziale od 1 do 20 sekund - ostrzezenie
  }
 
-return true;     <!-- gdy OK, wpisano poprawne dane WE - ostrzezenie -->
+return true;     // gdy OK, wpisano poprawne dane WE - ostrzezenie
 }
 
-function sprawdz_formularz_rezerwuj_auto(f)       <!-- sprawdzenie poprawnosci wpisanych danych do formularzy -->
+function sprawdz_formularz_rezerwuj_auto(f)       // sprawdzenie poprawnosci wpisanych danych do formularzy
 {
 var dzis = new Date();
 var DzienNow = dzis.getDate();
 var MiesNow = dzis.getMonth() + 1;
 var RokNow = dzis.getFullYear();
-dzis.setHours( 0 ); //¿eby zawze obecna godzin w dacie by³a wcze¶neijsza --> bo konstruktor ³aduje datê aktualn± + czas
+dzis.setHours( 0 ); // ¿eby zawsze obecna w dacie godzina by³a wcze¶niejsza --> bo konstruktor ³aduje datê aktualn± + czas
 
 var DzienPoczatek = f.dzien_pocz.options[f.dzien_pocz.options.selectedIndex].value;
 var MiesiacPoczatek = f.miesiac_pocz.options[f.miesiac_pocz.options.selectedIndex].value - 1;
@@ -59,12 +59,11 @@ var dataKonc = new Date( RokKonc, MiesiacKonc, DzienKonc, 11 );
  return false;    
  }
 
-return true;     <!-- gdy OK, wpisano poprawne dane WE - ostrzezenie -->
+return true;     // gdy OK, wpisano poprawne dane WE - ostrzezenie
 }
 
 
-function pokaz()
+function pokaz()    // tylko dla ewentualnych testow rezerwacji, brak aktywnego wplywy na dzialajacy projekt 
 {
 alert('test')
 return true
-}

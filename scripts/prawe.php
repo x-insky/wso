@@ -3,8 +3,6 @@
 <?php 
 
 
-
-
 	// kategorie pojazdów 
 $kwerenda = "SELECT nazwaKategorii, ID FROM auto_kategoria_tbl ORDER BY ID";
 $rezultat = mysql_query( $kwerenda );
@@ -79,9 +77,9 @@ $rezultat = mysql_query( $kwerenda );
    echo mysql_error();
    
    if ( $_SESSION['rola'] == "administrator" )
-   echo("<a href=\"./index.php?cid=$auto_naj\">$marka_naj $model_naj ($auto_naj_ile)</a> <br />");
+   echo("<a href=\"./index.php?cid=$auto_naj\">$ile. $marka_naj $model_naj ($auto_naj_ile)</a> <br />");
    else
-   echo("<a href=\"./index.php?cid=$auto_naj\">$marka_naj $model_naj</a> <br />");
+   echo("<a href=\"./index.php?cid=$auto_naj\">$ile. $marka_naj $model_naj</a> <br />");
     
    } //while-end
   echo("<br />"); 
@@ -126,6 +124,8 @@ $rezultat2 = mysql_query( $kwerenda2 );
   $temp6[] = $wynik2[1];
   $kategorie = array_combine( $temp5, $temp6 );
  }
+ /*  w 2015 nie ogarniam co robi powy¿sze (kwarenda2 i potem while) i po co jest ?! */
+
 
  for ( $i = 0; $i < 3; $i++ )
  {

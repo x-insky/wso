@@ -157,7 +157,7 @@ echo("$kategoria");
   </td>
  </tr>
  <tr>
-  <td class="tab_nazwa_kolumny2">Pojemno¶æ [cm^3]</td>
+  <td class="tab_nazwa_kolumny2">Pojemno¶œæ [cm^3]</td>
   <td class="tab_dane_kolumny">
 <?php  
 echo("$pojemnosc");
@@ -243,7 +243,7 @@ echo("$metalik");
  $max_x = 101;
   for ( $i = 0; $i < $ile_zdjec; $i++ )
   {
-  $parametry = getimagesize( $adres[$i] );  //sprawdzenie szerokosæi wczytaego zdjecia
+  $parametry = getimagesize( $adres[$i] );  //sprawdzenie szeroko¶ci wczytanego zdjêcia
   $szer = $parametry['0'];
   $wys = $parametry['1'];
    
@@ -257,7 +257,7 @@ echo("$metalik");
    $szerokosc = round( $szer * $max_x / $wys ); 
    $wysokosc = $max_y;
    }
-  echo('<td class="tab_dane_kolumny2">');     //promorcjonane zmiejszenie oryginaa³u
+  echo('<td class="tab_dane_kolumny2">');     //promorcjonane zmniejszenie orygina³u
   echo("<a href=\"$adres[$i]\"><img src=\"$adres[$i]\" width=\"$szerokosc\" height=\"$wysokosc\" border=\"0\" alt=\"\" /></a>"); 
   echo('</td>');
   }  //for-end 
@@ -276,13 +276,14 @@ echo('<tr>');
  {
  echo('<td>');
  echo("<h5>Zalogowani u¿ytkownicy mog± zarezerwowaæ auto na wybrany okres</h5>");
- echo("<p style=\"color: red;\">DEBUG: niezalogowany</p>");
+// echo("<p style=\"color: red;\">DEBUG: niezalogowany</p>");
  echo('</td></tr>');
  }
  
  if ( $_SESSION['rola'] == "klient" )
  {
 
+  echo('<br />');
   echo('<td class="komorka_lewa">');
   echo('<form name = "rezerwuj_auto" action = "./index.php" method = "post" 
        onsubmit="return sprawdz_formularz_rezerwuj_auto(this)" >');
@@ -291,7 +292,7 @@ echo('<tr>');
 
 
   echo('<h4>Data pocz±tkowa:</h4>');
-  echo('<p class="akapit_wezszy">&nbsp;&nbsp;&nbsp; dzieñ &nbsp;-&nbsp;&nbsp; miesi±c &nbsp;&nbsp;-&nbsp;&nbsp; rok</p>');
+  echo('<p class="akapit_wezszy">&nbsp;&nbsp;&nbsp; dzieñ &nbsp;-&nbsp;&nbsp; miesi±c &nbsp;&nbsp;-&nbsp;&nbsp; rok &nbsp;&nbsp;</p>');
   echo('</td>');
   echo('<td class="komorka_prawa"> <h4>Data koñcowa:</h4>');
   echo('<p class="akapit_prawy_wezszy"> dzieñ &nbsp;-&nbsp;&nbsp; miesi±c &nbsp;&nbsp;-&nbsp;&nbsp; rok&nbsp;&nbsp;&nbsp;</p>');
@@ -303,15 +304,15 @@ echo('<tr>');
   				// -------------------------------------------------------- od kiedy rezerwacja
   echo('<td class="komorka_lewa">');
 //dzien pocz±tkowy rezerwacji  
-  echo '<select name="dzien_pocz">';
+  echo '<select name="dzien_pocz" class="formularz_dodaj7	">';
    for ( $dzien_teraz = 1; $dzien_teraz <= 31; $dzien_teraz++ )
    {
     if ( date( 'j' ) == $dzien_teraz )
 	{
 	 if ( $dzien_teraz < 10 )
-	 echo "<option selected value=\"0".$dzien_teraz."\"> $dzien_teraz </option>";
+	 echo "<option selected=\"selected\" value=\"0".$dzien_teraz."\"> $dzien_teraz </option>";
      else
-	 echo "<option selected value=\"$dzien_teraz\"> $dzien_teraz </option>";
+	 echo "<option selected=\"selected\" value=\"$dzien_teraz\"> $dzien_teraz </option>";
 	}
 	else
     {
@@ -361,11 +362,11 @@ echo('<tr>');
   echo('</select>');
 
 //rok pocz±tkowy rezerwacji   
-    echo '-<select name="rok_pocz">';
-     for ( $rok_teraz = 2008; $rok_teraz < 2013; $rok_teraz++ )
+    echo '-<select name="rok_pocz" class="formularz_dodaj6" >';
+     for ( $rok_teraz = date(Y); $rok_teraz <= ( date(Y) + 1 ); $rok_teraz++ )
      {
       if ( date( 'Y' ) == $rok_teraz )
-      echo "<option selected value=\"$rok_teraz\"> $rok_teraz </option>";
+      echo "<option selected=\"selected\" value=\"$rok_teraz\"> $rok_teraz </option>";
       else
       echo "<option value=\"$rok_teraz\"> $rok_teraz </option>";
      }
@@ -375,7 +376,7 @@ echo('<tr>');
 			// -------------------------------------------------------- do kiedy rezerwacja
    echo('<td class="komorka_prawa">');
 //dzien koncowy rezerwacji  
-   echo '<select name="dzien_kon">';
+   echo '<select name="dzien_kon" class="formularz_dodaj7">';
     for ( $dzien_teraz = 1; $dzien_teraz <= 31; $dzien_teraz++ )
     {
      if ( date( 'j' ) == $dzien_teraz )
@@ -430,11 +431,11 @@ echo('<tr>');
 	  echo("<option value=\"$miesiac\"> $miesiac_nazwa </option>");
      }
 	}    
-   echo('</select> ');
+   echo('</select>');
 
 //rok koncowy rezerwacji   
-  echo '-<select name="rok_kon">';
-   for ( $rok_teraz = 2008; $rok_teraz < 2013; $rok_teraz++ )
+  echo '-<select name="rok_kon" class="formularz_dodaj6" >';
+   for ( $rok_teraz = date(Y); $rok_teraz <= ( date(Y) + 1 ); $rok_teraz++ )
    {
     if ( date( 'Y' ) == $rok_teraz )
     echo "<option selected value=\"$rok_teraz\"> $rok_teraz </option>";
@@ -455,13 +456,13 @@ echo('<tr>');
  echo('<td class="komorka_lewa">');
  echo("<input type=\"hidden\" name=\"rezerwuj_1_auto_id\" value=\"$auto_id\" />");
  echo("<input type=\"hidden\" name=\"rezerwuj_1_osoba_id\" value=\"$osoba_id\" />");
- echo("<input type=\"submit\" name=\"rezerwuj_1_auto\" value=\"Sprawd¼ termin\" class=\"przycisk1\" />");
+ echo("<input type=\"submit\" name=\"rezerwuj_1_auto\" value=\"Sprawd¼Ÿ termin\" class=\"przycisk1\" />");
   
  echo('</form>');
  echo('</td>');
 
  echo('</tr>');
- //echo("<h5>Zalogowani u¿ytkownicy mog± zarezerwowaæ auto na wybrany okres</h5>");
+ //echo("<h5>Zalogowani u¿ytkownicy mog¹ zarezerwowaæ auto na wybrany okres</h5>");
  //echo("<p style=\"color: red;\">DEBUG: niezalogowany</p>");
  }
  

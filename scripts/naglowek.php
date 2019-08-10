@@ -8,21 +8,21 @@ $data_teraz_miesiac = date("m");
 $data_teraz_dzien = date("j");
  switch ( $data_teraz_miesiac )
  {
-  case 1: $data_teraz_miesiac_nazwa = "styczeñ"; break;
-  case 2: $data_teraz_miesiac_nazwa = "luty"; break;
-  case 3: $data_teraz_miesiac_nazwa = "marzec"; break;
-  case 4: $data_teraz_miesiac_nazwa = "kwiecieñ"; break;
-  case 5: $data_teraz_miesiac_nazwa = "maj"; break;
-  case 6: $data_teraz_miesiac_nazwa = "czerwiec"; break;
-  case 7: $data_teraz_miesiac_nazwa = "lipiec"; break;
-  case 8: $data_teraz_miesiac_nazwa = "sierpien"; break;
-  case 9: $data_teraz_miesiac_nazwa = "wrzesieñ"; break;
-  case 10: $data_teraz_miesiac_nazwa = "pa¼dziernik"; break;
-  case 11: $data_teraz_miesiac_nazwa = "listopad"; break;
-  case 12: $data_teraz_miesiac_nazwa = "grudzieñ"; break;
+  case 1: $data_teraz_miesiac_nazwa = "stycznia"; break;
+  case 2: $data_teraz_miesiac_nazwa = "lutego"; break;
+  case 3: $data_teraz_miesiac_nazwa = "marca"; break;
+  case 4: $data_teraz_miesiac_nazwa = "kwietnia"; break;
+  case 5: $data_teraz_miesiac_nazwa = "maja"; break;
+  case 6: $data_teraz_miesiac_nazwa = "czerwca"; break;
+  case 7: $data_teraz_miesiac_nazwa = "lipca"; break;
+  case 8: $data_teraz_miesiac_nazwa = "sierpnia"; break;
+  case 9: $data_teraz_miesiac_nazwa = "wrze¶nia"; break;
+  case 10: $data_teraz_miesiac_nazwa = "pa¼dziernika"; break;
+  case 11: $data_teraz_miesiac_nazwa = "listopada"; break;
+  case 12: $data_teraz_miesiac_nazwa = "grudnia"; break;
  }
  
-echo("$data_teraz_dzien $data_teraz_miesiac_nazwa $data_teraz_rok"); 
+echo("$data_teraz_dzien. $data_teraz_miesiac_nazwa $data_teraz_rok"); 
 ?>
 </p>
 <!-- </div> --> 

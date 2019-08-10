@@ -232,7 +232,7 @@ $rezultat2 = mysql_query( $kwerenda2 );
     include ("./scripts/promocje_wszystkie.php");
    break;
 
-   case "booking":     //bie¿±ce rezerwacje
+   case "booking":     //bie¿¹ce rezerwacje
     include("./scripts/rezerwacje_historia.php");
      //include("./scripts/rezerwacje_uzytkownika.php");
     break; 
@@ -296,7 +296,7 @@ $rezultat2 = mysql_query( $kwerenda2 );
   {
    if ( SprawdzUprawnieniaAdmina() ) // oprócz tego musi mieæ iprawnienai administarcyjne
    {
-   echo('<h3>Szczegó³y odno¶nie wybranej osoby</h3><br />');
+   echo('<h3>Szczegó³y odnoœ¶nie wybranej osoby</h3><br />');
    WyswietlDaneOsoby( $_GET['uid'] ); 
    echo('<br />');
 
@@ -590,7 +590,7 @@ $rezultat2 = mysql_query( $kwerenda2 );
   	
     switch ( $_POST["aktywna_promocja"] )
     {
-    case "aktualna":			//od arzu aktywne og³oszenie
+    case "aktualna":			//od razu aktywne og³oszenie
       $aktywna_promocja = 1;
      break;
    
@@ -722,13 +722,13 @@ $rezultat2 = mysql_query( $kwerenda2 );
   }
   else
   {
-  echo('<h3 style="color: red;">Musisz byæ zalogowany, aby wykonaæ t± czynno¶æ!</h3>');
+  echo('<h3 style="color: red;">Musisz byæ zalogowany, aby wykonaæ t¹ czynnoœæ!</h3>');
   } //if-zalogowany-end
  } // modyfikacja-wiaomo¶ci-end
 
 // ------------------------------------------------------------------------------------------
 
-// wy¶witlenie nazw u¿ytkowników
+// wyœwitlenie nazw u¿ytkowników
  if ( ( isSet( $_POST['rodzaj_uzytkownikow'] ) ) && ( isSet( $_POST['rodzaj_sortowania'] ) ) )
  {
   if ( isSet( $_SESSION['zalogowany'] ) ) // czy osoba wywo³ujaca link jest zalogowana w serwisie?
@@ -895,13 +895,13 @@ $rezultat2 = mysql_query( $kwerenda2 );
  	}
 /*   else
    {
-   echo("Brak wyników spe³niaj±cych kryterium!");
+   echo("Brak wyników spe³niaj¹cych kryterium!");
    } */
    } 
    else
    {
-   echo("<h2>Brak praw do modyfikacji dla bie¿±cego u¿ytkownika!</h2>");
-   echo("<h3>Nie zmieniono zawarto¶ci w witrynie!</h3>");
+   echo("<h2>Brak praw do modyfikacji dla bie¿¹cego u¿ytkownika!</h2>");
+   echo("<h3>Nie zmieniono zawartoœci w witrynie!</h3>");
    } // if-"uprawnienia-admina"
   }
   else
@@ -989,7 +989,7 @@ $rezultat2 = mysql_query( $kwerenda2 );
    else
    {
    echo("<h2>Brak praw do modyfikacji dla bie¿±cego u¿ytkownika!</h2>");
-   echo("<h3>Nie zmieniono zawarto¶ci w witrynie!</h3>");
+   echo("<h3>Nie zmieniono zawartoœci w witrynie!</h3>");
    } // if-"uprawnienia-admina"
   }
   else
@@ -1241,10 +1241,10 @@ echo("<br /><br />Zapytanie zmodyfikowa³o ".mysql_affected_rows()." wierszy");
    
     $auto_id = $_POST['rezerwuj_1_auto_id'];
    
-    $data_poczatkowa_ludzka = $dzien_poczatkowy.".".$miesiac_poczatkowy.".".$rok_poczatkowy;
+    $data_poczatkowa_ludzka = $dzien_poczatkowy."-".$miesiac_poczatkowy."-".$rok_poczatkowy;
     $data_poczatkowa = $rok_poczatkowy."-".$miesiac_poczatkowy."-".$dzien_poczatkowy;
 
-    $data_koncowa_ludzka = $dzien_koncowy.".".$miesiac_koncowy.".".$rok_koncowy;
+    $data_koncowa_ludzka = $dzien_koncowy."-".$miesiac_koncowy."-".$rok_koncowy;
     $data_koncowa = $rok_koncowy."-".$miesiac_koncowy."-".$dzien_koncowy;
     $jest_blad = false;
 
@@ -1252,23 +1252,32 @@ echo("<br /><br />Zapytanie zmodyfikowa³o ".mysql_affected_rows()." wierszy");
     //$miesiac_teraz = date( "m" );
     //$rok_teraz = date( "Y" );
    	
-	$data_teraz = date( "Y-m-j" );
-
+	$data_teraz = date( "Y-m-d" );	//"d", NIE "j" !!!
+/*
+	// ---------------------------------	debug_mode
+	echo('<p class="ramka_status">') ;
+	echo('DEBUG MODE <br />') ;
+	echo('data_pocz±tkowa: <strong>'.$data_poczatkowa.'</strong><br />') ; 
+	echo('data_koñcowa: <strong>'.$data_koncowa.'</strong><br />') ; 	
+	echo('data_teraz: <strong>'.$data_teraz.'</strong><br />') ; 
+	echo('</p>') ;
+// ---------------------------------	debug_mode END	
+*/
      if ( $data_poczatkowa < $data_teraz )
 	 {
-	 echo("<br />b³ad: data pocz±tkowa rezeracji mniejsza od obecnej daty!"); 
+	 echo('<h4 style="color: red">B£¡D: data pocz±tkowa rezerwacji wczeœ¶niejsza od obecnej daty!</h4>'); 
      $jest_blad = true;
 	 }
 	 
 	 if ( $data_poczatkowa < $data_teraz )
 	 {
-	 echo("<br />b³ad: data koñcowa rezerwacji mniejsza od obecnej daty!"); 
+	 echo('<h4 style="color: red">B£¡D: data koñcowa rezerwacji wczeœ¶niejsza od obecnej daty!</h4>'); 
 	 $jest_blad = true;
 	 }
 	 
 	 if (  $data_poczatkowa > $data_koncowa )
 	 {
-	 echo("<br />b³ad: data koñcowa rezerwacji mniejsza od daty pocz±tkowej!"); 
+	 echo('<h4 style="color: red">B£¡D: data koñcowa rezerwacji wcze¶œniejsza od daty pocz¹tkowej!</h4>'); 
 	 $jest_blad = true;
 	 }
 
@@ -1285,22 +1294,22 @@ echo("<br /><br />Zapytanie zmodyfikowa³o ".mysql_affected_rows()." wierszy");
 	  $wynik2 = mysql_fetch_row( $rezultat2 );
 	  $marka = $wynik2[0]; 
 	
-      echo('<h3>Sprawdzanie dostêpno¶ci auta do rezerwacji</h3>');
-     //echo('<br />');
+      echo('<h3>Sprawdzanie dostêpno¶œci auta do rezerwacji</h3>');
+      //echo('<br />');
       echo('<p class="akapit_wezszy">');
-      echo('<br />Data pocz±tkowa <span style="color: red; ">');
+      echo('<br />Data pocz±tkowa: <span style="color: red; font-weight: bold">');
       echo("$data_poczatkowa_ludzka </span> ");
       $data_poczatkowa_ok = SprawdzDate ( $dzien_poczatkowy , $miesiac_poczatkowy, $rok_poczatkowy ); 
        if ( $data_poczatkowa_ok ) 
- 	   echo('<span style="color: #162C8C; font-weight: bold;">Data OK</span><br />');
+ 	   echo('<span style="color: #162C8C; font-weight: bold;"> (Data OK)</span><br />');
 	   else
 	   echo('<span style="color: red; font-weight: bold;">Data B£ÊDNA!</span><br />');
-      echo('<br />Data koñcowa <span style="color: red; ">');
+      echo('<br />Data koñcowa: <span style="color: red; font-weight: bold ">');
       echo("$data_koncowa_ludzka </span>"); 
       $data_koncowa_ok = SprawdzDate ( $dzien_koncowy , $miesiac_koncowy, $rok_koncowy ); 
       
 	   if ( $data_koncowa_ok ) 
-	   echo('<span style="color: #162C8C; font-weight: bold;">Data OK</span><br />');
+	   echo('<span style="color: #162C8C; font-weight: bold;"> (Data OK)</span><br />');
 	   else
 	   echo('<span style="color: red; font-weight: bold;">Data B£ÊDNA!</span><br />');
       echo('</p>');
@@ -1338,7 +1347,12 @@ $kwerenda2 = "SELECT `ID_rezerwacji`, `dataRez`, `dataPocz`, `dataKonc` FROM rez
 		   //? ma nic nie robic, tylko przejsc do nastepnego warunku
 	      else 
 		  { /*info ze nie mozna, bo zarezerwowane od row[0] do row[1] i break */ 
-		  echo("<br />$ile. id_rez: $id_rezerwacji, data_rez: $data_rez, data_pocz: $data_pocz, data_konc: $data_konc<br />");
+		  
+		  //echo("<br />$ile. id_rez: $id_rezerwacji, data_rez: $data_rez, data_pocz: $data_pocz, data_konc: $data_konc<br />");
+		  echo('<br />');
+		  echo('<p class="login_klient" >');
+		  echo("$ile. id_rez: $id_rezerwacji, data_rez: $data_rez, data_pocz: $data_pocz, data_konc: $data_konc <br />");
+		  echo('</p>');
 		  
 		  }
 //}
@@ -1369,11 +1383,11 @@ $kwerenda2 = "SELECT `ID_rezerwacji`, `dataRez`, `dataPocz`, `dataKonc` FROM rez
 	   if ( $rezerwacja ) // debug_2
 	   {
 	   $osoba_id = $_SESSION['id']; 
-	   echo("<br /><br /><h4>W podanym czasie rezerwacja auta $marka $model jest mo¿liwa do zrealizowania.</h4>");
-	   echo("<br />");
+	   echo("<br /><br /><h4>W podanym czasie rezerwacja auta<strong> $marka $model </strong>jest mo¿liwa do zrealizowania.</h4>");
+//	   echo("<br />");
 	   echo('<table width="440" border="0" align="center" cellpadding="0" cellspacing="2" >');
  	   echo('<tr>');
-	   echo('<td>Czy na pewno zarezerwowaæ w podanym terminie?<br /><br />');
+	   echo('<td><h4>Czy na pewno zarezerwowaæ w podanym terminie?</h4><br />');
 
 	   echo('<form name="rezerwuj_auto2" action="./index.php" method="post" >');
        echo("<input type=\"hidden\" name=\"rezerwuj_2_auto_id\" value=\"$auto_id\" />");
@@ -1447,7 +1461,7 @@ $kwerenda2 = "SELECT `ID_rezerwacji`, `dataRez`, `dataPocz`, `dataKonc` FROM rez
  {
   if ( isSet( $_SESSION['zalogowany'] ) ) // czy osoba wywo³ujaca link jest zalogowana w serwisie?
   {
-   if ( SprawdzUprawnieniaAdmina() ) // oprócz tego musi mieæ uprawnienai administarcyjne
+   if ( SprawdzUprawnieniaAdmina() ) // oprócz tego musi mieæ uprawnienia administarcyjne
    {
     if ( $_POST['rezerwuj_2_osoba_id'] == $_SESSION['id'] )
 	{
@@ -1469,7 +1483,7 @@ $kwerenda2 = "SELECT `ID_rezerwacji`, `dataRez`, `dataPocz`, `dataKonc` FROM rez
     $data_koncowa = $rok_koncowy."-".$miesiac_koncowy."-".$dzien_koncowy;
 
     
-	$data_teraz = date( "Y-m-j" );
+	$data_teraz = date( "Y-m-d" );	//znów "d" nie "j" !!!
     $jest_blad = false;
 
      if ( $data_poczatkowa < $data_teraz )
@@ -1532,7 +1546,7 @@ $kwerenda2 = "SELECT `ID_rezerwacji`, `dataRez`, `dataPocz`, `dataKonc` FROM rez
 	   }
 	   else
 	   {
-	   //pojazd w ty okresie jest zzarezerwowany przez innego klienta
+	   //pojazd w tym okresie jest zzarezerwowany przez innego klienta
 	   echo('<br /><h3 style="color: red;">Wyst±pi³ b³ad!.</h3>');
 	   echo('<br />');
 	   } //debug_2

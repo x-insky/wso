@@ -9,10 +9,16 @@
   </tr>
 </table>
 -->
-<p class="tlo_granat">2007-2008 &copy; Wypo¿yczalnia Samochodów Osobowych</p>
 
 <?php
-							//zakoñcznie po³±czenia z BD
+
+echo('<p class="tlo_granat">2007-' . date(Y) . ' &copy; Wypo¿yczalnia Samochodów Osobowych</p>');
+
+?>
+
+
+<?php
+							//zakoñcznie po³¹czenia z BD
 mysql_close( $db_link );
 
 ?>
