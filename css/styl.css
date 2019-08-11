@@ -383,7 +383,7 @@ a:active {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 9pt;
 	color: #162C8C;
-	width: 90px;
+	width: 95px;
 	vertical-align: middle;
 	border: 1px solid #82B8FB;
 	height: 23px;
@@ -396,12 +396,26 @@ a:active {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 9pt;
 	color: #162C8C;
-	width: 55px;
+	width: 60px;
 	vertical-align: middle;
 	border: 1px solid #82B8FB;
 	height: 23px;
 }
-.przycisk1 {
+
+.formularz_dodaj7 {
+	padding-top: 2px;
+	padding-right: 1px;
+	padding-bottom: 1px;
+	padding-left: 1px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	color: #162C8C;
+	width: 45px;
+	vertical-align: middle;
+	border: 1px solid #82B8FB;
+	height: 23px;
+}.przycisk1 {
+
 	font-size: 9pt;
 	color: #FFFFFF;
 	background-color: #000099;
@@ -451,7 +465,8 @@ a:active {
 	text-align: center;
 	margin-top: 5px;
 	margin-bottom: 10px;
-}
+
+	}
 .login_pracownik {
 	background-color: white;
 	color: black;
@@ -473,6 +488,7 @@ a:active {
 	text-align: center;
 	margin-top: 5px;
 	margin-bottom: 10px;
+	border: 1px solid #162C8C; 
 }
 .rola_admin {
 	color:	#0099FF;
@@ -485,7 +501,9 @@ a:active {
 }
 .ramka_status {
 	text-align: center;
-	padding: 5px;
+	font-weight: bold;
+	color: red;
+	padding: 10px;
 	border: 1px solid #162C8C;
 	background-color: white;
 	margin: 10px;

@@ -6,7 +6,7 @@
  if ( SprawdzUprawnieniaAdmina() )
  {
  $id_uzytkownika = $_SESSION['id'];
- $data_teraz = date( "Y-m-j" );
+ $data_teraz = date( "Y-m-d" ); 	// "d" nie "j" !!!
  
  $kwerenda = "SELECT `ID_rezerwacji`, `fk_autoID`, `dataRez`, `dataPocz`, `dataKonc` FROM rezerwacje_tbl WHERE `fk_userID`=$id_uzytkownika ORDER BY `dataRez` DESC";
 

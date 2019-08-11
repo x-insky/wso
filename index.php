@@ -1,7 +1,7 @@
 <?php
 // ---------------------------------------------------------------------------------  funkcje ----|
 
-			//funkcja testuj±ca
+			//funkcja testuj¹ca
 function SprawdzHaslo( $user, $pass)
 {
  if ( !$plikowa = fopen( "./config/hasla.txt", "r" ) ) return 1;
@@ -23,7 +23,7 @@ function SprawdzHasloDB( $user, $pass)
 {
 $kwerenda = "SELECT login, haslo, blokada FROM user_tbl WHERE login='$user' AND haslo='$pass'";
 $rezultat = @mysql_query( $kwerenda );
- if ( ! $rezultat ) return 1;			//b³êdy z po³±czeniem z baz±
+ if ( ! $rezultat ) return 1;			//b³êdy z po³¹czeniem z baz¹
  if ( mysql_num_rows( $rezultat ) == 1 )	//¿e znaleziono jeden pasuj¹cy
  {
  $wynik = mysql_fetch_row( $rezultat );   
@@ -64,7 +64,7 @@ $rezultat3 = mysql_query( $kwerenda3 );
  { 
  //$blad = mysql_error( $rezultat3 );
  //echo("$blad");
- echo("<br /><b>B£¡D!</b>");
+ echo("<br /><b>B£¥D!</b>");
  }
  else
  {
@@ -242,7 +242,7 @@ session_start();
 </head>
 <body>
 
-<script type="text/javascript" src="scripts/javascript.js"> </script>
+<script type="text/javascript" src="scripts/javascript.js"></script>
 
 <table width="910" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#162C8C">
 <tr>
