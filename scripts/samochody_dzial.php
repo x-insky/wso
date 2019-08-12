@@ -7,7 +7,7 @@ $kwerenda = "SELECT id, markaID, model, kategoriaID, rokProdukcji, kolorID, skrz
 $rezultat = mysql_query( $kwerenda );
  if ( ! $rezultat )
  {
- echo("<h3 style=\"color: red;\">Brak pojazdów w bazie!</h3>");
+ echo("<h3 style=\"color: red;\">Brak pojazdÃ³w w bazie!</h3>");
  }
  else
  {
@@ -36,7 +36,7 @@ $rezultat = mysql_query( $kwerenda );
   $drzwi_id[] = $wynik[7];
   }
 
-//pobranie wszystkich nazw marek samochodów do tablicy   
+//pobranie wszystkich nazw marek samochodÃ³w do tablicy   
    $kwerenda2 = "SELECT id, marka FROM auto_marka_tbl";
    $rezultat2 = mysql_query( $kwerenda2 );
    $temp1 = array();
@@ -48,7 +48,7 @@ $rezultat = mysql_query( $kwerenda );
     $marki = array_combine( $temp1, $temp2 );
     } 
 
-//pobranie wszystkich kolorów samochodów do tablicy  
+//pobranie wszystkich kolorÃ³w samochodÃ³w do tablicy  
    $kwerenda2 = "SELECT id, kolor FROM auto_kolor_tbl";
    $rezultat2 = mysql_query( $kwerenda2 );
    $temp3 = array();
@@ -60,7 +60,7 @@ $rezultat = mysql_query( $kwerenda );
     $kolory = array_combine( $temp3, $temp4 );
     } 
 
-//pobranie wszystkich nazw kategorii samochodów do tablicy   
+//pobranie wszystkich nazw kategorii samochodÃ³w do tablicy   
    $kwerenda2 = "SELECT id, nazwaKategorii FROM auto_kategoria_tbl";
    $rezultat2 = mysql_query( $kwerenda2 );
    $temp5 = array();
@@ -72,7 +72,7 @@ $rezultat = mysql_query( $kwerenda );
     $kategorie = array_combine( $temp5, $temp6 );
     } 
  
-//pobranie wszystkich ilo¶ci drzwi samochodów do tablicy   
+//pobranie wszystkich iloÅ›ci drzwi samochodÃ³w do tablicy   
    $kwerenda2 = "SELECT id, liczbaDrzwi FROM auto_drzwi_tbl";
    $rezultat2 = mysql_query( $kwerenda2 );
    $temp1 = array();
@@ -84,7 +84,7 @@ $rezultat = mysql_query( $kwerenda );
     $drzwii = array_combine( $temp1, $temp2 );
     } 
 
-//pobranie wszystkich rodzajów skrzyni samochodów do tablicy  
+//pobranie wszystkich rodzajÃ³w skrzyni samochodÃ³w do tablicy  
    $kwerenda2 = "SELECT id, typSkrzyni FROM auto_skrzynia_tbl";
    $rezultat2 = mysql_query( $kwerenda2 );
    $temp1 = array();
@@ -100,7 +100,7 @@ $rezultat = mysql_query( $kwerenda );
  //echo("<br />\$id_pojazdu[0]: $id_pojazdu[0]");
  //echo("<br />\$id_pojazdu[1]: $id_pojazdu[1]<br />");
  
- //wy¶wietlenie samochodów wraz z nazw± kategorii + opsi auta
+ //wyÅ›wietlenie samochodÃ³w wraz z nazwÄ… kategorii + opsi auta
    for ( $i = 0; $i < $ile_samochodow; $i++ )
    {
    $j = $i + 1;
@@ -115,7 +115,7 @@ $rezultat = mysql_query( $kwerenda );
 &nbsp;&nbsp;&nbsp;&nbsp;kolor: <b>$kolory[$zmienna3]</b></p>");
    echo("<br />");
    }
-   //echo("<br /><h4 style=\"color: red\">DEBUG: kolory aut... s± niezbyt.</h4>");
+   //echo("<br /><h4 style=\"color: red\">DEBUG: kolory aut... sÄ… niezbyt.</h4>");
    
    unset( $kwerenda, $rezultat, $wynik, $marka, $kolor, $kolor_id, $skrzynia, $markaID, $rok_produkcji, $i, $j );
    unset( $kwerenda2, $rezultat2, $wynik2, $kolory, $marki, $ile_samochodow, $temp1, $temp2,

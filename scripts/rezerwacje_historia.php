@@ -1,4 +1,4 @@
-<h3>Historia rezerwacji</h3>
+ï»¿<h3>Historia rezerwacji</h3>
 <br />
 
 <?php
@@ -17,7 +17,7 @@ $rezultat = mysql_query ( $kwerenda, $db_link );
  $ile_wierszy = mysql_num_rows( $rezultat ); 
   if ( ! $ile_wierszy )
   {
-  echo("<h4>Brak z³o¿onych rezerwacji!</h4>");
+  echo("<h4>Brak zÅ‚oÅ¼onych rezerwacji!</h4>");
   } 
   else
   {
@@ -26,7 +26,7 @@ $rezultat = mysql_query ( $kwerenda, $db_link );
   echo("<table width=\"450\" align=\"center\" border=\"0\" cellpadding=\"2\" cellspacing=\"2\" bgcolor=\"white\">");
   echo("<tr>");
   echo('<td width="35%" bgcolor="#82B8FB" align="center"><b>Marka i model auta</b></td>');
-  echo('<td width="25%" bgcolor="#82B8FB" align="center"><b>Data z³o¿enia rezerwacji </b></td>');
+  echo('<td width="25%" bgcolor="#82B8FB" align="center"><b>Data zÅ‚oÅ¼enia rezerwacji </b></td>');
   echo('<td bgcolor="#82B8FB" align="center"><b>Termin rezerwacji </b></td>');
   echo("</tr>");
   echo("</table>"); //tabela z nazwami kolumn
@@ -51,7 +51,7 @@ $rezultat = mysql_query ( $kwerenda, $db_link );
 	   $rezultat2 = mysql_query ( $kwerenda2, $db_link );
 		if ( ! $rezultat2 )
 		{
-		echo ("<h4>B³êdy:</h4>");
+		echo ("<h4>BÅ‚Ä™dy:</h4>");
 		echo mysql_error();
 		}
 		else
@@ -65,7 +65,7 @@ $rezultat = mysql_query ( $kwerenda, $db_link );
 	   $rezultat3 = mysql_query ( $kwerenda3, $db_link );
 		if ( ! $rezultat3 )
 		{
-		echo ("<h4>B³êdy:</h4>");
+		echo ("<h4>BÅ‚Ä™dy:</h4>");
 		echo mysql_error();
 		}
 		else
@@ -85,12 +85,13 @@ $rezultat = mysql_query ( $kwerenda, $db_link );
 		 echo("</tr>");
 		 echo('<tr style="background-color: white; height: 26px;">');
 		  echo('<td align="right" colspan="3">');
-	      echo('<form name="anuluj_rez" method="post" action="./index.php" onsubmit="return  confirm(\'Czy na pewno chcesz odwo³aæ rezerwacjê?\')" >');
+	      echo('<form name="anuluj_rez" method="post" action="./index.php" onsubmit="return  confirm(\'Czy na pewno chcesz odwoÅ‚aÄ‡ rezerwacjÄ™?\')" >');
 	
-		  echo("<input type=\"hidden\" name=\"anuluj_rez\" value=\"$nr_rezerwacji\" />");					          echo("<input type=\"hidden\" name=\"anuluj_rauto\" value=\"$auto_id\" />");
+		  echo("<input type=\"hidden\" name=\"anuluj_rez\" value=\"$nr_rezerwacji\" />");
+		  echo("<input type=\"hidden\" name=\"anuluj_rauto\" value=\"$auto_id\" />");
 		  echo("<input type=\"hidden\" name=\"anuluj_rosoba\" value=\"$id_uzytkownika\" />"); 			  
 		  
-	 	  echo('<input type="submit" value="Anuluj rezerwacjê" class="przycisk2" />');
+	 	  echo('<input type="submit" value="Anuluj rezerwacjÄ™" class="przycisk2" />');
 		  echo("</form>");
 		  echo("</td>");
 		 echo("</tr>");
@@ -130,7 +131,7 @@ $rezultat = mysql_query ( $kwerenda, $db_link );
   }
   else
   {
-  echo ("<h3 style=\"color: red;\">Wystapi³ b³±d!".mysql_error()."</h3>");
+  echo ("<h3 style=\"color: red;\">WystapiÅ‚ bÅ‚Ä…d!".mysql_error()."</h3>");
   }
  } 
 

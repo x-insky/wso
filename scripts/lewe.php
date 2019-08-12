@@ -1,18 +1,18 @@
-<div class="sekcja_biala">Menu u¿ytkownika</div>
+<div class="sekcja_biala">Menu uÅ¼ytkownika</div>
 <?php
  if ( isSet( $_SESSION['zalogowany'] ) )
  {
- //zrób co¶ dla zalogowanego u¿ytkownika
+ //zrÃ³b coÅ› dla zalogowanego uÅ¼ytkownika
   switch ( $_SESSION['rola'] )
   { 
   case "pracownik":
-    echo("<p class='login_pracownik'>Jeste¶ zalogowany jako <b>");
+    echo("<p class='login_pracownik'>JesteÅ› zalogowany jako <b>");
    break;
   case "administrator":
-    echo("<p class='login_admin'>Jeste¶ zalogowany jako <b>");
+    echo("<p class='login_admin'>JesteÅ› zalogowany jako <b>");
    break;  
   default:
-    echo("<p class='login_klient'>Jeste¶ zalogowany jako <br /><b>");
+    echo("<p class='login_klient'>JesteÅ› zalogowany jako <br /><b>");
    break;
   }
  echo $_SESSION['imie']; echo "&nbsp;"; echo $_SESSION['nazwisko'];
@@ -20,13 +20,13 @@
  echo ("rola: <b>");
  echo $_SESSION['rola'];
  echo("</b></p>");
- //menu u¿ytkownika
+ //menu uÅ¼ytkownika
  include("./scripts/menu_uzytkownika.php"); 
  
- //tez wyloguj usera //a mo¿e to poziom wy¿ej, na równi z zewn. IF ?
+ //tez wyloguj usera //a moÅ¼e to poziom wyÅ¼ej, na rÃ³wni z zewn. IF ?
   if ( isSet( $_POST['wylogowany'] ) )
   {
-    // + mo¿e co¶ jeszcze
+    // + moÅ¼e coÅ› jeszcze
   unset( $_SESSION['zalogowany'] );
   unset( $_SESSION['komunikat'] );
   
@@ -41,7 +41,7 @@
   unset( $_SESSION['id']);
   
   //$_SESSION['zalogowany'] = "";
-  //$_SESSION['komunikat'] = "Nie jeste¶ zalogowany";
+  //$_SESSION['komunikat'] = "Nie jesteÅ› zalogowany";
   session_destroy();
   @header("Location: ./index.php"); // !!!
   }
@@ -49,7 +49,7 @@
  }
  else
  {
- // gdy niezalogowany to sprawd¼ komunikat i daj formularz o logowania
+ // gdy niezalogowany to sprawdÄ½ komunikat i daj formularz o logowania
  echo("<br /><div align='center'><b>");
   if ( isSet( $_SESSION['komunikat']) ) 
   {
@@ -57,7 +57,7 @@
   }
   else
   {
-  echo("Wprowad¼ nazwê u¿ytkownika i has³o");
+  echo("WprowadÅº nazwÄ™ uÅ¼ytkownika i hasÅ‚o");
   }
  echo("</b></div><br />");
  //formularz logowania! 
@@ -66,26 +66,26 @@
  
  // + rejestracja +
  echo('<br />');
- echo('<p class="akapit_srodek_wezszy"><a href="./index.php?link=register">Za³ó¿ konto</a></p>');
+ echo('<p class="akapit_srodek_wezszy"><a href="./index.php?link=register">ZaÅ‚Ã³Å¼ konto</a></p>');
  }
  
-  //a teraz sprawd¼ zawarto¶æ przes³anych pól z formularza
+  //a teraz sprawdÄ½ zawartoÅ›Ä‡ przesÅ‚anych pÃ³l z formularza
  if ( isSet( $_POST["uzytkownik"] ) && isSet( $_POST["haslo"] ) )
- {  //gdy s± przes³ane oba pola
+ {  //gdy sÄ… przesÅ‚ane oba pola
  $wartosc = SprawdzHasloDB( $_POST["uzytkownik"], $_POST["haslo"] );
    if ( $wartosc == 0 ) //haslo i uzytkownik zgodne
    {
    $_SESSION['zalogowany'] = $_POST['uzytkownik'];
    $zalogowany = $_POST['uzytkownik'];
-   //odczytanie pozosta³ych danych u¿ytkownika i zapis ich do zmiennych sesji 
+   //odczytanie pozostaÅ‚ych danych uÅ¼ytkownika i zapis ich do zmiennych sesji 
    $kwerenda = "SELECT id, imie, nazwisko, email, rolaID, nazwaFirmyID, dataRejestracji, godzinaRejestracji FROM user_tbl WHERE login='$zalogowany'";
    $rezultat = mysql_query( $kwerenda );
     if ( ! $rezultat )
     {
-	echo("B³êdy w po³±czeniu z baz± danych! [1]"); 
+	echo("BÅ‚Ä™dy w poÅ‚Ä…czeniu z bazÄ… danych! [1]"); 
     exit(1);
     }
-    if ( mysql_num_rows( $rezultat ) == 1 )	//¿e znaleziono jeden pasuj±cy
+    if ( mysql_num_rows( $rezultat ) == 1 )	//Å¼e znaleziono jeden pasujÄ…cy
     {
     $wynik = mysql_fetch_row( $rezultat );   
     $_SESSION['id'] = $wynik[0];
@@ -99,32 +99,32 @@
     } // if-poprawny odczyt bazy
 	
 	
-   //$zmienna = $_SESSION['id'];    //wyci±ganie nazwy roli w serwisie
+   //$zmienna = $_SESSION['id'];    //wyciÄ…ganie nazwy roli w serwisie
    $kwerenda = "SELECT `rolaNazwa` FROM `userrole_tbl` WHERE `id`=$zmienna2";
    $rezultat = mysql_query( $kwerenda );
     if ( ! $rezultat )
     {
-	echo("B³êdy w po³aczeniu z baz± danych! [2]"); 
+	echo("BÅ‚Ä™dy w poÅ‚aczeniu z bazÄ… danych! [2]"); 
     //exit(1);  //// ****
     }
-    if ( mysql_num_rows( $rezultat ) == 1 )	//¿e znaleziono jeden pasuj±cy
+    if ( mysql_num_rows( $rezultat ) == 1 )	//Å¼e znaleziono jeden pasujÄ…cy
     {
     $wynik = mysql_fetch_row( $rezultat );   
     $_SESSION['rola'] = $wynik[0];
     } // if-poprawny odczyt bazy
 
-   $zmienna = $_SESSION['id'];    //wyci±ganie nazwy roli w serwisie
+   $zmienna = $_SESSION['id'];    //wyciÄ…ganie nazwy roli w serwisie
    $kwerenda = "SELECT nazwaFirmy FROM firma_tbl WHERE ID=$zmienna3";
    $rezultat = mysql_query( $kwerenda );
-    if ( ! $rezultat ) //mo¿e byæ pominiêta nazwa
+    if ( ! $rezultat ) //moÅ¼e byÄ‡ pominiÄ™ta nazwa
     {
-	//echo("B³êdy w po³±czeniu z baz± danych! [3]"); 
+	//echo("BÅ‚Ä™dy w poÅ‚Ä…czeniu z bazÄ… danych! [3]"); 
     //exit(1);
     $_SESSION['firma'] = "";
 	}
 	else
 	{
-     if ( mysql_num_rows( $rezultat ) == 1 )	//¿e znaleziono jeden pasuj±cy
+     if ( mysql_num_rows( $rezultat ) == 1 )	//Å¼e znaleziono jeden pasujÄ…cy
      {
      $wynik = mysql_fetch_row( $rezultat );
      //echo("<br />nazwa firmy: $wynik[0] !!!");
@@ -143,7 +143,7 @@
    
    if ( $wartosc == 1 )
    {
-   $_SESSION['komunikat'] = "B³±d serwera. Zalogowanie nie by³o mo¿liwe.";
+   $_SESSION['komunikat'] = "BÅ‚Ä…d serwera. Zalogowanie nie byÅ‚o moÅ¼liwe.";
    //header("Location: ./index.php");
 
    //include("form_v2.php");
@@ -151,27 +151,27 @@
     //else
    if ($wartosc == 2 )
    {
-   $_SESSION['komunikat'] = "Nieprawid³owa nazwa lub has³o u¿ytkownika";
+   $_SESSION['komunikat'] = "NieprawidÅ‚owa nazwa lub hasÅ‚o uÅ¼ytkownika";
    //include("form_v2.php");
    @header("Location: ./index.php");
    }
 /*   else
    {
-   $_SESSION['komunikat'] = "B³±d serwera. Zalogowanie nie by³o mo¿liwe";
+   $_SESSION['komunikat'] = "BÅ‚Ä…d serwera. Zalogowanie nie byÅ‚o moÅ¼liwe";
    //include("form_v2.php");
    //header("Location: ./index.php");
    }   */
    	//blokada konta
    if ($wartosc == 3 )
    {
-   $_SESSION['komunikat'] = "Twoje konto jest zablokowane. Skontaktuj siê z adminem serwisu";
+   $_SESSION['komunikat'] = "Twoje konto jest zablokowane. Skontaktuj siÄ™ z adminem serwisu";
    //include("form_v2.php");
    @session_start();
    @header("Location: ./index.php");
    }
 /*   else
    {
-   $_SESSION['komunikat'] = "B³±d serwera. Zalogowanie nie by³o mo¿liwe";
+   $_SESSION['komunikat'] = "BÅ‚Ä…d serwera. Zalogowanie nie byÅ‚o moÅ¼liwe";
    //include("form_v2.php");
    //header("Location: ./index.php");
    }  */
@@ -189,15 +189,15 @@
 
 <form name = "wyszukaj" action = "./index.php" method = "post" style="align: center;" >
 
- <table width="180" border = "0" align="center" cellpadding="0" cellspacing="0">
+ <table width="180" border="0" align="center" cellpadding="0" cellspacing="0">
  <tr>
-  <td>Wyra¿enie</td>
+  <td>WyraÅ¼enie</td>
  </tr>
  <tr>
   <td><input type="text" name="szukaj" size="30" class="formularz1" /></td>
  </tr>
  <tr>
-  <td><input type = "submit" value="Znajd¼" class="przycisk1" /></td>
+  <td><input type = "submit" value="ZnajdÅº" class="przycisk1" /></td>
  </tr>
  <tr>
   <td>

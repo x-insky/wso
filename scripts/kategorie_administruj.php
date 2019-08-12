@@ -1,7 +1,7 @@
-<h3>Administruj kategoriami pojazdów</h3>
+<h3>Administruj kategoriami pojazdÃ³w</h3>
 <br />
 <br />
 <h4 style="color: red;">UWAGA:</h4>
-<h4>Nie modyfikowaæ kategorii, do której przypisane s± ju¿ pojazdy!</h4>
+<h4>Nie modyfikowaÄ‡ kategorii, do ktÃ³rej przypisane sÄ… juÅ¼ pojazdy!</h4>
 <br />
-<h4>Funkcja tymczasowo niedostêpna</h4>
+<h4>Funkcja tymczasowo niedostÄ™pna</h4>

@@ -1,51 +1,51 @@
 <h3>Regulamin</h3>
 <br />
-<h4>Ogólne warunki wynajmu samochodów</h4>
-<p class="akapit_wezszy">WSO sp. z o.o. oddaje do u¿ytkowania osobie (firmie) pojazd na okres opisany na odwrocie i na warunkach przedstawionych poni¿ej.<br />
+<h4>OgÃ³lne warunki wynajmu samochodÃ³w</h4>
+<p class="akapit_wezszy">WSO sp. z o.o. oddaje do uÅ¼ytkowania osobie (firmie) pojazd na okres opisany na odwrocie i na warunkach przedstawionych poniÅ¼ej.<br />
 <br />
-U¿ytkownik swoim podpisem o¶wiadcza, ze przyjmuje poni¿sze Ogólne Warunki Wynajmu i przyjmuje osobist± odpowiedzialno¶æ za samochód oraz odpowiedzialno¶æ za wszelkie osoby, którym powierzy samochód.<br /><br />
-Kierowc± mo¿e byæ tylko osoba, która jest wskazana na Umowie Najmu. <br />
+UÅ¼ytkownik swoim podpisem oÅ›wiadcza, ze przyjmuje poniÅ¼sze OgÃ³lne Warunki Wynajmu i przyjmuje osobistÄ… odpowiedzialnoÅ›Ä‡ za samochÃ³d oraz odpowiedzialnoÅ›Ä‡ za wszelkie osoby, ktÃ³rym powierzy samochÃ³d.<br /><br />
+KierowcÄ… moÅ¼e byÄ‡ tylko osoba, ktÃ³ra jest wskazana na Umowie Najmu. <br />
 <br />
-U¿ytkownik zobowi±zuje siê zwróciæ pojazd nieuszkodzony, z kompletnym wyposa¿eniem i z dokumentami w miejscu, gdzie samochód pobra³ lub w innym uzgodnionym, najpó¼niej w dniu zakoñczenia umowy.<br />
+UÅ¼ytkownik zobowiÄ…zuje siÄ™ zwrÃ³ciÄ‡ pojazd nieuszkodzony, z kompletnym wyposaÅ¼eniem i z dokumentami w miejscu, gdzie samochÃ³d pobraÅ‚ lub w innym uzgodnionym, najpÃ³Ä½niej w dniu zakoÅ„czenia umowy.<br />
 <br />
-Ka¿de przed³u¿enie musi byæ uzgodnione i zatwierdzone pisemnie przez przedstawiciela WSO sp. z o.o. nie pó¼niej ni¿ 24 godz. przed zakoñczeniem umowy. <br />
+KaÅ¼de przedÅ‚uÅ¼enie musi byÄ‡ uzgodnione i zatwierdzone pisemnie przez przedstawiciela WSO sp. z o.o. nie pÃ³Ä½niej niÅ¼ 24 godz. przed zakoÅ„czeniem umowy. <br />
 <br />
-Za doprowadzenie lub odbiór pojazdu od U¿ytkownika na terenie Wroc³awia WSO sp. z o.o. nie pobiera op³aty. W innych miejscach (poza Wroc³awiem) op³aty ustala siê zgodnie z cennikiem.<br />
+Za doprowadzenie lub odbiÃ³r pojazdu od UÅ¼ytkownika na terenie WrocÅ‚awia WSO sp. z o.o. nie pobiera opÅ‚aty. W innych miejscach (poza WrocÅ‚awiem) opÅ‚aty ustala siÄ™ zgodnie z cennikiem.<br />
 <br />
-Bezprawne przed³u¿enie umowy upowa¿nia WSO sp. z o.o. do pobrania dodatkowej op³aty w wysoko¶ci 200 % stawki podstawowej za ca³y okres u¿ytkowania pojazdu niezgodnie z umow± oraz powiadomienia Policji o zaginiêciu samochodu.<br />
+Bezprawne przedÅ‚uÅ¼enie umowy upowaÅ¼nia WSO sp. z o.o. do pobrania dodatkowej opÅ‚aty w wysokoÅ›ci 200 % stawki podstawowej za caÅ‚y okres uÅ¼ytkowania pojazdu niezgodnie z umowÄ… oraz powiadomienia Policji o zaginiÄ™ciu samochodu.<br />
 <br />
-Pojazd w chwili wydania musi byæ sprawny technicznie, czysty i zatankowany. Ewentualne uwagi o stanie pojazdu nale¿y wpisaæ do rubryki "Uwagi". W chwili zwrotu w poje¼dzie powinna byæ taka sama ilo¶æ paliwa jak przy wyje¼dzie. Je¶li ilo¶æ paliwa jest mniejsza, U¿ytkownik wniesie dodatkow± op³atê za paliwo.<br />
+Pojazd w chwili wydania musi byÄ‡ sprawny technicznie, czysty i zatankowany. Ewentualne uwagi o stanie pojazdu naleÅ¼y wpisaÄ‡ do rubryki "Uwagi". W chwili zwrotu w pojeÄ½dzie powinna byÄ‡ taka sama iloÅ›Ä‡ paliwa jak przy wyjeÄ½dzie. JeÅ›li iloÅ›Ä‡ paliwa jest mniejsza, UÅ¼ytkownik wniesie dodatkowÄ… opÅ‚atÄ™ za paliwo.<br />
 <br />
-U¿ytkownik zobowi±zuje siê przestrzegaæ zasad typowego u¿ytkowania pojazdu a w szczególno¶ci:<br />
-1. przewoziæ dozwolon± liczbê pasa¿erów i ³adunków, <br />
-2. nie kierowaæ pojazdem znajduj±c siê pod wp³ywem alkoholu lub innych ¶rodków odurzaj±cych, <br />
-3. nie holowaæ innych pojazdów lub przyczep,<br />
-4. pojazdem mo¿e kierowaæ tylko osoba wymieniona w umowie lub je¶li U¿ytkownikiem jest firma, osoba upowa¿niona,<br />
-5. kierowca musi mieæ ukoñczone 21 lat i posiadaæ prawo jazdy od co najmniej 1 roku.<br />
+UÅ¼ytkownik zobowiÄ…zuje siÄ™ przestrzegaÄ‡ zasad typowego uÅ¼ytkowania pojazdu a w szczegÃ³lnoÅ›ci:<br />
+1. przewoziÄ‡ dozwolonÄ… liczbÄ™ pasaÅ¼erÃ³w i Å‚adunkÃ³w, <br />
+2. nie kierowaÄ‡ pojazdem znajdujÄ…c siÄ™ pod wpÅ‚ywem alkoholu lub innych Å›rodkÃ³w odurzajÄ…cych, <br />
+3. nie holowaÄ‡ innych pojazdÃ³w lub przyczep,<br />
+4. pojazdem moÅ¼e kierowaÄ‡ tylko osoba wymieniona w umowie lub jeÅ›li UÅ¼ytkownikiem jest firma, osoba upowaÅ¼niona,<br />
+5. kierowca musi mieÄ‡ ukoÅ„czone 21 lat i posiadaÄ‡ prawo jazdy od co najmniej jednego roku.<br />
 <br />
-SAMOCHÓD JEST UBEZPIECZONY NA WARUNKACH FIRMY UBEZPIECZENIOWEJ W ZAKRESIE OC, AC, KR I NW. U¯YTKOWNIKA OBOWI¡ZUJ¡ WSZYSTKIE WARUNKI OKRE¦LONE PRZEZ FIRMÊ UBEZPIECZENIOW¡, A W SZCZEGÓLNO¦CI DOTYCZ¡CE UTRATY POJAZDU WRAZ Z DOKUMENTAMI. <br />
+SAMOCHÃ“D JEST UBEZPIECZONY NA WARUNKACH FIRMY UBEZPIECZENIOWEJ W ZAKRESIE OC, AC, KR I NW. UÅ»YTKOWNIKA OBOWIÄ„ZUJÄ„ WSZYSTKIE WARUNKI OKREÅšLONE PRZEZ FIRMÄ˜ UBEZPIECZENIOWÄ„, A W SZCZEGÃ“LNOÅšCI DOTYCZÄ„CE UTRATY POJAZDU WRAZ Z DOKUMENTAMI. <br />
 <br />
-U¿ytkownik przyjmuje na siebie pe³n± materialn± odpowiedzialno¶æ w przypadku uszkodzenia pojazdu z w³asnej winy. Odpowiedzialno¶æ ta obejmuje szkody nie objête ubezpieczeniem AC. Za szkody powsta³e z w³asnej winy u¿ytkownik jest obci±¿ony kwota udzia³u w³asnego, a w szkodach o warto¶ci mniejszej ni¿ 1000 PLN, U¿ytkownik obci±¿ony zostanie pe³nymi kosztami naprawy. Je¿eli warunki ubezpieczenia stanowi± inaczej szkody likwidujemy z Collision Waiver Insurance.<br />
+UÅ¼ytkownik przyjmuje na siebie peÅ‚nÄ… materialnÄ… odpowiedzialnoÅ›Ä‡ w przypadku uszkodzenia pojazdu z wÅ‚asnej winy. OdpowiedzialnoÅ›Ä‡ ta obejmuje szkody nie objÄ™te ubezpieczeniem AC. Za szkody powstaÅ‚e z wÅ‚asnej winy uÅ¼ytkownik jest obciÄ…Å¼ony kwota udziaÅ‚u wÅ‚asnego, a w szkodach o wartoÅ›ci mniejszej niÅ¼ 1000 PLN, UÅ¼ytkownik obciÄ…Å¼ony zostanie peÅ‚nymi kosztami naprawy. JeÅ¼eli warunki ubezpieczenia stanowiÄ… inaczej szkody likwidujemy z Collision Waiver Insurance.<br />
 <br />
-U¿ytkownik odpowiada materialnie za straty powsta³e w wyniku zawinionego braku zabezpieczenia samochodu lub dokumentów niezbêdnych do likwidacji szkody. 
-Kaucja - depozyt (w formie zastawu bankowego) w okresie wynajmu wynosi 1700 PLN (tysi±c siedemset z³otych polskich).<br />
+UÅ¼ytkownik odpowiada materialnie za straty powstaÅ‚e w wyniku zawinionego braku zabezpieczenia samochodu lub dokumentÃ³w niezbÄ™dnych do likwidacji szkody. 
+Kaucja - depozyt (w formie zastawu bankowego) w okresie wynajmu wynosi 1700 PLN (tysiÄ…c siedemset zÅ‚otych polskich).<br />
 <br />
-Kaucja nie podlega zwrotowi w przypadku zawinionej utraty pojazdu lub braku dokumentów umo¿liwiaj±cych likwidacjê szkody przez firmê ubezpieczeniow±. Kaucji nie zatrzymuje siê, je¶li sprawc± uszkodzenia pojazdu jest osoba trzecia i likwidacja szkody odbywa siê z jego polisy ubezpieczeniowej. <br />
+Kaucja nie podlega zwrotowi w przypadku zawinionej utraty pojazdu lub braku dokumentÃ³w umoÅ¼liwiajÄ…cych likwidacjÄ™ szkody przez firmÄ™ ubezpieczeniowÄ…. Kaucji nie zatrzymuje siÄ™, jeÅ›li sprawcÄ… uszkodzenia pojazdu jest osoba trzecia i likwidacja szkody odbywa siÄ™ z jego polisy ubezpieczeniowej. <br />
 <br />
-Je¿eli kierowca spowodowa³ wypadek znajduj±c siê pod wp³ywem alkoholu lub innego ¶rodka odurzaj±cego, WSO sp. z o.o. zastrzega sobie prawo do dodatkowego odszkodowania za poniesione szkody i straty.<br />
+JeÅ¼eli kierowca spowodowaÅ‚ wypadek znajdujÄ…c siÄ™ pod wpÅ‚ywem alkoholu lub innego Å›rodka odurzajÄ…cego, WSO sp. z o.o. zastrzega sobie prawo do dodatkowego odszkodowania za poniesione szkody i straty.<br />
 <br />
-U¿ytkownik ponosi pe³n± odpowiedzialno¶æ za przestrzeganie przepisów ruchu drogowego. <br />
+UÅ¼ytkownik ponosi peÅ‚nÄ… odpowiedzialnoÅ›Ä‡ za przestrzeganie przepisÃ³w ruchu drogowego. <br />
 <br />
-WSO sp. z o.o. nie ponosi odpowiedzialno¶ci za rzeczy przewo¿one lub pozostawione w samochodzie. 
-W przypadku niezap³acenia rachunku gotówk± lub przelewem w ustalonym terminie, WSO sp. z o.o. mo¿e doliczaæ odsetki za zw³okê. <br />
+WSO sp. z o.o. nie ponosi odpowiedzialnoÅ›ci za rzeczy przewoÅ¼one lub pozostawione w samochodzie. 
+W przypadku niezapÅ‚acenia rachunku gotÃ³wkÄ… lub przelewem w ustalonym terminie, WSO sp. z o.o. moÅ¼e doliczaÄ‡ odsetki za zwÅ‚okÄ™. <br />
 <br />
-Je¿eli samochód zostanie wy³±czony z ruchu z przyczyn niezale¿nych od U¿ytkownika, przys³uguje mu prawo do zast±pienia uszkodzonego pojazdu innym, o podobnym standardzie lub w przypadku braku takiej mo¿liwo¶ci zwrot pieniêdzy za niewykorzystany okres. <br />
+JeÅ¼eli samochÃ³d zostanie wyÅ‚Ä…czony z ruchu z przyczyn niezaleÅ¼nych od UÅ¼ytkownika, przysÅ‚uguje mu prawo do zastÄ…pienia uszkodzonego pojazdu innym, o podobnym standardzie lub w przypadku braku takiej moÅ¼liwoÅ›ci zwrot pieniÄ™dzy za niewykorzystany okres. <br />
 <br />
-W przypadku konieczno¶ci dokonania naprawy w okresie u¿ytkowania pojazdu, U¿ytkownik upowa¿niony jest do podpisania i odebrania faktury VAT w imieniu WSO sp. z o.o. Je¶li nie ustalono inaczej, naprawa powinna byæ dokonana w najbli¿szym autoryzowanym serwisie danej marki samochodu. Rozliczenie kosztów naprawy nast±pi przy zwrocie pojazdu. <br />
+W przypadku koniecznoÅ›ci dokonania naprawy w okresie uÅ¼ytkowania pojazdu, UÅ¼ytkownik upowaÅ¼niony jest do podpisania i odebrania faktury VAT w imieniu WSO sp. z o.o. JeÅ›li nie ustalono inaczej, naprawa powinna byÄ‡ dokonana w najbliÅ¼szym autoryzowanym serwisie danej marki samochodu. Rozliczenie kosztÃ³w naprawy nastÄ…pi przy zwrocie pojazdu. <br />
 <br />
-Wszelkie sprawy nieuregulowane niniejsz± umow± mog± byæ rozpatrywane w oparciu o przepisy Kodeksu Cywilnego. Ewentualne spory rozstrzygane bêd± przez s±dy w³a¶ciwe. <br />
+Wszelkie sprawy nieuregulowane niniejszÄ… umowÄ… mogÄ… byÄ‡ rozpatrywane w oparciu o przepisy Kodeksu Cywilnego. Ewentualne spory rozstrzygane bÄ™dÄ… przez sÄ…dy wÅ‚aÅ›ciwe. <br />
 <br />
-WSO sp. z o.o. informuje, ze obowi±zkiem osoby bior±cej w najem pojazd jest zapewnienie udzia³u Policji w przypadku zaistnienia szkody komunikacyjnej. Zaniechanie powy¿szego narusza warunki polisy ubezpieczeniowej i mo¿e skutkowaæ odpowiedzialno¶ci± materialn± bior±cego pojazd w najem.<br />
+WSO sp. z o.o. informuje, ze obowiÄ…zkiem osoby biorÄ…cej w najem pojazd jest zapewnienie udziaÅ‚u Policji w przypadku zaistnienia szkody komunikacyjnej. Zaniechanie powyÅ¼szego narusza warunki polisy ubezpieczeniowej i moÅ¼e skutkowaÄ‡ odpowiedzialnoÅ›ciÄ… materialnÄ… biorÄ…cego pojazd w najem.<br />
 <br />
-U¿ytkownik przyjmuje do wiadomo¶ci, ¿e wyjazdy poza granice kraju mog± siê odbywaæ po uzyskaniu zgody Wypo¿yczalni WSO, na pisemny wniosek u¿ytkownika.</p>
+UÅ¼ytkownik przyjmuje do wiadomoÅ›ci, Å¼e wyjazdy poza granice kraju mogÄ… siÄ™ odbywaÄ‡ po uzyskaniu zgody WypoÅ¼yczalni WSO, na pisemny wniosek uÅ¼ytkownika.</p>
 <br />

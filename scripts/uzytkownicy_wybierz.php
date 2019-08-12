@@ -1,4 +1,4 @@
-<h3>Wybierz uøytkownikÛw</h3>
+<h3>Wybierz u≈ºytkownik√≥w</h3>
 <br />
 
 <form name = "wyswietl_uzytkownikow" action = "./index.php" method = "post" >
@@ -14,23 +14,23 @@
  <td>&nbsp;</td>
 </tr>
 <tr>
- <td class="tab_nazwa_kolumny">Fragment imienia (nieobowi±zkowe)</td> 
+ <td class="tab_nazwa_kolumny">Fragment imienia (nieobowiƒÖzkowe)</td> 
  <td class="tab_dane_kolumny"><input type = "text" name = "imie_szukaj" size = "20" maxlength = "99" class="formularz_dodaj3" /></td>
  <td>&nbsp;</td>
 </tr>
 <tr>
- <td class="tab_nazwa_kolumny">Fragment nazwiska (nieobowi±zkowe)</td> 
+ <td class="tab_nazwa_kolumny">Fragment nazwiska (nieobowiƒÖzkowe)</td> 
  <td class="tab_dane_kolumny"><input type = "text" name = "nazwisko_szukaj" size = "20" maxlength = "99" class="formularz_dodaj3" /></td>
  <td>&nbsp;</td>
 </tr>
 <tr>
- <td class="tab_nazwa_kolumny">Zablokowani uøytkownicy</td> 
- <td class="tab_dane_kolumny"><label><input type="checkbox" name="wyswietl_zablokow" value="tylko_zablokowani" /> wy∂wietl <b>tylko</b> zablokowanych uøytkownikÛw serwisu</label></td>
+ <td class="tab_nazwa_kolumny">Zablokowani u≈ºytkownicy</td> 
+ <td class="tab_dane_kolumny"><label><input type="checkbox" name="wyswietl_zablokow" value="tylko_zablokowani" /> wy≈õwietl <b>tylko</b> zablokowanych u≈ºytkownik√≥w serwisu</label></td>
  <td>&nbsp;</td>
 </tr>
 <tr>
  <td class="tab_nazwa_kolumny">Sortuj wg</td> 
- <td class="tab_dane_kolumny"><label><input type="radio" name="rodzaj_sortowania" value="rola_nazwisko" checked="checked" /> rola uøytkownika, nazwisko, imiÍ</label><br />
+ <td class="tab_dane_kolumny"><label><input type="radio" name="rodzaj_sortowania" value="rola_nazwisko" checked="checked" /> rola u≈ºytkownika, nazwisko, imiƒô</label><br />
 <label><input type="radio" name="rodzaj_sortowania" value="data_rejestr" /> data rejestracji</label></td>
  <td>&nbsp;</td>
 </tr>
@@ -40,7 +40,7 @@
  <td></td>
 </tr>
 <tr>
- <td><input type = "submit" value = "Wy∂wietl uøytkownikÛw" class="przycisk1" />&nbsp;</td>
+ <td><input type = "submit" value = "Wy≈õwietl u≈ºytkownik√≥w" class="przycisk1" />&nbsp;</td>
  <td></td>
  <td>&nbsp;</td>
 </tr>

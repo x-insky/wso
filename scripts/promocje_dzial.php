@@ -22,7 +22,7 @@ $rezultat = mysql_query ( $kwerenda, $db_link );
    $rezultat2 = mysql_query ( $kwerenda2, $db_link );
     if ( ! $rezultat2 )
 	{
-	echo ("<h1>B³êdy</h1>");
+	echo ("<h1>BÅ‚Ä™dy</h1>");
 	}
     else
 	{
@@ -32,7 +32,7 @@ $rezultat = mysql_query ( $kwerenda, $db_link );
 	echo('<table width="450" align="center" border="0" cellpadding="1" cellspacing="2" bgcolor="#162C8C">');
 /*	echo("<tr><td><b>$tytul</b></td></tr>");
     echo("<tr bgcolor='white'><td>$tresc</td></tr>");
-	echo("<tr><td align=\"center\">Doda³ <b>$autor_imie $autor_nazwisko</b>&nbsp;&nbsp; Dnia: <b>$data</b> &nbsp; Godzina: <b>$czas</b></td></tr>"); */
+	echo("<tr><td align=\"center\">DodaÅ‚ <b>$autor_imie $autor_nazwisko</b>&nbsp;&nbsp; Dnia: <b>$data</b> &nbsp; Godzina: <b>$czas</b></td></tr>"); */
 	echo('<tr style="color: white;">');
 	echo("<td width=\"88%\"><b>$tytul</b></td>");
 	echo("<td align=\"right\">"); 
@@ -53,7 +53,7 @@ $rezultat = mysql_query ( $kwerenda, $db_link );
 	echo("</tr>");
 //	echo("<tr><td>Ostatnia modyfikacja dnia: <b>$data</b> &nbsp; Godzina: <b>$czas</b> </td><td>Autor: <b>$autor_imie $autor_nazwisko</b></td></tr>");
 	echo('<tr style="color: white;">');
-	echo("<td colspan=\"2\" align=\"center\">Napisa³: <b>$autor_imie $autor_nazwisko</b> w dniu: <b>$data</b> o godzinie: <b>$czas</b></td></tr>");
+	echo("<td colspan=\"2\" align=\"center\">NapisaÅ‚: <b>$autor_imie $autor_nazwisko</b> w dniu: <b>$data</b> o godzinie: <b>$czas</b></td></tr>");
 	
 	echo("</table>");
 	echo("<br />");
@@ -70,7 +70,7 @@ $rezultat = mysql_query ( $kwerenda, $db_link );
   }
   else
   {
-  //echo("<p class=\"akapit_prawy_wezszy\">Zalogowani u¿ytkownicy mog± obejrzeæ wszystkie wiadomo¶ci.<p>");
+  //echo("<p class=\"akapit_prawy_wezszy\">Zalogowani uÅ¼ytkownicy mogÄ… obejrzeÄ‡ wszystkie wiadomoÅ›ci.<p>");
   }
  }
 

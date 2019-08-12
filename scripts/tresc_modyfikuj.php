@@ -1,5 +1,5 @@
 <?php
-//zapytanie paramerty wiadomo¶ci o numerze ID
+//zapytanie paramerty wiadomoÅ›ci o numerze ID
 $kwerenda = "SELECT tytul, tresc, trescRodzaj, aktywne FROM tresc_tbl WHERE id=$id_wiadomosci";
 $rezultat = mysql_query( $kwerenda );
 $ile_wierszy = mysql_num_rows( $rezultat ); 
@@ -22,9 +22,9 @@ echo("aktywne: $aktywne<br />"); */
 
  <table width="450" border = "0" align="center" cellpadding="0" cellspacing="2" >
  <tr>
-  <td class="tab_nazwa_kolumny">Tytu³</td>
+  <td class="tab_nazwa_kolumny">TytuÅ‚</td>
   <td>
-<?php   //dodanie zawarto¶ci do pola formularza
+<?php   //dodanie zawartoÅ›ci do pola formularza
 echo('<input type = "text" name = "tytul_modyf" size = "30" maxlength = "99"'); 
 echo ("value=\"$tytul\" class=\"formularz_dodaj\" />");
 echo("<input type=\"hidden\" name=\"id_wiadomosci\" value=\"$id_wiadomosci\" />");  // ukryty: id_wiadomosci
@@ -32,7 +32,7 @@ echo("</td>");
 ?>  
  </tr>
  <tr>
-  <td class="tab_nazwa_kolumny">Tre¶æ</td>
+  <td class="tab_nazwa_kolumny">TreÅ›Ä‡</td>
   <td><textarea  name = "tresc_modyf" rows="10" class="formularz_dodaj" />
 <?php
 echo("$tresc");
@@ -43,14 +43,14 @@ echo("$tresc");
   <td class="tab_nazwa_kolumny">Kategoria</td>
   <td class="tab_dane_kolumny"><label><input type="radio" name="rodzaj_tresci_modyf" value="aktualnosci" 
 <?php
- if ( $kategoria_tresci == 1 ) //og³oszenie
+ if ( $kategoria_tresci == 1 ) //ogÅ‚oszenie
  {  
  echo('checked="checked"');
  }
 echo(' />');
-echo('Aktualno¶ci</label>&nbsp;&nbsp;');
+echo('AktualnoÅ›ci</label>&nbsp;&nbsp;');
 echo('  <label><input type="radio" name="rodzaj_tresci_modyf" value="promocje"');
- if ( $kategoria_tresci == 2 ) //og³oszenie
+ if ( $kategoria_tresci == 2 ) //ogÅ‚oszenie
  {  
  echo('checked="checked"');
  }
@@ -73,16 +73,16 @@ echo (" />&nbsp;Aktywna promocja (znaczenie tylko dla promocji)</label>");
   <td>&nbsp;</td>
  </tr>
  <tr>
-  <td><p style="color: red;">Co chcesz zrobiæ?</p></td>
-  <td><p style="color: red;"><label><input type="radio" name="rodzaj_modyfikacji" value="edycja" checked="checked" />Zmodyfikowaæ tre¶æ</label>&nbsp;&nbsp;
-  <label><input type="radio" name="rodzaj_modyfikacji" value="usuniecie" />&nbsp;Usun±æ</label>&nbsp; </td>
+  <td><p style="color: red;">Co chcesz zrobiÄ‡?</p></td>
+  <td><p style="color: red;"><label><input type="radio" name="rodzaj_modyfikacji" value="edycja" checked="checked" />ZmodyfikowaÄ‡ treÅ›Ä‡</label>&nbsp;&nbsp;
+  <label><input type="radio" name="rodzaj_modyfikacji" value="usuniecie" />&nbsp;UsunÄ…Ä‡</label>&nbsp; </td>
  </tr>
  <tr>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
  </tr>
  <tr>
-  <td><input type = "submit" value = "Zatwierd¼" class="przycisk1" /></td>
+  <td><input type = "submit" value = "ZatwierdÄ½" class="przycisk1" /></td>
   <td>&nbsp;</td>
  </tr>
  </table>

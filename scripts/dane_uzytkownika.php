@@ -2,7 +2,7 @@
 <br />
 <table width="450" align="center" border="0" cellpadding="0" cellspacing="2" >
 <tr>
- <td class="tab_nazwa_kolumny">Imiê</td>
+ <td class="tab_nazwa_kolumny">ImiÄ™</td>
  <td class="tab_dane_kolumny"> <?php echo ($_SESSION['imie']); ?> </td>
 </tr>
 <tr>
