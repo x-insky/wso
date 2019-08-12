@@ -544,9 +544,10 @@ $rezultat2 = mysql_query( $kwerenda2 );
 	$kolor_nr = $wynik[4];
 	$skrzynia_nr = $wynik[5];
 	$drzwi_nr = $wynik[6];
-	
-	echo("<h4 style=\"color: #82B8FB\">$j. <a href=\"./index.php?cid=$nr_auta\"> $marki[$marka_nr] $model</a> - kategoria <a href=\"./index.php?kat=kategoria_nr\">$kategorie[$kategoria_nr]</a></h4>");
-   echo("<p class=\"akapit_wezszy\">&nbsp;&nbsp;&nbsp;&nbsp;rok produkcji: <b>$rok_produkcji</b>, skrzynia: <b> $skrzynie[$skrzynia_nr]</b>, liczba drzwi: <b>$drzwii[$drzwi_nr]</b>, <br />
+
+        //naprawiono: przejście do przypisanej kategorii wyszukanego pojazdu w wyświetlanych wynikach, bezpośrednio z odnośnika danego pojazdu 
+	echo("<h4 style=\"color: #82B8FB\">$j. <a href=\"./index.php?cid=$nr_auta\"> $marki[$marka_nr] $model</a> - kategoria <a href=\"./index.php?kat=$kategoria_nr\">$kategorie[$kategoria_nr]</a></h4>");
+    echo("<p class=\"akapit_wezszy\">&nbsp;&nbsp;&nbsp;&nbsp;rok produkcji: <b>$rok_produkcji</b>, skrzynia: <b> $skrzynie[$skrzynia_nr]</b>, liczba drzwi: <b>$drzwii[$drzwi_nr]</b>, <br />
 &nbsp;&nbsp;&nbsp;&nbsp;kolor: <b>$kolory[$kolor_nr]</b></p><br />");
 
     } 
