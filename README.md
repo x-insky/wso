@@ -4,12 +4,12 @@ A web application written mainly in PHP, intended to facilitate the management o
 It allows you to operate vehicle (and user) objects on three levels of authority, i.e. roles: customer, employee and site administrator.
 
 ### Functionalities
-Diversified number of available activities, depending on the role on the site, which determines the level of entitlements. Roles set from above and assigned to a specific user. Extended functionality available after login. Browse the website, offers (ie lists and groups of vehicles) and search for cars carried out identically for the user not logged in. Any role supports login and logout.
+Diversified number of available activities, depending on the role on the site, which determines the level of entitlements. Roles set from above and assigned to a specific user. Extended functionality available after login. Browse the website, offers (i.e. lists and groups of vehicles) and search for cars carried out identically for the user not logged in. Any role supports login and logout.
 
 Role | Possible operations (working actions in bold)
 ------------ | -------------
 Customer | account registration, **booking a car**, **review of own reservations and bookings**, **modification/cancellation of reservations**, car rental, ...
-Employee | approval/rejection of reservations, car rental, loan settlement, finances, vehicle maintenance (periodic, technical tests, repairs), ...
+Employee | approval/rejection of reservations, car rental, reservations settlement, finances, vehicle maintenance (periodic, technical tests, repairs), ...
 Administrator | **adding and editing of cars**, **creation/modification of promotions**, **creation/modification of service notifications**, **management of users**, ...
 
 ### A working trial version
@@ -23,17 +23,26 @@ The functionality is available for testing after logging in with the lowest auth
 Download the latest version from this repository to any web server with PHP support. Every version of PHP, starting from 5.0 should be suitable (designed using PHP v5.2.X).
 
 #### Import of the reference database to the MySQL server from the repository from the file:
-`_sql\baza.sql`
+`_sql\baza_wso_utf8.sql` or from unrecommended file (older) `_sql\baza_wso.sql`
 
 #### Creating a user and giving him minimum rights to communicate with the database (*sample names here*):
 ```SQL
 CREATE USER 'wso_user'@'localhost' IDENTIFIED BY 'Sup3rP@$$';
 GRANT USER SELECT, INSERT, UPDATE, DELETE ON wso_database.* TO 'wso_user'@'localhost';
 ```
+#### Consider site security
+Protection against browsing the contents of server folders, as a minimum, is provided by the `.htaccess` file used in the project. For servers other than Apache, use a similar solution that deactivates the generation of dynamic content in an existing project subfolder (indexing).
+
 ### Information and disclaimers
 
+#### Everything is in Polish inside this project
+* textual content
+* php file names
+* names of variables, functions and comments contained in these files
+* dynamic content coming from the database (with the database schema itself)
+
 #### Warning! Old PHP code and misuse of CSS styles (and much more blah blah...)
-Please consider that this project was created from December 2007 to the end of January of the following year. In the application, the wheel was reinvented many times, its cover was changed, or its quadrature was modified to be more even. Luckily, as it later turned out, some "new" solutions are used _in a similar way_ in a real and working applications on professional websites. Amazing, considering that the author (I mean myself :)) did not know many web issues at that time, as well as the complex architecture and client-server specificity.\
+Please consider that this project was created from December 2007 to the end of January of the following year. In the application, the wheel was reinvented many times, its cover was changed, or its quadrature was modified to be more even. Luckily, as it later turned out, some "new" solutions are used _in a similar way_ in a real and working applications on professional websites (HTML content is certainly generated differently and more efficiently). It is amazing that the whole project is functioning properly, considering that the author (I mean myself :) ) at the time the project was created *did not know well* many web issues at the right level. There was a lot of nuances and strange behavior of PHP itself, as well as the complex architecture and specifics of the client-server, but we managed to create a minimum of working functionality.\
 **To sum up**: the code quality is not always great, but the application does not generate errors. Rather, it will not be possible to cause data loss, and at the same time it is quite difficult to make incorrect move - a fairly high resistance to intentional or inefficient actions of users was provided.
 
 #### This is a student project
@@ -82,21 +91,24 @@ Funkcjonalność dostępna do przetestowania po zalogowaniu z najniższym poziom
 Pobranie najnowszej wersji z tego repozytorium na dowolny serwer www z obsługą PHP. Każda wersja PHP, poczynając od 5.0 powinna się nadać (projektowano przy użyciu PHP v5.2.X).
 
 #### Import wzorcowej bazy danych do serwera MySQL z repozytorium z pliku:
-`_sql\baza.sql`
+`_sql\baza_wso_utf8.sql` lub ze starszego (i niepolecanego) `_sql\baza_wso.sql`, zawierającego uprzednie kodowanie znaków.
 
 #### Utworzenie użytkownika i nadanie mu minimum praw do komunikacji z bazą danych (zawarto *przykładowe* nazwy):
 ```SQL
 CREATE USER 'wso_user'@'localhost' IDENTIFIED BY 'Sup3rP@$$';
 GRANT USER SELECT, INSERT, UPDATE, DELETE ON baza_wso.* TO 'wso_user'@'localhost';
 ```
+#### Zastanów się nad bezpieczeństem serwisu
+Zabezpieczenie przed przeglądaniem zawartości folderów serwera, jako niezbędne minimum, zapewnia użyty w projekcie plik `.htaccess`. Dla serwerów innych niż Apache użyj podobnego rozwiązania, dezaktywującego generowanie dynamicznej zawartości istniejącego podfolderu projektu (indeksowanie folderu).  
+
 ### Informacje i zatrzeżenia
 
 #### Ostrzeżenie! Stary kod PHP oraz niewłaściwe użycie stylów CSS (+bla blabla...) 
-Proszę wziąć pod uwagę, że projekt powstawał od grudnia 2007 roku do końca stycznia kolejnego roku. W aplikacji wiele razy wynajdywano na nowo koło, zmieniano jego poszycie, albo modyfikowano jego kwadraturę na bardziej wyrównaną. Szczęśliwym trafem, co się później okazało, część "nowych" rozwiązań jest _w podobny sposób_ wykorzystywanych w rzeczywistych i działających aplikacjach w profesjonalnych serwisach www . Zadziwiające, biorąc pod uwagę że autor nie znał (znaczy się ja :) )  wielu zagadnień webowych, jak również złożonej architektury i specyfiki klient-serwer.\
+Proszę wziąć pod uwagę, że projekt powstawał od grudnia 2007 roku do końca stycznia kolejnego roku. W aplikacji wiele razy wynajdywano na nowo koło, zmieniano jego poszycie, albo modyfikowano jego kwadraturę na bardziej wyrównaną. Szczęśliwym trafem, co się później okazało, część "nowych" rozwiązań jest _w podobny sposób_ wykorzystywanych w rzeczywistych i działających aplikacjach w profesjonalnych serwisach www (treść HTML na pewno jest generowana inaczej i bardziej wydajnie). Zadziwiające, że całość wykonanego projektu funkcjonuje należycie, biorąc pod uwagę że autor (znaczy się ja :) ) w momencie powstawania projektu *nie znał dobrze* wielu zagadnień webowych na właściwym poziomie. Było mnóstwo niuansów i dziwnego zachowania samego PHP, jak również złożonej architektury i specyfiki klient-serwer, ale udało się utworzyć minimum działajacej funkcjonalności.\
 **Podsumowując**: jakość kodu nie zawsze jest świetna, ale aplikacja nie generuje błędów. Raczej nie uda się spowodować utraty danych, a przy tym dość trudno wykonać niewłaściwy ruch - zapewniono dość wysoką odporność na zamierzone bądź nieudolne działania użytkowników. 
 
 #### To jest projekt studencki
-To moja pierwsza **duża** aplikacja PHP. Aplikację wykonano na zaliczenie przedmiotu *Sieciowe systemy biznesu elektronicznego*. Oceniana była **działająca funkcjonalność**, a nie cały funkcjonujący projekt lub jego szczegóły budowy. Teraz struktura HTMLa, użycie stylów CSS oraz część kod PHP nadaje się do gruntownych poprawqek lub/i wyśmiania.\
+To moja pierwsza **duża** aplikacja PHP. Aplikację wykonano na zaliczenie przedmiotu *Sieciowe systemy biznesu elektronicznego*. Oceniana była **działająca funkcjonalność**, a nie cały funkcjonujący projekt lub jego szczegóły budowy. Teraz struktura HTMLa, użycie stylów CSS oraz część kod PHP nadaje się do gruntownych poprawek lub/i wyśmiania.\
 Projekt powstawał w czasach, gdy układ tabelkowy zaczynał być krytykowany, a z responsywnością witryn można było zetknąć tylko poprzez JavaScript (często niekompatybilny).
 
 > Nie wińcie mnie, lecz pamiętajmy, że "uczymy się na własnych błędach" i "człowiek uczy się przez całe życie" zwłaszcza dzięki "nauce poprzez działanie" ;-) 
