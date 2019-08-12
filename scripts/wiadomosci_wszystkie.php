@@ -1,6 +1,6 @@
 <?php
 
-echo("<h3>Wszystkie wiadomo¶ci</h3>");
+echo("<h3>Wszystkie wiadomoÅ›ci</h3>");
 echo('<br />');
 
 $kwerenda = "SELECT tytul, tresc, autorID, dataTresci, czasTresci, id FROM tresc_tbl WHERE trescRodzaj=1 ORDER BY id DESC";
@@ -22,7 +22,7 @@ $rezultat = mysql_query ( $kwerenda, $db_link );
    $rezultat2 = mysql_query ( $kwerenda2, $db_link );
     if ( ! $rezultat2 )
 	{
-	echo ("<h1>B³êdy</h1>");
+	echo ("<h1>BÅ‚Ä™dy</h1>");
 	}
     else
 	{

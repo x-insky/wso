@@ -1,4 +1,4 @@
-<h3>Historia wypoøyczeÒ uøytkownika</h3>
+<h3>Historia wypo≈ºycze≈Ñ u≈ºytkownika</h3>
 <br />
 
 <?php
@@ -17,7 +17,7 @@ $rezultat = mysql_query ( $kwerenda, $db_link );
  $ile_wierszy = mysql_num_rows( $rezultat ); 
   if ( ! $ile_wierszy )
   {
-  echo("<h4>Brak z≥oøonych rezerwacji!</h4>");
+  echo("<h4>Brak z≈Ço≈ºonych rezerwacji!</h4>");
   } 
   else
   {
@@ -26,7 +26,7 @@ $rezultat = mysql_query ( $kwerenda, $db_link );
 		echo("<table width=\"450\" align=\"center\" border=\"0\" cellpadding=\"2\" cellspacing=\"2\" bgcolor=\"white\">");
 		echo("<tr>");
  		 echo('<td width="37%" bgcolor="#82B8FB" align="center"><b>Marka i model auta</b></td>');
-		 echo('<td width="21%" bgcolor="#82B8FB" align="center"><b>Data wypoøyczenia</b></td>');
+		 echo('<td width="21%" bgcolor="#82B8FB" align="center"><b>Data wypo≈ºyczenia</b></td>');
 		 echo('<td width="21%" bgcolor="#82B8FB" align="center"><b>Oczekiwana data zwrotu </b></td>');
 	     echo('<td width="21%" bgcolor="#82B8FB" align="center"><b>(Rzeczywista data zwrotu)</b></td>');
 		echo("</tr>");
@@ -52,7 +52,7 @@ $rezultat = mysql_query ( $kwerenda, $db_link );
 	   $rezultat2 = mysql_query ( $kwerenda2, $db_link );
 		if ( ! $rezultat2 )
 		{
-		echo ("<h4>B≥Ídy:</h4>");
+		echo ("<h4>B≈Çƒôdy:</h4>");
 		echo mysql_error();
 		}
 		else
@@ -66,7 +66,7 @@ $rezultat = mysql_query ( $kwerenda, $db_link );
 	   $rezultat3 = mysql_query ( $kwerenda3, $db_link );
 		if ( ! $rezultat3 )
 		{
-		echo ("<h4>B≥Ídy:</h4>");
+		echo ("<h4>B≈Çƒôdy:</h4>");
 		echo mysql_error();
 		}
 		else
@@ -128,7 +128,7 @@ $rezultat = mysql_query ( $kwerenda, $db_link );
   }
   else
   {
-  echo ("<h3 style=\"color: red;\">Wystapi≥ b≥±d!".mysql_error()."</h3>");
+  echo ("<h3 style=\"color: red;\">Wystapi≈Ç b≈ÇƒÖd!".mysql_error()."</h3>");
   }
  } 
 

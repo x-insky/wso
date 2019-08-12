@@ -2,31 +2,31 @@
  if ( $_SESSION['rola'] == "klient" )
  {
  echo('<a href="./index.php?menu=booking">Moje rezerwacje</a> <br />');
- //echo('<a href="./index.php?menu=booking_h">Z≥oøone rezerwacje (historia)</a> <br />');
- echo('<a href="./index.php?menu=borrow">Moje wypoøyczenia</a> <br />');
- //echo('<a href="./index.php?menu=borrow_h">Z≥oøone wypoøyczenia (historia)</a> <br />');
+ //echo('<a href="./index.php?menu=booking_h">Z≈Ço≈ºone rezerwacje (historia)</a> <br />');
+ echo('<a href="./index.php?menu=borrow">Moje wypo≈ºyczenia</a> <br />');
+ //echo('<a href="./index.php?menu=borrow_h">Z≈Ço≈ºone wypo≈ºyczenia (historia)</a> <br />');
  echo('<br />');
- echo('<a href="./index.php?menu=about">MÛj Profil</a> <br />');
+ echo('<a href="./index.php?menu=about">M√≥j Profil</a> <br />');
  echo('<br />');
- echo('<a href="./index.php?menu=allnews">Aktualno∂ci z witryny</a><br />');
+ echo('<a href="./index.php?menu=allnews">Aktualno≈õci z witryny</a><br />');
  echo('<br />');
  }
  if ( $_SESSION['rola'] == "administrator")
  {
- echo('<a href="./index.php?menu=about">MÛj Profil</a> <br />');
+ echo('<a href="./index.php?menu=about">M√≥j Profil</a> <br />');
  //pasek panelu administratora
  echo('<p class="login_admin">menu administratora</p>'); 
 
  echo('<a href="./index.php?menu=dodaj_tresc">Dodaj komunikat</a><br />');
- echo('<a href="./index.php?menu=allnews">Modyfikuj wiadomo∂ci</a><br />');
+ echo('<a href="./index.php?menu=allnews">Modyfikuj wiadomo≈õci</a><br />');
 echo('<a href="./index.php?menu=alldiscounts">Modyfikuj promocje</a><br />');
  echo('<br />');
  echo('<a href="./index.php?menu=dodaj_auto">Dodaj pojazd</a><br />');
- echo('<a href="./index.php?menu=adm_kategor">Administruj kategoriami pojazdÛw</a><br />');
- echo('<a href="./index.php?menu=users_show">Wy∂wietl uøytkownikÛw serwisu</a><br />');
-// echo('<a href="./index.php?menu=user_add"># Dodaj uøytkownika</a><br />');
-// echo('<a href="./index.php?menu=change">ZmieÒ swoje dane osobowe</a> <br />');
- //echo('<a href="./index.php?menu=users_admin">Administruj uøytkownikami</a><br />');
+ echo('<a href="./index.php?menu=adm_kategor">Administruj kategoriami pojazd√≥w</a><br />');
+ echo('<a href="./index.php?menu=users_show">Wy≈õwietl u≈ºytkownik√≥w serwisu</a><br />');
+// echo('<a href="./index.php?menu=user_add"># Dodaj u≈ºytkownika</a><br />');
+// echo('<a href="./index.php?menu=change">Zmie≈Ñ swoje dane osobowe</a> <br />');
+ //echo('<a href="./index.php?menu=users_admin">Administruj u≈ºytkownikami</a><br />');
  }
 ?>
 <br />

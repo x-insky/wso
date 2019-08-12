@@ -1,3 +1,3 @@
-<h3>Rejestracja nowego u¿ytkownika</h3>
+<h3>Rejestracja nowego uÅ¼ytkownika</h3>
 <br />
-<h5 style="color: red;">Rejestracja chwilowo niedostêpna</h5>
+<h5 style="color: red;">Rejestracja chwilowo niedostÄ™pna</h5>

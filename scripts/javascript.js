@@ -1,24 +1,27 @@
 function sprawdz_formularz_dodaj_auto(f)       // sprawdzenie poprawnosci wpisanych danych do formularzy
 {
+var dzis = new Date();
+var rokBiezacy = dzis.getFullYear();    
+    
  if ( (f.marka.value == '') || (f.model.value == '') || (f.rok_produkcji.value == '') || (f.kategoria.value == '0') )
  {
- alert('Proszê wype³niæ obowi±zkowe pola: Model, Markê, Rok produkcji oraz Kategoriê pojazdu.');
- return false;    // gdy jeden lub oba pola adresowe sa puste - ostrzezenie
+ alert('ProszÄ™ wypeÅ‚niÄ‡ obowiÄ…zkowe pola: Model, MarkÄ™, Rok produkcji oraz KategoriÄ™ pojazdu.');
+ return false;    // ostrzezenie, gdy jeden lub oba pola adresowe sa puste
  }
 
  if ( f.rok_produkcji.value <= 0 )
  {
- alert('Podane adresy s± identyczne! Proszê skorygowaæ dane wej¶ciowe.');
- return false;    // gdy wpisano to samo do jednego lub obu pol adresowych - ostrzezenie
+ alert('Podane adresy sÄ… identyczne! ProszÄ™ skorygowaÄ‡ dane wejÅ›ciowe.');
+ return false;    // ostrzezenie, gdy wpisano to samo do jednego lub obu pol adresowych
  }
 
- if ( (f.rok_produkcji.value <= 1900) || (f.rok_produkcji.value >= 2009) )
+ if ( (f.rok_produkcji.value <= 1900) || (f.rok_produkcji.value > rokBiezacy) )
  {
- alert('Podano b³êdny rok produkcji pojazdu. Proszê skorygowaæ wpis.');
- return false;    // gdy czas oczekiwanie nie jest w przedziale od 1 do 20 sekund - ostrzezenie
+ alert('Podano bÅ‚Ä™dny rok produkcji pojazdu. ProszÄ™ skorygowaÄ‡ wpis.');
+ return false;  // ostrzeÅ¼enie, gdy przy dodawaniu auta do bazy wybrano zbyt stary/mÅ‚ody rocznik  
  }
 
-return true;     // gdy OK, wpisano poprawne dane WE - ostrzezenie
+return true;     // gdy OK, ale gdy nie wpisano poprawnych danych WE -> ostrzeÅ¼enie
 }
 
 function sprawdz_formularz_rezerwuj_auto(f)       // sprawdzenie poprawnosci wpisanych danych do formularzy
@@ -27,7 +30,7 @@ var dzis = new Date();
 var DzienNow = dzis.getDate();
 var MiesNow = dzis.getMonth() + 1;
 var RokNow = dzis.getFullYear();
-dzis.setHours( 0 ); // ¿eby zawsze obecna w dacie godzina by³a wcze¶niejsza --> bo konstruktor ³aduje datê aktualn± + czas
+dzis.setHours( 0 ); // Å¼eby zawze obecna w dacie godzina byÅ‚a wczeÅ›niejsza --> bo konstruktor Å‚aduje datÄ™ aktualnÄ… + czas
 
 var DzienPoczatek = f.dzien_pocz.options[f.dzien_pocz.options.selectedIndex].value;
 var MiesiacPoczatek = f.miesiac_pocz.options[f.miesiac_pocz.options.selectedIndex].value - 1;
@@ -43,19 +46,19 @@ var dataKonc = new Date( RokKonc, MiesiacKonc, DzienKonc, 11 );
  
  if ( dataPocz < dzis ) 
  {
- alert('Data pocz±tkowa rezerwacji jest WCZE¦NIEJSZA od obecnej daty! Proszê poprawiæ dane.');
+ alert('Data poczÄ…tkowa rezerwacji jest WCZEÅšNIEJSZA od obecnej daty! ProszÄ™ poprawiÄ‡ dane.');
  return false;    
  }
 
  if ( dataKonc < dzis )  
  {
- alert('Data koñcowa rezerwacji jest WCZE¦NIEJSZA od obecnej daty! Proszê poprawiæ dane.');
+ alert('Data koÅ„cowa rezerwacji jest WCZEÅšNIEJSZA od obecnej daty! ProszÄ™ poprawiÄ‡ dane.');
  return false;    
  }
 
  if ( dataPocz > dataKonc ) 
  {
- alert('Data pocz±tkowa rezerwacji jest PÓ¬NIEJSZA od daty koñcowej! Proszê poprawiæ dane.');
+ alert('Data poczÄ…tkowa rezerwacji jest PÃ“Å¹NIEJSZA od daty koÅ„cowej! ProszÄ™ poprawiÄ‡ dane.');
  return false;    
  }
 
@@ -63,7 +66,8 @@ return true;     // gdy OK, wpisano poprawne dane WE - ostrzezenie
 }
 
 
-function pokaz()    // tylko dla ewentualnych testow rezerwacji, brak aktywnego wplywy na dzialajacy projekt 
+function pokaz()    // tylko dla ewentualnych testÃ³w rezerwacji, brak aktywnego wpÅ‚ywu na dziaÅ‚ajÄ…cy projekt 
 {
-alert('test')
-return true
+alert('test');
+return true;
+}

@@ -1,21 +1,21 @@
 <?php
-				 //dopisaÊ kaødego uøywanego GETa i POSTa !!!     
+				 //dopisaƒá ka≈ºdego u≈ºywanego GETa i POSTa !!!     
  if ( ( ! isSet( $_GET['link'] ) ) && ( ! isSet( $_GET['kat'] ) ) && ( ! isSet( $_GET['menu'] ) )
  && ( ! isSet( $_GET['wid'] ) ) && ( ! isSet( $_GET['uid'] ) ) && ( ! isSet( $_GET['cid'] ) )
  && ( ! isSet( $_POST['rodzaj_uzytkownikow'] ) ) && ( ! isSet( $_POST['dzialanie'] ) ) 
  && ( ! isSet( $_POST['marka'] ) ) && ( ! isSet( $_POST['szukaj'] ) ) && ( ! isSet( $_POST['rezerwuj_1_auto_id'] ) ) && ( ! isSet( $_POST['rezerwuj_2_auto_id'] ) ) && ( ! isSet( $_POST['anuluj_rez'] ) ) )
  
-				 //dopisaÊ kaødego uøywanego GETa i POSTa !!!
+				 //dopisaƒá ka≈ºdego u≈ºywanego GETa i POSTa !!!
  {
  //echo("<h2 style=\"color: red;\">DEBUG: link pusty!</h2>"); // debug
  include("./scripts/glowna_dzial.php");
  }
 
-//a strona g≥owna?
+//a strona g≈Çowna?
 
 // ------------------------------------------------------------------------------------------
 
-// menu G£”WNE - nag≥Ûwek
+// menu G≈Å√ìWNE - nag≈Ç√≥wek
  if ( isSet( $_GET['link'] ) )
  {
   switch ( $_GET['link'] ) // menu "publiczne"
@@ -25,7 +25,7 @@
   // include("./scripts/glowna_dzial.php");
   // break; 
   
-  case "main":		 //g≥Ûwna !
+  case "main":		 //g≈Ç√≥wna !
     include("./scripts/glowna_dzial.php");
    break; 
 
@@ -49,7 +49,7 @@
     include("./scripts/kontakt_dzial.php");
    break;
    
-  case "register":  //rejestracja uøytkownika - PRZENIESIONO
+  case "register":  //rejestracja u≈ºytkownika - PRZENIESIONO
 	include("./scripts/uzytkownicy_rejestruj.php"); 
    break;
 
@@ -61,13 +61,13 @@
  if ( isSet( $_GET['kat'] ) )  //menu PUBLICZNE
  {
  $kategoriaID = $_GET['kat'];
-  // sprawdzenie jakie s± nazwy kategorii dla pzrekazanego ID kategorii
+  // sprawdzenie jakie sƒÖ nazwy kategorii dla przekazanego ID kategorii
 
  $kwerenda = "SELECT nazwaKategorii, opisKategorii FROM auto_kategoria_tbl WHERE id=$kategoriaID LIMIT 1";
  $rezultat = mysql_query( $kwerenda );
   if ( ! $rezultat )
   {
-  echo("<h3 style=\"color: red;\">Brak kategorii pojazdÛw w bazie danych lub b≥Ídny odno∂nik.</h3>");
+  echo("<h3 style=\"color: red;\">Brak kategorii pojazd√≥w w bazie danych lub b≈Çƒôdny odno≈õnik.</h3>");
   }
   else
   {
@@ -75,19 +75,20 @@
   $nazwa_kategorii = $wynik[0];
   $opis = $wynik[1]; 
  
- //wy∂wietlenie nazwy kategoeii z opisem + auta w kategorii
+ //wy≈õwietlenie nazwy kategorii z opisem + auta w kategorii
   echo("<h3>$nazwa_kategorii</h3>");
   echo("<p class=\"akapit_wezszy\">");
-   nl2br( $opis );
-  echo("$opis</p>");
+  echo nl2br( $opis );   // wy≈õwietlenie opisu wraz z nowymi liniami (o ile te zanki znajdujƒÖ siƒô w opisie danego auta w BD)
+  echo "<br /><br /></p>";
+      //echo("$opis</p>");
   //echo("<br />id=$kategoriaID");
-  echo("<br /><h3>Samochody w tej kategori:</h3>");
+  echo("<h3>Samochody w tej kategorii:</h3>");
 
 $kwerenda2 = "SELECT id, markaID, model, rokProdukcji, kolorID, skrzyniaID, drzwiID FROM auto_tbl WHERE kategoriaID=$kategoriaID";
 $rezultat2 = mysql_query( $kwerenda2 );
  if ( ! $rezultat2 )
  {
- echo("<h3 style=\"color: red;\">Brak pojazdÛw w bazie dla tej kategorii!</h3>");
+ echo("<h3 style=\"color: red;\">Brak pojazd√≥w w bazie dla tej kategorii!</h3>");
  }
  else
  {
@@ -115,7 +116,7 @@ $rezultat2 = mysql_query( $kwerenda2 );
   $drzwi_id[] = $wynik[6];
   }
 
-//pobranie wszystkich nazw marek samochodÛw do tablicy   
+//pobranie wszystkich nazw marek samochod√≥w do tablicy   
    $kwerenda3 = "SELECT id, marka FROM auto_marka_tbl";
    $rezultat3 = mysql_query( $kwerenda3 );
    $temp1 = array();
@@ -127,7 +128,7 @@ $rezultat2 = mysql_query( $kwerenda2 );
     $marki = array_combine( $temp1, $temp2 );
     } 
 
-//pobranie wszystkich kolorÛw samochodÛw do tablicy  
+//pobranie wszystkich kolor√≥w samochod√≥w do tablicy  
    $kwerenda3 = "SELECT id, kolor FROM auto_kolor_tbl";
    $rezultat3 = mysql_query( $kwerenda3 );
    $temp3 = array();
@@ -139,7 +140,7 @@ $rezultat2 = mysql_query( $kwerenda2 );
     $kolory = array_combine( $temp3, $temp4 );
     } 
 
-//pobranie wszystkich ilo∂ci drzwi samochodÛw do tablicy   
+//pobranie wszystkich ilo≈õci drzwi samochod√≥w do tablicy   
    $kwerenda3 = "SELECT id, liczbaDrzwi FROM auto_drzwi_tbl";
    $rezultat3 = mysql_query( $kwerenda3 );
    $temp1 = array();
@@ -151,7 +152,7 @@ $rezultat2 = mysql_query( $kwerenda2 );
     $drzwii = array_combine( $temp1, $temp2 );
     } 
 
-//pobranie wszystkich rodzajÛw skrzyni samochodÛw do tablicy  
+//pobranie wszystkich rodzaj√≥w skrzyni samochod√≥w do tablicy  
    $kwerenda3= "SELECT id, typSkrzyni FROM auto_skrzynia_tbl";
    $rezultat3 = mysql_query( $kwerenda3 );
    $temp1 = array();
@@ -167,7 +168,7 @@ $rezultat2 = mysql_query( $kwerenda2 );
  //echo("<br />\$id_pojazdu[0]: $id_pojazdu[0]");
  //echo("<br />\$id_pojazdu[1]: $id_pojazdu[1]<br />");
  
- //wy∂wietlenie samochodÛw wraz z nazw± kategorii + opsi auta
+ //wy≈õwietlenie samochod√≥w wraz z nazwƒÖ kategorii + opsi auta
    for ( $i = 0; $i < $ile_samochodow; $i++ )
    {
    $j = $i + 1;
@@ -181,7 +182,7 @@ $rezultat2 = mysql_query( $kwerenda2 );
    echo("<p class=\"akapit_wezszy\">&nbsp;&nbsp;&nbsp;&nbsp;rok produkcji: <b>$rok_produkcji[$i]</b>, skrzynia: <b> $skrzynie[$skrzynia]</b>, liczba drzwi: <b>$drzwii[$drzwi]</b>, <br />
 &nbsp;&nbsp;&nbsp;&nbsp;kolor: <b>$kolory[$zmienna3]</b></p>");
    }
-   //echo("<br /><h4 style=\"color: red\">DEBUG: kolory aut... s± niezbyt.</h4>");
+   //echo("<br /><h4 style=\"color: red\">DEBUG: kolory aut... sƒÖ niezbyt.</h4>");
    
    unset( $kwerenda, $rezultat, $wynik, $marka, $kolor, $kolor_id, $markaID, $rok_produkcji );
    unset( $kwerenda2, $rezultat2, $wynik2, $kolory, $marki, $ile_samochodow, $temp1, $temp2,
@@ -199,12 +200,12 @@ $rezultat2 = mysql_query( $kwerenda2 );
  if ( isSet( $_GET['cid'] ) )  //menu PUBLICZNE
  {
  $autoID = $_GET['cid'];
- // sprawdzenie jakie s± nazwy kategorii dla pzrekazanego ID kategorii
+ // sprawdzenie jakie sƒÖ nazwy kategorii dla pzrekazanego ID kategorii
  $kwerenda = "SELECT id FROM auto_tbl WHERE id=$autoID LIMIT 1";
  $rezultat = mysql_query( $kwerenda );
   if ( ! $rezultat )
   {
-  echo("<h3 style=\"color: red;\">Brak podanego pojazdu w bazie danych lub b≥Ídny odno∂nik.</h3>");
+  echo("<h3 style=\"color: red;\">Brak podanego pojazdu w bazie danych lub b≈Çƒôdny odno≈õnik.</h3>");
   }
   else
   {
@@ -216,7 +217,7 @@ $rezultat2 = mysql_query( $kwerenda2 );
  
  if ( isSet( $_GET['menu'] ) )
  {
-  if ( isSet( $_SESSION['zalogowany'] ) ) // czy osoba wywo≥ujaca link jest zalogowana w serwisie?
+  if ( isSet( $_SESSION['zalogowany'] ) ) // czy osoba wywo≈Çujaca link jest zalogowana w serwisie?
   {
    switch ( $_GET['menu'] )
    {
@@ -232,7 +233,7 @@ $rezultat2 = mysql_query( $kwerenda2 );
     include ("./scripts/promocje_wszystkie.php");
    break;
 
-   case "booking":     //bieøπce rezerwacje
+   case "booking":     //bie≈ºƒÖce rezerwacje
     include("./scripts/rezerwacje_historia.php");
      //include("./scripts/rezerwacje_uzytkownika.php");
     break; 
@@ -241,12 +242,12 @@ $rezultat2 = mysql_query( $kwerenda2 );
 //     include("./scripts/rezerwacje_historia.php");
 //    break; 
  
-   case "borrow":     //dane wypoøyczenia
+   case "borrow":     //dane wypo≈ºyczenia
      include("./scripts/wypozyczenia_historia.php");
 	 //include("./scripts/wypozyczenia_uzytkownika.php");
     break; 
 
-//   case "borrow_h":     //historia wypoøyczeÒ
+//   case "borrow_h":     //historia wypo≈ºycze≈Ñ
 //     include("./scripts/wypozyczenia_historia.php");
 //    break; 
 
@@ -276,31 +277,31 @@ $rezultat2 = mysql_query( $kwerenda2 );
 	 include("./scripts/uzytkownicy_administruj.php"); 
     break; */
   
-   //case "register":   //rejestracja uøytkownika - PRZENIESIONO do GET["link"]
+   //case "register":   //rejestracja u≈ºytkownika - PRZENIESIONO do GET["link"]
 	// include("./scripts/uzytkownicy_rejestruj.php"); 
    // break;
    }  //switch-end 
   }
   else
   {
-  echo('<h3 style="color: red;">Musisz byÊ zalogowany, aby wykonaÊ t± czynno∂Ê!</h3>');
+  echo('<h3 style="color: red;">Musisz byƒá zalogowany, aby wykonaƒá tƒô czynno≈õƒá!</h3>');
   }
  } //"menu" end
 
 // ------------------------------------------------------------------------------------------
 
-  // szczegÛ≥y uøytkownika + modyfikacja
+  // szczeg√≥≈Çy u≈ºytkownika + modyfikacja
  if ( isSet( $_GET['uid'] ) )
  {
-  if ( isSet( $_SESSION['zalogowany'] ) ) // czy osoba wywo≥ujaca link jest zalogowana w serwisie?
+  if ( isSet( $_SESSION['zalogowany'] ) ) // czy osoba wywo≈Çujaca link jest zalogowana w serwisie?
   {
-   if ( SprawdzUprawnieniaAdmina() ) // oprÛcz tego musi mieÊ iprawnienai administarcyjne
+   if ( SprawdzUprawnieniaAdmina() ) // opr√≥cz tego musi mieƒá iprawnienai administarcyjne
    {
-   echo('<h3>SzczegÛ≥y odnoú∂nie wybranej osoby</h3><br />');
+   echo('<h3>Szczeg√≥≈Çy odno≈õ≈õnie wybranej osoby</h3><br />');
    WyswietlDaneOsoby( $_GET['uid'] ); 
    echo('<br />');
 
-//pobranie wszystkich nazw uøytkownikÛw do tabeli   
+//pobranie wszystkich nazw u≈ºytkownik√≥w do tabeli   
    $kwerenda = "SELECT id, rolaNazwa FROM userRole_tbl";
    $rezultat = mysql_query( $kwerenda );
    $temp1 = array();
@@ -328,23 +329,23 @@ $rezultat2 = mysql_query( $kwerenda2 );
    echo('<tr>');
    echo('<td width="250">');
   
-  //nie moøna w ogÛle modyfikowaÊ ustawieÒ innych adminÛw 
+  //nie mo≈ºna w og√≥le modyfikowaƒá ustawie≈Ñ innych admin√≥w 
     if ( ( $role[$temp2] == "administrator" ) && ($id_osoby == $_SESSION['id'] )
        || ( $role[$temp2] != "administrator" ) )
     {
-     if ( $id_osoby != $_SESSION['id'] ) //aby siebie nie moøna by≥o zablokowaÊ
+     if ( $id_osoby != $_SESSION['id'] ) //aby siebie nie mo≈ºna by≈Ço zablokowaƒá
      {
 	 echo('<form name="odblokuj_zablokuj" action = "./index.php" method = "post" >');
      echo("<input type=\"hidden\" name=\"osoba\" value=\"$id_osoby\" />");
-      if ( $blokada == 0 ) // NIEzablokowany -> pokaø przycisk ZABLOKUJ
+      if ( $blokada == 0 ) // NIEzablokowany -> poka≈º przycisk ZABLOKUJ
       {
       echo("<input type=\"hidden\" name=\"dzialanie\" value=\"zablokuj\" />");
-      echo("<input type=\"submit\" value=\"Zablokuj uøytkownika\" class=\"przycisk1\" />");
+      echo("<input type=\"submit\" value=\"Zablokuj u≈ºytkownika\" class=\"przycisk1\" />");
       }
-      else // zablokowany -> pokaø przycisk ODBLOKUJ
+      else // zablokowany -> poka≈º przycisk ODBLOKUJ
       {
       echo("<input type=\"hidden\" name=\"dzialanie\" value=\"odblokuj\" />");
-      echo("<input type=\"submit\" value=\"Odblokuj uøytkownika\" class=\"przycisk1\" />");
+      echo("<input type=\"submit\" value=\"Odblokuj u≈ºytkownika\" class=\"przycisk1\" />");
       }
      echo('</form>'); 	
      echo('</td>');
@@ -356,27 +357,27 @@ $rezultat2 = mysql_query( $kwerenda2 );
     //echo('<td width="50">&nbsp;</td>');
      echo('<td>');
  
-    // przegl±daj±cemu adminowi zezwÛl na modyfikacjÍ TYLKO swoich danych, z wy≥±czeniem innych adminÛw  
+    // przeglƒÖdajƒÖcemu adminowi zezw√≥l na modyfikacjƒô TYLKO swoich danych, z wy≈ÇƒÖczeniem innych admin√≥w  
      echo("<p class=\"akapit_prawy_wezszy\"><a style=\"color: red;\" href=\"./index.php?moduid=$wynik[0]\">modyfikuj dane osoby</a></p></td>");
 
     }
     else
     {
     echo('&nbsp;</td>');
-    echo("<td><b>nie moøesz</b> modyfikowaÊ ustawieÒ innego administratora</td>");
+    echo("<td><b>nie mo≈ºesz</b> modyfikowaƒá ustawie≈Ñ innego administratora</td>");
     }
    echo('</tr>');	
    echo('</table>'); 
    }
    else
    {
-   echo("<h2>Brak praw do ogl±dania wybranej pozycji dla bieø±cego uøytkownika!</h2>");
-   echo("<h3>Nie zezwolono na pokazanie szczegÛ≥Ûw!</h3>");
+   echo("<h2>Brak praw do oglƒÖdania wybranej pozycji dla bie≈ºƒÖcego u≈ºytkownika!</h2>");
+   echo("<h3>Nie zezwolono na pokazanie szczeg√≥≈Ç√≥w!</h3>");
    } //if-"admin"-end
   } //if-zalogowany-end
   else
   {
-  echo('<h3 style="color: red;">Musisz byÊ zalogowany, aby wykonaÊ t± czynno∂Ê!</h3>');
+  echo('<h3 style="color: red;">Musisz byƒá zalogowany, aby wykonaƒá tƒô czynno≈õƒá!</h3>');
   }
  } //uid
 
@@ -384,15 +385,15 @@ $rezultat2 = mysql_query( $kwerenda2 );
 
  if ( isSet( $_GET['wid'] ) )
  { 
-  if ( isSet( $_SESSION['zalogowany'] ) ) // czy osoba wywo≥ujaca link jest zalogowana w serwisie?
+  if ( isSet( $_SESSION['zalogowany'] ) ) // czy osoba wywo≈Çujaca link jest zalogowana w serwisie?
   {
- //przegl±d wiadomosci
+ //przeglƒÖd wiadomosci
   $id_wiadomosci = $_GET['wid'];
   include("./scripts/tresc_modyfikuj.php");
   }
   else
   {
-  echo('<h3 style="color: red;">Musisz byÊ zalogowany, aby wykonaÊ t± czynno∂Ê!</h3>');
+  echo('<h3 style="color: red;">Musisz byƒá zalogowany, aby wykonaƒá tƒô czynno≈õƒá!</h3>');
   } //if-zalogowany-end
  } // modyfikacja wiadomosci
 
@@ -400,12 +401,12 @@ $rezultat2 = mysql_query( $kwerenda2 );
 // ****************************************   P O S T   ****************************************** 
 
 
-       // wyszukiwanie zwyk≥e  --------------------------------------------- wyszukiwanie zwyk≥e
+       // wyszukiwanie zwyk≈Çe  --------------------------------------------- wyszukiwanie zwyk≈Çe
  if ( isSet( $_POST["szukaj"] ) )  // menu publiczne
  {
   if ( $_POST["szukaj"] == "" ) //puste pole formularza wyszukiwania 
   {
-  echo('<h3 style="color: red;">Nie zosta≥ podane wyraøenie do wyszukania!</h3>');
+  echo('<h3 style="color: red;">Nie zosta≈Ç podane wyra≈ºenie do wyszukania!</h3>');
   }
   else
   {
@@ -415,7 +416,7 @@ $rezultat2 = mysql_query( $kwerenda2 );
   $znalezione_auta_id = array();
   $znalezione_auta_ile = 0;
   
-  //pobranie nr wszystkich nazw marek, ktÛre s± w miarÍ zgodne z ci±giem  
+  //pobranie nr wszystkich nazw marek, kt√≥re sƒÖ w miarƒô zgodne z ciƒÖgiem  
   $kwerenda = "SELECT id FROM auto_marka_tbl WHERE marka LIKE '$ciag_wyszukiwania'";
   $rezultat = mysql_query( $kwerenda );
    while ( $wynik = mysql_fetch_row( $rezultat ) )
@@ -425,14 +426,14 @@ $rezultat2 = mysql_query( $kwerenda2 );
    $id_marek[] = $temp;
    } //while-end
 
-   if ( $ile_marek > 0 ) //ze znaleziono cokolwiek pasuj±cego w nazwie marki
+   if ( $ile_marek > 0 ) //ze znaleziono cokolwiek pasujƒÖcego w nazwie marki
    {
     for ( $i = 0; $i < $ile_marek; $i++ )
     {
     $temp = $id_marek[$i];
     $kwerenda = "SELECT id FROM auto_tbl WHERE markaID=$temp";
     $rezultat = mysql_query( $kwerenda );
-     if ( $rezultat ) //gdy znaleziono jak±∂ furÍ z danej kategorii
+     if ( $rezultat ) //gdy znaleziono jakƒÖ≈õ furƒô z danej kategorii
  	 {
 	  while ( $wynik = mysql_fetch_row( $rezultat ) )
 	  {
@@ -442,7 +443,7 @@ $rezultat2 = mysql_query( $kwerenda2 );
 	  } //while-end
 	 } //if-znaleziono
     } //for-end
-   } //wyszukiwanie samochodÛw z nazwy marek
+   } //wyszukiwanie samochod√≥w z nazwy marek
  
   $kwerenda = "SELECT id FROM auto_tbl WHERE model LIKE '$ciag_wyszukiwania'";
   $rezultat = mysql_query( $kwerenda );
@@ -455,20 +456,20 @@ $rezultat2 = mysql_query( $kwerenda2 );
     $znalezione_auta_id[] = $temp;
     } //while-end
    }
-     //wy∂wielenie wynikÛw
+     //wy≈õwielenie wynik√≥w
   echo("<h3>Wyszukiwanie samochodu</h3>");
     
   if ( $znalezione_auta_ile <= 0 )
   {
-  echo("<h4>Nie znaleziono pojazdÛw dla zapytania <span style=\"color: red;\">$ciag</span></h4>");
+  echo("<h4>Nie znaleziono pojazd√≥w dla zapytania &bdquo;<span style=\"color: #82b8fb;\">$ciag</span>&rdquo;</h4>");
   }
-  else // jeøeli znaleziono cokolwiek = wy∂wietl dane
+  else // je≈ºeli znaleziono cokolwiek ==> wy≈õwietl dane
   {
-  echo("<h4>Dla zapytania <span style=\"color: red;\">$ciag</span> znaleziono <b>$znalezione_auta_ile</b> wynikÛw</h4>");
+  echo("<h4>Dla zapytania &bdquo;<span style=\"color: #82b8fb; font-weight: bold; font-size: 120%;\">$ciag</span>&rdquo; znaleziono <b>$znalezione_auta_ile</b> wynik/wynik√≥w</h4>");
   
-  //pobranie danych dodatkowych pojazdÛw -----------------------------
+  //pobranie danych dodatkowych pojazd√≥w -----------------------------
 
-//pobranie wszystkich nazw marek samochodÛw do tablicy   
+//pobranie wszystkich nazw marek samochod√≥w do tablicy   
    $kwerenda2 = "SELECT id, marka FROM auto_marka_tbl";
    $rezultat2 = mysql_query( $kwerenda2 );
    $temp1 = array();
@@ -480,7 +481,7 @@ $rezultat2 = mysql_query( $kwerenda2 );
     $marki = array_combine( $temp1, $temp2 );
     } 
 
-//pobranie wszystkich kolorÛw samochodÛw do tablicy  
+//pobranie wszystkich kolor√≥w samochod√≥w do tablicy  
    $kwerenda2 = "SELECT id, kolor FROM auto_kolor_tbl";
    $rezultat2 = mysql_query( $kwerenda2 );
    $temp3 = array();
@@ -492,7 +493,7 @@ $rezultat2 = mysql_query( $kwerenda2 );
     $kolory = array_combine( $temp3, $temp4 );
     } 
 
-//pobranie wszystkich nazw kategorii samochodÛw do tablicy   
+//pobranie wszystkich nazw kategorii samochod√≥w do tablicy   
    $kwerenda2 = "SELECT id, nazwaKategorii FROM auto_kategoria_tbl";
    $rezultat2 = mysql_query( $kwerenda2 );
    $temp5 = array();
@@ -504,7 +505,7 @@ $rezultat2 = mysql_query( $kwerenda2 );
     $kategorie = array_combine( $temp5, $temp6 );
     } 
  
-//pobranie wszystkich ilo∂ci drzwi samochodÛw do tablicy   
+//pobranie wszystkich ilo≈õci drzwi samochod√≥w do tablicy   
    $kwerenda2 = "SELECT id, liczbaDrzwi FROM auto_drzwi_tbl";
    $rezultat2 = mysql_query( $kwerenda2 );
    $temp1 = array();
@@ -516,7 +517,7 @@ $rezultat2 = mysql_query( $kwerenda2 );
     $drzwii = array_combine( $temp1, $temp2 );
     } 
 
-//pobranie wszystkich rodzajÛw skrzyni samochodÛw do tablicy  
+//pobranie wszystkich rodzaj√≥w skrzyni samochod√≥w do tablicy  
    $kwerenda2 = "SELECT id, typSkrzyni FROM auto_skrzynia_tbl";
    $rezultat2 = mysql_query( $kwerenda2 );
    $temp1 = array();
@@ -543,9 +544,10 @@ $rezultat2 = mysql_query( $kwerenda2 );
 	$kolor_nr = $wynik[4];
 	$skrzynia_nr = $wynik[5];
 	$drzwi_nr = $wynik[6];
-	
-	echo("<h4 style=\"color: #82B8FB\">$j. <a href=\"./index.php?cid=$nr_auta\"> $marki[$marka_nr] $model</a> - kategoria <a href=\"./index.php?kat=kategoria_nr\">$kategorie[$kategoria_nr]</a></h4>");
-   echo("<p class=\"akapit_wezszy\">&nbsp;&nbsp;&nbsp;&nbsp;rok produkcji: <b>$rok_produkcji</b>, skrzynia: <b> $skrzynie[$skrzynia_nr]</b>, liczba drzwi: <b>$drzwii[$drzwi_nr]</b>, <br />
+
+        //naprawiono: przej≈õcie do przypisanej kategorii wyszukanego pojazdu w wy≈õwietlanych wynikach, bezpo≈õrednio z odno≈õnika danego pojazdu 
+	echo("<h4 style=\"color: #82B8FB\">$j. <a href=\"./index.php?cid=$nr_auta\"> $marki[$marka_nr] $model</a> - kategoria <a href=\"./index.php?kat=$kategoria_nr\">$kategorie[$kategoria_nr]</a></h4>");
+    echo("<p class=\"akapit_wezszy\">&nbsp;&nbsp;&nbsp;&nbsp;rok produkcji: <b>$rok_produkcji</b>, skrzynia: <b> $skrzynie[$skrzynia_nr]</b>, liczba drzwi: <b>$drzwii[$drzwi_nr]</b>, <br />
 &nbsp;&nbsp;&nbsp;&nbsp;kolor: <b>$kolory[$kolor_nr]</b></p><br />");
 
     } 
@@ -562,16 +564,16 @@ $rezultat2 = mysql_query( $kwerenda2 );
         // dodawanie tresci do serwisu  ------------------------------------------------------
  if ( isSet( $_POST["tytul_dodaj"] ) && isSet( $_POST["tresc_dodaj"] ) && isSet( $_POST["rodzaj_tresci_dodaj"] ) )
  {
-  if ( isSet( $_SESSION['zalogowany'] ) ) // czy osoba wywo≥ujaca link jest zalogowana w serwisie?
+  if ( isSet( $_SESSION['zalogowany'] ) ) // czy osoba wywo≈Çujaca link jest zalogowana w serwisie?
   {
-  // gdy BIEØ°CY UØYTKOWNIK ma prawo ( ==true ) wykonaÊ t± modyfikacjÍ to zezwÛl dalej na:
+  // gdy BIE≈ªÀáCY U≈ªYTKOWNIK ma prawo ( ==true ) wykonaƒá tƒô modyfikacjƒô to zezw√≥l dalej na:
    if ( SprawdzUprawnieniaAdmina() )
    {
   
     if ( ( $_POST["tytul_dodaj"] == "") || ( $_POST["tresc_dodaj"] == "") || ( $_POST["rodzaj_tresci_dodaj"] == "") )
     {
-    echo("<b>Nie zosta≥y wype≥nione wszystkie pola!</b><br />");
-    echo("Tre∂ci <b>nie dodano!</b>");
+    echo("<b>Nie zosta≈Çy wype≈Çnione wszystkie pola!</b><br />");
+    echo("Tre≈õci <b>nie dodano!</b>");
     }
   
    $tytul = trim( $_POST["tytul_dodaj"] );
@@ -579,7 +581,7 @@ $rezultat2 = mysql_query( $kwerenda2 );
  
     switch ( $_POST["rodzaj_tresci_dodaj"] )
     {
-    case "aktualnosci":			//og≥oszenie
+    case "aktualnosci":			//og≈Çoszenie
       $rodzaj_tresci = 1;
      break;
    
@@ -590,7 +592,7 @@ $rezultat2 = mysql_query( $kwerenda2 );
   	
     switch ( $_POST["aktywna_promocja"] )
     {
-    case "aktualna":			//od razu aktywne og≥oszenie
+    case "aktualna":			//od razu aktywne og≈Çoszenie
       $aktywna_promocja = 1;
      break;
    
@@ -619,17 +621,17 @@ $rezultat2 = mysql_query( $kwerenda2 );
   			tresc='$tresc', zdjecia=1, autorID=$id, dataTresci='$data', czasTresci='$czas',  aktywne=$aktywna_promocja";
    $rezultat = mysql_query( $kwerenda, $db_link );
     if ( $rezultat ) echo("<h3>Dane dodano!</h3>");
-    else echo ("<h3>Wyst±pi≥ b≥±d</h3>");
+    else echo ("<h3>WystƒÖpi≈Ç b≈ÇƒÖd!</h3>");
    } //end-"uprawnienia-amina"
    else
    {
-   echo("<h2>Brak praw dla bieø±cego uøytkownika!</h2>");
-   echo("<h3>Nie zezwolono na modyfikacjÍ!</h3>");
+   echo("<h2>Brak praw dla bie≈ºƒÖcego u≈ºytkownika!</h2>");
+   echo("<h3>Nie zezwolono na modyfikacjƒô!</h3>");
    }
   } 
   else
   {
-  echo('<h3 style="color: red;">Musisz byÊ zalogowany, aby wykonaÊ t± czynno∂Ê!</h3>');
+  echo('<h3 style="color: red;">Musisz byƒá zalogowany, aby wykonaƒá tƒô czynno≈õƒá!</h3>');
   }
  } //END-dodawanie tresci
 
@@ -638,9 +640,9 @@ $rezultat2 = mysql_query( $kwerenda2 );
   // modyfikacja tresci 
  if ( isSet( $_POST["tytul_modyf"] ) && isSet( $_POST["tresc_modyf"] ) && isSet( $_POST["rodzaj_tresci_modyf"] ) && isSet( $_POST['rodzaj_modyfikacji'] ) && isSet( $_POST['id_wiadomosci'] )  )
  {
-  if ( isSet( $_SESSION['zalogowany'] ) ) // czy osoba wywo≥ujaca link jest zalogowana w serwisie?
+  if ( isSet( $_SESSION['zalogowany'] ) ) // czy osoba wywo≈Çujaca link jest zalogowana w serwisie?
   {
- // gdy BIEØ°CY UØYTKOWNIK ma prawo ( ==true ) wykonaÊ t± modyfikacjÍ to zezwÛl dalej na:
+ // gdy BIE≈ªÀáCY U≈ªYTKOWNIK ma prawo ( ==true ) wykonaƒá tƒÖ modyfikacjƒô to zezw√≥l dalej na:
    if ( SprawdzUprawnieniaAdmina() )
    {
     if ( $_POST["rodzaj_modyfikacji"] == "usuniecie" )
@@ -650,17 +652,17 @@ $rezultat2 = mysql_query( $kwerenda2 );
 
     $kwerenda = "DELETE FROM tresc_tbl WHERE id=$id_wiadomosci";
     $rezultat = mysql_query( $kwerenda );
-     if ( $rezultat ) echo("<h3>Rekord usuniÍto</h3>");
-     else echo("<h3>Nie uda≥o siÍ usun±c rekordu!</h3>");   
+     if ( $rezultat ) echo("<h3>Rekord usuniƒôto</h3>");
+     else echo("<h3>Nie uda≈Ço siƒô usunƒÖƒá rekordu!</h3>");   
     }
   
     if ( $_POST["rodzaj_modyfikacji"] == "edycja" )
     {
-    // gdy modyfikacja to sprawdzenie zawartosci pÛl
+    // gdy modyfikacja to sprawdzenie zawartosci p√≥l
      if ( ( $_POST["tytul_modyf"] == "") || ( $_POST["tresc_modyf"] == "") || ( $_POST["rodzaj_tresci_modyf"] == "") )
      {
-     echo("<b>Nie zosta≥y wype≥nione wszystkie pola!</b><br />");
-     echo("Tre∂ci <b>nie zamodyfikowano!</b>");
+     echo("<b>Nie zosta≈Çy wype≈Çnione wszystkie pola!</b><br />");
+     echo("Tre≈õci <b>nie zamodyfikowano!</b>");
      }
   
     $tytul_modyf = trim( $_POST["tytul_modyf"] );
@@ -668,7 +670,7 @@ $rezultat2 = mysql_query( $kwerenda2 );
   
      switch ( $_POST["rodzaj_tresci_modyf"] )
      {
-     case "aktualnosci":			//og≥oszenie
+     case "aktualnosci":			//og≈Çoszenie
        $rodzaj_tresci_modyf = 1;
       break;
     
@@ -701,7 +703,7 @@ $rezultat2 = mysql_query( $kwerenda2 );
    echo ("<br />");
    echo( "\$_POST['rodzaj_tresci_modyf'] = "); 
    echo ($_POST["rodzaj_tresci_modyf"]); echo("&nbsp;<b>vs</b>&nbsp;$rodzaj_tresci_modyf"); */
-    $id = $_SESSION['id'];  // ID_uøytkownika !
+    $id = $_SESSION['id'];  // ID_u≈ºytkownika !
     $data = date( "Y-m-j");
     $czas = date( "G:i:s");
 	$zdjeciaID = 1;
@@ -711,27 +713,27 @@ $rezultat2 = mysql_query( $kwerenda2 );
  			tresc='$tresc_modyf', zdjecia=$zdjeciaID, autorID='$id', dataTresci='$data', czasTresci='$czas', aktywne=$aktywna_promocja WHERE id=$id_wiadomosci";
     $rezultat = mysql_query( $kwerenda, $db_link );
      if ( $rezultat ) echo("<h3>Dane zmieniono!</h3>");
-     else echo ("<h3>Wyst±pi≥ b≥±d</h3>");
+     else echo ("<h3>WystƒÖpi≈Ç b≈ÇƒÖd</h3>");
     } //id-end modyfikacja
-   } //zezwolenie na modyfikacjÍ
+   } //zezwolenie na modyfikacjƒô
    else
    {
-   echo("<h2>Brak praw do modyfikacji dla bieø±cego uøytkownika!</h2>");
-   echo("<h3>Nie zmieniono zawarto∂ci w witrynie!</h3>");
+   echo("<h2>Brak praw do modyfikacji dla bie≈ºƒÖcego u≈ºytkownika!</h2>");
+   echo("<h3>Nie zmieniono zawarto≈õci w witrynie!</h3>");
    } //if-else-"admin"-end
   }
   else
   {
-  echo('<h3 style="color: red;">Musisz byÊ zalogowany, aby wykonaÊ tπ czynnoúÊ!</h3>');
+  echo('<h3 style="color: red;">Musisz byƒá zalogowany, aby wykonaƒá tƒÖ czynno≈õƒá!</h3>');
   } //if-zalogowany-end
- } // modyfikacja-wiaomo∂ci-end
+ } // modyfikacja-wiaomo≈õci-end
 
 // ------------------------------------------------------------------------------------------
 
-// wyúwitlenie nazw uøytkownikÛw
+// wy≈õwitlenie nazw u≈ºytkownik√≥w
  if ( ( isSet( $_POST['rodzaj_uzytkownikow'] ) ) && ( isSet( $_POST['rodzaj_sortowania'] ) ) )
  {
-  if ( isSet( $_SESSION['zalogowany'] ) ) // czy osoba wywo≥ujaca link jest zalogowana w serwisie?
+  if ( isSet( $_SESSION['zalogowany'] ) ) // czy osoba wywo≈Çujaca link jest zalogowana w serwisie?
   {
    if ( SprawdzUprawnieniaAdmina() )
    {
@@ -816,7 +818,7 @@ $rezultat2 = mysql_query( $kwerenda2 );
    $firmy = array_combine( $temp1, $temp2 );
    };
 
-//pobranie wszystkich nazw uøytkownikÛw do tabeli   
+//pobranie wszystkich nazw u≈ºytkownik√≥w do tabeli   
   $kwerenda = "SELECT id, rolaNazwa FROM userRole_tbl";
   $rezultat = mysql_query( $kwerenda );
   $temp1 = array();
@@ -835,21 +837,21 @@ $rezultat2 = mysql_query( $kwerenda2 );
     //if ( $rezultat != 0 ) 
 	//{
 	echo('<table width="450" align="center" cellpadding="0" cellspacing="0">');
-    echo('<tr class="tab_kolumna"><td class="tab_komorka">Nr</td><td class="tab_komorka">Nazwisko</td><td class="tab_komorka">ImiÍ</td><td class="tab_komorka">Firma</td><td class="tab_komorka">Blokada</td><td class="tab_komorka">Rola</td><td class="tab_komorka">Profil</td></tr>');  
+    echo('<tr class="tab_kolumna"><td class="tab_komorka">Nr</td><td class="tab_komorka">Nazwisko</td><td class="tab_komorka">Imiƒô</td><td class="tab_komorka">Firma</td><td class="tab_komorka">Blokada</td><td class="tab_komorka">Rola</td><td class="tab_komorka">Profil</td></tr>');  
     $temp = 0;
 	 while ( $wynik = mysql_fetch_row( $rezultat ) )
      {
      $temp++;
-	 echo("<tr><td class=\"tab_komorka\">".$temp.".</td>");   //numer porz±dkowy
+	 echo("<tr><td class=\"tab_komorka\">".$temp.".</td>");   //numer porzƒÖdkowy
 	 echo("<td class=\"tab_komorka\">$wynik[1]</td>");  //nazwisko
-	 echo("<td class=\"tab_komorka\">$wynik[2]</td>");  //imiÍ
+	 echo("<td class=\"tab_komorka\">$wynik[2]</td>");  //imiƒô
 	 $temp2 = $wynik[3];
 	 echo("<td class=\"tab_komorka\">$firmy[$temp2]</td>");  //nazwa firmy
 	  if ( $wynik[4] == 0 ) echo("<td class=\"tab_komorka\">nie</td>");    //blokada korzystania
 	  else echo("<td class=\"tab_komorka\" style=\"color: red;\">tak</td>");
 	 $temp2 = $wynik[5];
      echo("<td class=\"tab_komorka\">");
-	  switch ( $temp2 ) //kolorki t≥a
+	  switch ( $temp2 ) //kolorki t≈Ça
 	  {
 	  case 1:
 	    echo('<p class="rola_admin">');
@@ -865,14 +867,14 @@ $rezultat2 = mysql_query( $kwerenda2 );
 	  }
 	 echo("$role[$temp2]</p></td>");  //rola uzytkownika
 	 
-     echo("<td class=\"tab_komorka\"><a href=\"./index.php?uid=$wynik[0]\">szczegÛ≥y</a></td>");  //
+     echo("<td class=\"tab_komorka\"><a href=\"./index.php?uid=$wynik[0]\">szczeg√≥≈Çy</a></td>");  //
 // + if admin ....	
  /*     if ( $role[$temp2] == "administrator" )
 	  {
 	  $temp3 = $wynik[0];
 	   if ( $temp3 == $_SESSION['id'] )
 	   {
-	  // pzergl±daj±cemu adminowi zezwÛl na modyfikacjÍ TYLKO swoich danych, z wy≥±czeniem innych adminÛw  
+	  // przerglƒÖdajƒÖcemu adminowi zezw√≥l na modyfikacjƒô TYLKO swoich danych, z wy≈ÇƒÖczeniem innych admin√≥w  
 	   echo("<td class=\"tab_komorka\"><a style=\"color: red;\" href=\"./index.php?moduid=$wynik[0]\">edit</a></td>");
 	   }
 	   else
@@ -891,36 +893,36 @@ $rezultat2 = mysql_query( $kwerenda2 );
  //  } //
     else
 	{
-	echo("Brak wynikÛw spe≥niaj±cych kryterium!");
+	echo("Brak wynik√≥w spe≈ÇniajƒÖcych kryterium!");
  	}
 /*   else
    {
-   echo("Brak wynikÛw spe≥niajπcych kryterium!");
+   echo("Brak wynik√≥w spe≈ÇniajƒÖcych kryterium!");
    } */
    } 
    else
    {
-   echo("<h2>Brak praw do modyfikacji dla bieøπcego uøytkownika!</h2>");
-   echo("<h3>Nie zmieniono zawartoúci w witrynie!</h3>");
+   echo("<h2>Brak praw do modyfikacji dla bie≈ºƒÖcego u≈ºytkownika!</h2>");
+   echo("<h3>Nie zmieniono zawarto≈õci w witrynie!</h3>");
    } // if-"uprawnienia-admina"
   }
   else
   {
-  echo('<h3 style="color: red;">Musisz byÊ zalogowany, aby wykonaÊ t± czynno∂Ê!</h3>');
+  echo('<h3 style="color: red;">Musisz byƒá zalogowany, aby wykonaƒá tƒô czynno≈õƒá!</h3>');
   } //if-zalogowany-end
  }
  
  // ------------------------------------------------------------------------------------------
-    // blokowanie i odblokowywanie uøytkownikÛw
+    // blokowanie i odblokowywanie u≈ºytkownik√≥w
  if ( ( isSet( $_POST['dzialanie'] ) ) && ( isSet( $_POST['osoba'] ) ) )
  {
-  if ( isSet( $_SESSION['zalogowany'] ) ) // czy osoba wywo≥ujaca link jest zalogowana w serwisie?
+  if ( isSet( $_SESSION['zalogowany'] ) ) // czy osoba wywo≈Çujaca link jest zalogowana w serwisie?
   {
-   if ( SprawdzUprawnieniaAdmina() ) // dzia≥anie tylko dla adminÛw 
+   if ( SprawdzUprawnieniaAdmina() ) // dzia≈Çanie tylko dla admin√≥w 
    {
     if ( $_POST['osoba'] == $_SESSION['id'] )
 	{
-    echo('<h3 style="color: red;">Nie moøesz sam siebie zablokowaÊ!</h3>');
+    echo('<h3 style="color: red;">Nie mo≈ºesz sam siebie zablokowaƒá!</h3>');
 	}
 	else
 	{
@@ -940,11 +942,11 @@ $rezultat2 = mysql_query( $kwerenda2 );
   
      if ( $temp3 == "administrator" )
 	 {
-     echo('<h3 style="color: red;">Nie moøesz zablokowaÊ innego administratora!</h3>');
+     echo('<h3 style="color: red;">Nie mo≈ºesz zablokowaƒá innego administratora!</h3>');
 	 }
-	 else //inny uøytkownik niø administrator 
+	 else //inny u≈ºytkownik ni≈º administrator 
      {	
-	  if ( $temp == 0 ) //konto jest aktywne - moøna tylko je odblokowaÊ
+	  if ( $temp == 0 ) //konto jest aktywne - mo≈ºna tylko je odblokowaƒá
 	  {
 	   if ( $_POST['dzialanie'] == "zablokuj" )
 	   {
@@ -952,22 +954,22 @@ $rezultat2 = mysql_query( $kwerenda2 );
        $rezultat = mysql_query( $kwerenda );
         if ( $rezultat )
 		{
-		echo("<h3>Uda≥o siÍ zablokowaÊ konto uøytkownika $imiÍ $nazwisko! </h3>");
+		echo("<h3>Uda≈Ço siƒô zablokowaƒá konto u≈ºytkownika $imiƒô $nazwisko! </h3>");
 		echo('<br />');
-	    echo("<p class=\"akapit_prawy_wezszy\"><a href=\"./index.php?uid=$id_osoby\">PowrÛt do szczegÛ≥Ûw wybranego konta uøytkownika</a></p>");  
+	    echo("<p class=\"akapit_prawy_wezszy\"><a href=\"./index.php?uid=$id_osoby\">Powr√≥t do szczeg√≥≈Ç√≥w wybranego konta u≈ºytkownika</a></p>");  
 		}
 	   }
 	   
 	   if ( $_POST['dzialanie'] == "odblokuj" )
 	   {
-	   echo("<h3 style=\"color: red;\">Nie moøna odblokowaÊ AKTYWNEGO konta uøytkownika! </h3>");
+	   echo("<h3 style=\"color: red;\">Nie mo≈ºna odblokowaƒá AKTYWNEGO konta u≈ºytkownika! </h3>");
 	   }
 	  }
-	  else // konto zablokowane - moøna je tylko odblokowaÊ
+	  else // konto zablokowane - mo≈ºna je tylko odblokowaƒá
 	  {
 	   if ( $_POST['dzialanie'] == "zablokuj" )
 	   {
-	   echo("<h3 style=\"color: red;\">Nie moøna zablokowaÊ juø ZABLOKOWANEGO konta uøytkownika! </h3>");
+	   echo("<h3 style=\"color: red;\">Nie mo≈ºna zablokowaƒá ju≈º ZABLOKOWANEGO konta u≈ºytkownika! </h3>");
   }
 	   
 	   if ( $_POST['dzialanie'] == "odblokuj" )
@@ -976,9 +978,9 @@ $rezultat2 = mysql_query( $kwerenda2 );
        $rezultat = mysql_query( $kwerenda );
         if ( $rezultat )
 		{
-		echo("<h3>Uda≥o siÍ zablokowaÊ konto uøytkownika $imiÍ $nazwisko! </h3>");
+		echo("<h3>Uda≈Ço siƒô zablokowaƒá konto u≈ºytkownika $imiƒô $nazwisko! </h3>");
 		echo('<br />');
-	    echo("<p class=\"akapit_prawy_wezszy\"><a href=\"./index.php?uid=$id_osoby\">PowrÛt do szczegÛ≥Ûw wybranego konta uøytkownika</a></p>");  
+	    echo("<p class=\"akapit_prawy_wezszy\"><a href=\"./index.php?uid=$id_osoby\">Powr√≥t do szczeg√≥≈Ç√≥w wybranego konta u≈ºytkownika</a></p>");  
 		}
 	   }
 	  } //?
@@ -988,13 +990,13 @@ $rezultat2 = mysql_query( $kwerenda2 );
    } 
    else
    {
-   echo("<h2>Brak praw do modyfikacji dla bieø±cego uøytkownika!</h2>");
-   echo("<h3>Nie zmieniono zawartoúci w witrynie!</h3>");
+   echo("<h2>Brak praw do modyfikacji dla bie≈ºƒÖcego u≈ºytkownika!</h2>");
+   echo("<h3>Nie zmieniono zawarto≈õci w witrynie!</h3>");
    } // if-"uprawnienia-admina"
   }
   else
   {
-  echo('<h3 style="color: red;">Musisz byÊ zalogowany, aby wykonaÊ t± czynno∂Ê!</h3>');
+  echo('<h3 style="color: red;">Musisz byƒá zalogowany, aby wykonaƒá tƒô czynno≈õƒá!</h3>');
   } //if-zalogowany-end
  }
 
@@ -1002,9 +1004,9 @@ $rezultat2 = mysql_query( $kwerenda2 );
     // dodawanie auta
  if ( ( isSet( $_POST['marka'] ) ) && ( isSet( $_POST['model'] ) ) && ( isSet( $_POST['kategoria'] ) ) && ( isSet( $_POST['kolor'] ) ) )
  {
-  if ( isSet( $_SESSION['zalogowany'] ) ) // czy osoba wywo≥ujaca link jest zalogowana w serwisie?
+  if ( isSet( $_SESSION['zalogowany'] ) ) // czy osoba wywo≈Çujaca link jest zalogowana w serwisie?
   {
-   if ( SprawdzUprawnieniaAdmina() ) // dzia≥anie tylko dla adminÛw 
+   if ( SprawdzUprawnieniaAdmina() ) // dzia≈Çanie tylko dla admin√≥w 
    {
    
    $markaID = $_POST['marka'];
@@ -1095,7 +1097,7 @@ $rezultat2 = mysql_query( $kwerenda2 );
  {
   if ( $zdjecia_nazwy_nowe[$i] == false)
   {
-  echo("<br /><h3 style=\"color: red;\">Plik za≥±czony jako zdjÍcie nr ".($i+1)." nie jest plikiem graficznym!</h3>");
+  echo("<br /><h3 style=\"color: red;\">Plik za≈ÇƒÖczony jako zdjƒôcie nr ".($i+1)." nie jest plikiem graficznym!</h3>");
   $pliki_graficzne[$i] = false;
   }
   else //gdy graficzny plik
@@ -1105,20 +1107,20 @@ $rezultat2 = mysql_query( $kwerenda2 );
    if ( ( move_uploaded_file( $zdjecia_tymczasowe_nazwy[$i], $pliki_zdjecia[$i] ) ) 
        && ( $pliki_graficzne[$i] ) )
    {
-   echo "<h3><a href=\"./$pliki_zdjecia[$i]\">Link</a> do uprzednio wys≥anego pliku: ";
+   echo "<h3><a href=\"./$pliki_zdjecia[$i]\">Link</a> do uprzednio wys≈Çanego pliku: ";
    echo "<a href=\"$pliki_zdjecia[$i]\"><img src=\"./$pliki_zdjecia[$i]\" height=101 width=101></a>";
    echo "</h3>";
    echo "<br />";
    } 
    else
    {
-   echo "Nieprawid≥owy plik <b>$zdjecia_nazwy_nowe[$i]</b><br />";
+   echo "Nieprawid≈Çowy plik <b>$zdjecia_nazwy_nowe[$i]</b><br />";
    } // if-end "przenoszenie pliku"
-  } // if-end "b≥Ídna nazwa"
+  } // if-end "b≈Çƒôdna nazwa"
 
   if ( $zdjecia_bledy[$i] != UPLOAD_ERR_OK )
   {
-  echo "<p style=\"color: red;\">Wyst±pi≥ b≥±d nr ",  $zdjecia_bledy[$i], ": ";
+  echo "<p style=\"color: red;\">WystƒÖpi≈Ç b≈ÇƒÖd nr ",  $zdjecia_bledy[$i], ": ";
   
    switch( $zdjecia_bledy[$i] )
    {
@@ -1127,13 +1129,13 @@ $rezultat2 = mysql_query( $kwerenda2 );
     echo("Przekroczono maksymalny rozmiar pliku!</p>");
     break;
    case "UPLOAD_ERR_PARTIAL" :
-    echo("Odebramo tylko czÍ∂Ê pliku!</p>");
+    echo("Odebramo tylko czƒô≈õƒá pliku!</p>");
     break;
    case "UPLOAD_ERR_NO_FILE" :
-    echo("Plik nie zosta≥ pobrany!</p>");
+    echo("Plik nie zosta≈Ç pobrany!</p>");
     break;
    default :
-    echo("Nieznany typ b≥Ídu!</p>");
+    echo("Nieznany typ b≈Çƒôdu!</p>");
    } //switch-end
   } // if-end "nowa_nazwa_pliku false"
  } // FOR-end
@@ -1141,25 +1143,25 @@ $rezultat2 = mysql_query( $kwerenda2 );
    $kwerenda = "INSERT INTO auto_tbl SET `ID`=NULL, `markaID`=$markaID, `model`='$model', `nrRejestracyjny`='$nr_rejestracyjny', `rokProdukcji`='$rok_produkcji', `statusPojazdu`=$status_pojazdu, `kategoriaID`=$kategoriaID, `pojemnosc`=$pojemnosc, `moc`=$moc, `skrzyniaID`=$skrzyniaID, `paliwoID`=$paliwoID, `nadwozieID`=$nadwozieID, `drzwiID`=$drzwiID, `wyposazenieID`=$wyposazenieID, `kolorID`=$kolorID, `metalik`=$metalik"; 
 
     $rezultat = mysql_query( $kwerenda );
-echo("<br /><br />Zapytanie zmodyfikowa≥o ".mysql_affected_rows()." wierszy"); 
+echo("<br /><br />Zapytanie zmodyfikowa≈Ço ".mysql_affected_rows()." wierszy"); 
  
     if ( ! $rezultat )
 	{
     echo("<br /><br />");
-	echo ("<h3 style=\"color: red;\">Wystapi≥ b≥±d!".mysql_error( $rezultat )/"</h3>");
+	echo ("<h3 style=\"color: red;\">Wystapi≈Ç b≈ÇƒÖd!".mysql_error( $rezultat )/"</h3>");
 	}
     else
 	{
     echo("<br /><br />");
-	echo ('<h3>Dane samochodu wstawiono do bazy pomy∂lnie!</h3>');
+	echo ('<h3>Dane samochodu wstawiono do bazy pomy≈õlnie!</h3>');
 	
-	// podzapytanie - najpierw wydbycie ID w≥a∂nie wstawionego pojazdu
-	    // zak≥adam, ze jest to ten ostatnio dodany pojazd
+	// podzapytanie - najpierw wydbycie ID w≈Ça≈õnie wstawionego pojazdu
+	    // zak≈Çadam, ze jest to ten ostatnio dodany pojazd
 	$kwerenda2 = "SELECT MAX(id) FROM auto_tbl";
     $rezultat2 = mysql_query( $kwerenda2 );
 	$wynik2 = mysql_fetch_row( $rezultat2 );
 	
-	$id_pojazdu = $wynik2[0];   // ID dodanego w≥a∂nie pojazdu
+	$id_pojazdu = $wynik2[0];   // ID dodanego w≈Ça≈õnie pojazdu
     echo("<h4 style=\"color: red;\">ID dodanego pojazdu: $id_pojazdu");
  
     $id_zdjec = array();
@@ -1176,7 +1178,7 @@ echo("<br /><br />Zapytanie zmodyfikowa≥o ".mysql_affected_rows()." wierszy");
 	
 	   if ( $rezultat2 )   // gdy poprawnie dodano zdjecie do bazy
 	   {
-	   $ile_zdjec_dodano++;  //zwiÍksz liczbÍ dodanych zdjeÊ
+	   $ile_zdjec_dodano++;  //zwiƒôksz liczbƒô dodanych zdjeƒá
 	    
 		$kwerenda3 = "SELECT id FROM zdjecia_tbl WHERE url='$zmienna'";
         $rezultat3 = mysql_query( $kwerenda3 );
@@ -1195,7 +1197,7 @@ echo("<br /><br />Zapytanie zmodyfikowa≥o ".mysql_affected_rows()." wierszy");
 
 	   if ( $rezultat2 )   // gdy poprawnie dodano zdjecie do bazy
 	   {
-	   echo(" Dodano poprawnie <b> $i </b zdjÍcie. ");
+	   echo(" Dodano poprawnie <b> $i </b zdjƒôcie. ");
 	   }
 	 } // for-end
 	}
@@ -1209,13 +1211,13 @@ echo("<br /><br />Zapytanie zmodyfikowa≥o ".mysql_affected_rows()." wierszy");
    else
    {
    echo("<br />");
-   echo("<h2>Brak praw do modyfikacji dla bieø±cego uøytkownika!</h2>");
-   echo("<h3>Nie zmieniono zawarto∂ci w witrynie!</h3>");
+   echo("<h2>Brak praw do modyfikacji dla bie≈ºƒÖcego u≈ºytkownika!</h2>");
+   echo("<h3>Nie zmieniono zawarto≈õci w witrynie!</h3>");
    } // if-"uprawnienia-admina"
   }
   else
   {
-  echo('<h3 style="color: red;">Musisz byÊ zalogowany, aby wykonaÊ t± czynno∂Ê!</h3>');
+  echo('<h3 style="color: red;">Musisz byƒá zalogowany, aby wykonaƒá tƒô czynno≈õƒá!</h3>');
   } //if-zalogowany-end
  } // end "dodawanie auta"
  
@@ -1225,9 +1227,9 @@ echo("<br /><br />Zapytanie zmodyfikowa≥o ".mysql_affected_rows()." wierszy");
       //sprawdzenie rezerwacji
  if ( ( isSet( $_POST['rezerwuj_1_auto_id'] ) ) && ( isSet( $_POST['rezerwuj_1_osoba_id'] ) ) )
  {
-  if ( isSet( $_SESSION['zalogowany'] ) ) // czy osoba wywo≥ujaca link jest zalogowana w serwisie?
+  if ( isSet( $_SESSION['zalogowany'] ) ) // czy osoba wywo≈Çujaca link jest zalogowana w serwisie?
   {
-   if ( SprawdzUprawnieniaAdmina() ) // oprÛcz tego musi mieÊ uprawnienai administarcyjne
+   if ( SprawdzUprawnieniaAdmina() ) // opr√≥cz tego musi mieƒá uprawnienai administarcyjne
    {
     if ( $_POST['rezerwuj_1_osoba_id'] == $_SESSION['id'] )
 	{
@@ -1257,27 +1259,27 @@ echo("<br /><br />Zapytanie zmodyfikowa≥o ".mysql_affected_rows()." wierszy");
 	// ---------------------------------	debug_mode
 	echo('<p class="ramka_status">') ;
 	echo('DEBUG MODE <br />') ;
-	echo('data_pocz±tkowa: <strong>'.$data_poczatkowa.'</strong><br />') ; 
-	echo('data_koÒcowa: <strong>'.$data_koncowa.'</strong><br />') ; 	
+	echo('data_poczƒÖtkowa: <strong>'.$data_poczatkowa.'</strong><br />') ; 
+	echo('data_ko≈Ñcowa: <strong>'.$data_koncowa.'</strong><br />') ; 	
 	echo('data_teraz: <strong>'.$data_teraz.'</strong><br />') ; 
 	echo('</p>') ;
 // ---------------------------------	debug_mode END	
 */
      if ( $data_poczatkowa < $data_teraz )
 	 {
-	 echo('<h4 style="color: red">B£°D: data pocz±tkowa rezerwacji wczeú∂niejsza od obecnej daty!</h4>'); 
+	 echo('<h4 style="color: red">B≈ÅÀáD: data poczƒÖtkowa rezerwacji wcze≈õniejsza od obecnej daty!</h4>'); 
      $jest_blad = true;
 	 }
 	 
 	 if ( $data_poczatkowa < $data_teraz )
 	 {
-	 echo('<h4 style="color: red">B£°D: data koÒcowa rezerwacji wczeú∂niejsza od obecnej daty!</h4>'); 
+	 echo('<h4 style="color: red">B≈ÅÀáD: data ko≈Ñcowa rezerwacji wcze≈õniejsza od obecnej daty!</h4>'); 
 	 $jest_blad = true;
 	 }
 	 
 	 if (  $data_poczatkowa > $data_koncowa )
 	 {
-	 echo('<h4 style="color: red">B£°D: data koÒcowa rezerwacji wcze∂úniejsza od daty poczπtkowej!</h4>'); 
+	 echo('<h4 style="color: red">B≈ÅÀáD: data ko≈Ñcowa rezerwacji wcze≈õniejsza od daty poczƒÖtkowej!</h4>'); 
 	 $jest_blad = true;
 	 }
 
@@ -1294,24 +1296,24 @@ echo("<br /><br />Zapytanie zmodyfikowa≥o ".mysql_affected_rows()." wierszy");
 	  $wynik2 = mysql_fetch_row( $rezultat2 );
 	  $marka = $wynik2[0]; 
 	
-      echo('<h3>Sprawdzanie dostÍpno∂úci auta do rezerwacji</h3>');
+      echo('<h3>Sprawdzanie dostƒôpno≈õ≈õci auta do rezerwacji</h3>');
       //echo('<br />');
       echo('<p class="akapit_wezszy">');
-      echo('<br />Data pocz±tkowa: <span style="color: red; font-weight: bold">');
+      echo('<br />Data poczƒÖtkowa: <span style="color: red; font-weight: bold">');
       echo("$data_poczatkowa_ludzka </span> ");
       $data_poczatkowa_ok = SprawdzDate ( $dzien_poczatkowy , $miesiac_poczatkowy, $rok_poczatkowy ); 
        if ( $data_poczatkowa_ok ) 
  	   echo('<span style="color: #162C8C; font-weight: bold;"> (Data OK)</span><br />');
 	   else
-	   echo('<span style="color: red; font-weight: bold;">Data B£ DNA!</span><br />');
-      echo('<br />Data koÒcowa: <span style="color: red; font-weight: bold ">');
+	   echo('<span style="color: red; font-weight: bold;">Data B≈ÅƒòDNA!</span><br />');
+      echo('<br />Data ko≈Ñcowa: <span style="color: red; font-weight: bold ">');
       echo("$data_koncowa_ludzka </span>"); 
       $data_koncowa_ok = SprawdzDate ( $dzien_koncowy , $miesiac_koncowy, $rok_koncowy ); 
       
 	   if ( $data_koncowa_ok ) 
 	   echo('<span style="color: #162C8C; font-weight: bold;"> (Data OK)</span><br />');
 	   else
-	   echo('<span style="color: red; font-weight: bold;">Data B£ DNA!</span><br />');
+	   echo('<span style="color: red; font-weight: bold;">Data B≈ÅƒòDNA!</span><br />');
       echo('</p>');
   
       if ( ( $data_poczatkowa_ok ) && ( $data_koncowa_ok ) && ( ! $jest_blad ) )
@@ -1364,7 +1366,7 @@ $kwerenda2 = "SELECT `ID_rezerwacji`, `dataRez`, `dataPocz`, `dataKonc` FROM rez
 		 } 	
  //$rezerwacja = true;
 	    //$rezerwacja = false;  // !!!
-		//znaleziono --> nie da siÍ zarezerwawaÊ
+		//znaleziono --> nie da siƒô zarezerwawaƒá
  	   
 	   
 	   
@@ -1375,7 +1377,7 @@ $kwerenda2 = "SELECT `ID_rezerwacji`, `dataRez`, `dataPocz`, `dataKonc` FROM rez
 		echo("<p class=\"akapit_wezszy\">".mysql_error()."</p>");
 		$rezerwacja = true; // !!!
  //$rezerwacja = false;	
-		//nie znaleziono pasujacych aut --> mozemy zazwoliÊ na rezerwacjÍ
+		//nie znaleziono pasujacych aut --> mozemy zazwoliƒá na rezerwacjƒô
 		
 		}
 		
@@ -1383,11 +1385,11 @@ $kwerenda2 = "SELECT `ID_rezerwacji`, `dataRez`, `dataPocz`, `dataKonc` FROM rez
 	   if ( $rezerwacja ) // debug_2
 	   {
 	   $osoba_id = $_SESSION['id']; 
-	   echo("<br /><br /><h4>W podanym czasie rezerwacja auta<strong> $marka $model </strong>jest moøliwa do zrealizowania.</h4>");
+	   echo("<br /><br /><h4>W podanym czasie rezerwacja auta<strong> $marka $model </strong>jest mo≈ºliwa do zrealizowania.</h4>");
 //	   echo("<br />");
 	   echo('<table width="440" border="0" align="center" cellpadding="0" cellspacing="2" >');
  	   echo('<tr>');
-	   echo('<td><h4>Czy na pewno zarezerwowaÊ w podanym terminie?</h4><br />');
+	   echo('<td><h4>Czy na pewno zarezerwowaƒá w podanym terminie?</h4><br />');
 
 	   echo('<form name="rezerwuj_auto2" action="./index.php" method="post" >');
        echo("<input type=\"hidden\" name=\"rezerwuj_2_auto_id\" value=\"$auto_id\" />");
@@ -1399,30 +1401,30 @@ $kwerenda2 = "SELECT `ID_rezerwacji`, `dataRez`, `dataPocz`, `dataKonc` FROM rez
        echo("<input type=\"hidden\" name=\"dzien_kon2\" value=\"$dzien_koncowy\" />");
        echo("<input type=\"hidden\" name=\"miesiac_kon2\" value=\"$miesiac_koncowy\" />");
        echo("<input type=\"hidden\" name=\"rok_kon2\" value=\"$rok_koncowy\" />");
-       echo("<input type=\"submit\" name=\"rezerwuj_2_auto\" value=\"Zatwierdº rezerwacjÍ\" class=\"przycisk1\" />");
+       echo("<input type=\"submit\" name=\"rezerwuj_2_auto\" value=\"Zatwierd≈∫ rezerwacjƒô\" class=\"przycisk1\" />");
 	   echo("</form>");
 	   echo("</td></tr>");
 	   echo("</table>");
 	   
 	   echo("<br /><br />");
-	   echo("<p class=\"akapit_prawy_wezszy\"><a href=\"./index.php?cid=$auto_id\">PowrÛt do wyboru auta i okresu rezerwacji</a></p>"); 
+	   echo("<p class=\"akapit_prawy_wezszy\"><a href=\"./index.php?cid=$auto_id\">Powr√≥t do wyboru auta i okresu rezerwacji</a></p>"); 
 	   }
 	   else
 	   {
 	   //pojazd w tym okresie jest zarezerwowany przez innego klienta
-	   echo("<br /><br /><h4>Niestety rezerwacja auta $marka $model <span style=\"color: red\"> nie moøe byÊ zrealizowana </span>. Auto w podanym czasie jest juø zarezerwowane.</h4>");
+	   echo("<br /><br /><h4>Niestety rezerwacja auta $marka $model <span style=\"color: red\"> nie mo≈ºe byƒá zrealizowana </span>. Auto w podanym czasie jest ju≈º zarezerwowane.</h4>");
       
 	   echo('<br /><br />');
-	   echo("<p class=\"akapit_prawy_wezszy\"><a href=\"./index.php?cid=$auto_id\">PowrÛt do wyboru auta i okresu rezerwacji</a></p>"); 
+	   echo("<p class=\"akapit_prawy_wezszy\"><a href=\"./index.php?cid=$auto_id\">Powr√≥t do wyboru auta i okresu rezerwacji</a></p>"); 
 	   
        } //debug_2
  
       }
-      else  // daty dobre wiÍc moøna rezerwowaÊ
+      else  // daty dobre wiƒôc mo≈ºna rezerwowaƒá
       {
       echo("<br /><br />");
-      echo('<h4 style="color: red;">Nie moøna zarezerwowaÊ pojazdu, wprowadzono b≥Ídn± datÍ!</h4>');      echo('<br />');
-	  echo("<p class=\"akapit_prawy_wezszy\"><a href=\"./index.php?cid=$auto_id\">PowrÛt do wyboru auta i okresu rezerwacji</a></p>"); 
+      echo('<h4 style="color: red;">Nie mo≈ºna zarezerwowaƒá pojazdu, wprowadzono b≈ÇƒôdnƒÖ datƒô!</h4>');      echo('<br />');
+	  echo("<p class=\"akapit_prawy_wezszy\"><a href=\"./index.php?cid=$auto_id\">Powr√≥t do wyboru auta i okresu rezerwacji</a></p>"); 
 	   
 	  } //dobre daty
 
@@ -1430,27 +1432,27 @@ $kwerenda2 = "SELECT `ID_rezerwacji`, `dataRez`, `dataPocz`, `dataKonc` FROM rez
      } 
 	 else
 	 {
-	 echo('<h2 style="color: red;">B≥Ídne dane, takie auto nie istnieje</h2>');
+	 echo('<h2 style="color: red;">B≈Çƒôdne dane, takie auto nie istnieje</h2>');
 	 echo('<br />');
      } //if-end "id-pojazdu_formularz
     }
 	else
     { 
     echo("<br />");
-    echo("<h2>Brak praw do modyfikacji dla bieø±cego uøytkownika!</h2>");
-    echo("<h3>Nie zmieniono zawarto∂ci w witrynie!</h3>");
-    } // if-end "link od innego uøytkownika"
+    echo("<h2>Brak praw do modyfikacji dla bie≈ºƒÖcego u≈ºytkownika!</h2>");
+    echo("<h3>Nie zmieniono zawarto≈õci w witrynie!</h3>");
+    } // if-end "link od innego u≈ºytkownika"
    }  
    else
    {
    echo("<br />");
-   echo("<h2>Brak praw do modyfikacji dla bieø±cego uøytkownika!</h2>");
-   echo("<h3>Nie zmieniono zawarto∂ci w witrynie!</h3>");
+   echo("<h2>Brak praw do modyfikacji dla bie≈ºƒÖcego u≈ºytkownika!</h2>");
+   echo("<h3>Nie zmieniono zawarto≈õci w witrynie!</h3>");
    } // if-"uprawnienia-admina"
   }
   else
   {
-  echo('<h3 style="color: red;">Musisz byÊ zalogowany, aby wykonaÊ t± czynno∂Ê!</h3>');
+  echo('<h3 style="color: red;">Musisz byƒá zalogowany, aby wykonaƒá tƒô czynno≈õƒá!</h3>');
   } //if-zalogowany-end
  } // end "sprawdzane rezerwacji"
 
@@ -1459,9 +1461,9 @@ $kwerenda2 = "SELECT `ID_rezerwacji`, `dataRez`, `dataPocz`, `dataKonc` FROM rez
       //zatwierdzanie rezerwacji!
  if ( ( isSet( $_POST['rezerwuj_2_auto_id'] ) ) && ( isSet( $_POST['rezerwuj_2_osoba_id'] ) ) )
  {
-  if ( isSet( $_SESSION['zalogowany'] ) ) // czy osoba wywo≥ujaca link jest zalogowana w serwisie?
+  if ( isSet( $_SESSION['zalogowany'] ) ) // czy osoba wywo≈Çujaca link jest zalogowana w serwisie?
   {
-   if ( SprawdzUprawnieniaAdmina() ) // oprÛcz tego musi mieÊ uprawnienia administarcyjne
+   if ( SprawdzUprawnieniaAdmina() ) // opr√≥cz tego musi mieƒá uprawnienia administarcyjne
    {
     if ( $_POST['rezerwuj_2_osoba_id'] == $_SESSION['id'] )
 	{
@@ -1483,24 +1485,24 @@ $kwerenda2 = "SELECT `ID_rezerwacji`, `dataRez`, `dataPocz`, `dataKonc` FROM rez
     $data_koncowa = $rok_koncowy."-".$miesiac_koncowy."-".$dzien_koncowy;
 
     
-	$data_teraz = date( "Y-m-d" );	//znÛw "d" nie "j" !!!
+	$data_teraz = date( "Y-m-d" );	//zn√≥w "d" nie "j" !!!
     $jest_blad = false;
 
      if ( $data_poczatkowa < $data_teraz )
 	 {
-	 echo("<br />b≥ad: data pocz±tkowa rezeracji mniejsza od obecnej daty!"); 
+	 echo("<br />b≈Çad: data poczƒÖtkowa rezeracji mniejsza od obecnej daty!"); 
      $jest_blad = true;
 	 }
 	 
 	 if ( $data_poczatkowa < $data_teraz )
 	 {
-	 echo("<br />b≥ad: data koÒcowa rezerwacji mniejsza od obecnej daty!"); 
+	 echo("<br />b≈Çad: data ko≈Ñcowa rezerwacji mniejsza od obecnej daty!"); 
 	 $jest_blad = true;
 	 }
 	 
 	 if (  $data_poczatkowa > $data_koncowa )
 	 {
-	 echo("<br />b≥ad: data koÒcowa rezerwacji mniejsza od daty pocz±tkowej!"); 
+	 echo("<br />b≈Çad: data ko≈Ñcowa rezerwacji mniejsza od daty poczƒÖtkowej!"); 
 	 $jest_blad = true;
 	 }
 
@@ -1547,7 +1549,7 @@ $kwerenda2 = "SELECT `ID_rezerwacji`, `dataRez`, `dataPocz`, `dataKonc` FROM rez
 	   else
 	   {
 	   //pojazd w tym okresie jest zzarezerwowany przez innego klienta
-	   echo('<br /><h3 style="color: red;">Wyst±pi≥ b≥ad!.</h3>');
+	   echo('<br /><h3 style="color: red;">WystƒÖpi≈Ç b≈Çad!.</h3>');
 	   echo('<br />');
 	   } //debug_2
   
@@ -1556,27 +1558,27 @@ $kwerenda2 = "SELECT `ID_rezerwacji`, `dataRez`, `dataPocz`, `dataKonc` FROM rez
      } 
 	 else
 	 {
-	 echo('<h2 style="color: red;">B≥Ídne dane, takie auto nie istnieje</h2>');
+	 echo('<h2 style="color: red;">B≈Çƒôdne dane, takie auto nie istnieje</h2>');
 	 echo('<br />');
      } //if-end "id-pojazdu_formularz
     }
 	else
     { 
     echo("<br />");
-    echo("<h2>Brak praw do modyfikacji dla bieø±cego uøytkownika!</h2>");
-    echo("<h3>Nie zmieniono zawarto∂ci w witrynie!</h3>");
-    } // if-end "link od innego uøytkownika"
+    echo("<h2>Brak praw do modyfikacji dla bie≈ºƒÖcego u≈ºytkownika!</h2>");
+    echo("<h3>Nie zmieniono zawarto≈õci w witrynie!</h3>");
+    } // if-end "link od innego u≈ºytkownika"
    }  
    else
    {
    echo("<br />");
-   echo("<h2>Brak praw do modyfikacji dla bieø±cego uøytkownika!</h2>");
-   echo("<h3>Nie zmieniono zawarto∂ci w witrynie!</h3>");
+   echo("<h2>Brak praw do modyfikacji dla bie≈ºƒÖcego u≈ºytkownika!</h2>");
+   echo("<h3>Nie zmieniono zawarto≈õci w witrynie!</h3>");
    } // if-"uprawnienia-admina"
   }
   else
   {
-  echo('<h3 style="color: red;">Musisz byÊ zalogowany, aby wykonaÊ t± czynno∂Ê!</h3>');
+  echo('<h3 style="color: red;">Musisz byƒá zalogowany, aby wykonaƒá tƒô czynno≈õƒá!</h3>');
   } //if-zalogowany-end
  } // end "sprawdzane rezerwacji"
 
@@ -1584,7 +1586,7 @@ $kwerenda2 = "SELECT `ID_rezerwacji`, `dataRez`, `dataPocz`, `dataKonc` FROM rez
 
   if ( ( isSet( $_POST['anuluj_rez'] ) ) && ( isSet( $_POST['anuluj_rosoba'] ) ) && ( isSet( $_POST['anuluj_rauto'] ) ) )
  {
-  if ( isSet( $_SESSION['zalogowany'] ) ) // czy osoba wywo≥ujaca link jest zalogowana w serwisie?
+  if ( isSet( $_SESSION['zalogowany'] ) ) // czy osoba wywo≈Çujaca link jest zalogowana w serwisie?
   {
    if ( SprawdzUprawnieniaAdmina() ) 
    {
@@ -1603,11 +1605,11 @@ $kwerenda2 = "SELECT `ID_rezerwacji`, `dataRez`, `dataPocz`, `dataKonc` FROM rez
 	
 	 if ( $rezultat )
 	 {
-	 echo("<h3 style=\"color: red;\">UsuniÍto rezerwacjÍ</h3>");
+	 echo("<h3 style=\"color: red;\">Usuniƒôto rezerwacjƒô</h3>");
 	 }
 	 else
 	 {
-	 echo("<h3 style=\"color: red;\">Wyst±pi≥y b≥Ídy:</h3>");
+	 echo("<h3 style=\"color: red;\">WystƒÖpi≈Çy b≈Çƒôdy:</h3>");
 	 //echo mysql_error();
 	 }
 	
@@ -1616,13 +1618,13 @@ $kwerenda2 = "SELECT `ID_rezerwacji`, `dataRez`, `dataPocz`, `dataKonc` FROM rez
    else
    {
    echo("<br />");
-   echo("<h2>Brak praw do modyfikacji dla bieø±cego uøytkownika!</h2>");
-   echo("<h3>Nie zmieniono zawarto∂ci w witrynie!</h3>");
+   echo("<h2>Brak praw do modyfikacji dla bie≈ºƒÖcego u≈ºytkownika!</h2>");
+   echo("<h3>Nie zmieniono zawarto≈õci w witrynie!</h3>");
    } // if-"uprawnienia-admina"
   }
   else
   {
-  echo('<h3 style="color: red;">Musisz byÊ zalogowany, aby wykonaÊ t± czynno∂Ê!</h3>');
+  echo('<h3 style="color: red;">Musisz byƒá zalogowany, aby wykonaƒá tƒÖ czynno≈õƒá!</h3>');
   } //if-zalogowany-end
  } // end "sprawdzane rezerwacji" 
    	

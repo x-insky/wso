@@ -1,9 +1,9 @@
-<div class="sekcja_biala">Kategorie pojazdÛw</div>
+<div class="sekcja_biala">Kategorie pojazd√≥w</div>
  
 <?php 
 
 
-	// kategorie pojazdÛw 
+	// kategorie pojazd√≥w 
 $kwerenda = "SELECT nazwaKategorii, ID FROM auto_kategoria_tbl ORDER BY ID";
 $rezultat = mysql_query( $kwerenda );
 $ile_wierszy = mysql_num_rows( $rezultat ); 
@@ -15,7 +15,7 @@ $ile_wierszy = mysql_num_rows( $rezultat );
   $nazwa_kategorii = $wynik[0];
   $id = $wynik[1];
    if ( $wynik[1] == $_GET['kat'] )
-   {  //pogrub atywn± kategoriÍ
+   {  //pogrub atywnƒÖ kategoriƒô
    echo("<span class=\"kategoria_link\">$nazwa_kategorii</span><br />");  //..<br />");
    }
    else
@@ -124,7 +124,7 @@ $rezultat2 = mysql_query( $kwerenda2 );
   $temp6[] = $wynik2[1];
   $kategorie = array_combine( $temp5, $temp6 );
  }
- /*  w 2015 nie ogarniam co robi powyøsze (kwarenda2 i potem while) i po co jest ?! */
+ /*  w 2015 nie ogarniam co robi powy≈ºsze (kwarenda2 i potem while) i po co jest ?! */
 
 
  for ( $i = 0; $i < 3; $i++ )

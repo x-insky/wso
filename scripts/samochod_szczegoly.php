@@ -1,4 +1,4 @@
-<h3>Samochód - szczegó³y</h3>
+<h3>SamochÃ³d - szczegÃ³Å‚y</h3>
 <br />
 
 <?php
@@ -24,7 +24,7 @@
  $metalik = $wynik[13];
  $wyposazenieID = $wynik[14];
 
- //przypisanie w mairê prostych wyników
+ //przypisanie w mairÄ™ prostych wynikÃ³w
   if ( $metalik == 1 ) $metalik = "tak"; 
   else $metalik = "nie";
  $wyposazenie = $wyposazenieID; // ?
@@ -70,7 +70,7 @@
  $wynik2 = mysql_fetch_row( $rezultat2 );
  $marka = $wynik2[0];
 
-// + wyszukiwanie adresó zdjêc pojazdu z bazy
+// + wyszukiwanie adresÃ³ zdjÄ™c pojazdu z bazy
  $czy_sa_zdjecia = false;
  $ile_zdjec = 0;
  $adres_zdjecia = array();
@@ -157,7 +157,7 @@ echo("$kategoria");
   </td>
  </tr>
  <tr>
-  <td class="tab_nazwa_kolumny2">Pojemno¶œæ [cm^3]</td>
+  <td class="tab_nazwa_kolumny2">PojemnoÅ›Ä‡ [cm^3]</td>
   <td class="tab_dane_kolumny">
 <?php  
 echo("$pojemnosc");
@@ -173,7 +173,7 @@ echo("$moc");
   </td>
  </tr>
  <tr>
-  <td class="tab_nazwa_kolumny2">Skrzynia biegów</td>
+  <td class="tab_nazwa_kolumny2">Skrzynia biegÃ³w</td>
   <td class="tab_dane_kolumny">
 <?php
 echo("$skrzynia");  
@@ -205,7 +205,7 @@ echo("$drzwi");
   </td>
  </tr>
  <tr>
-  <td class="tab_nazwa_kolumny2">Wyposa¿enie</td>
+  <td class="tab_nazwa_kolumny2">WyposaÅ¼enie</td>
   <td class="tab_dane_kolumny">
 <?php  
 echo("$wyposazenie"); 
@@ -243,7 +243,7 @@ echo("$metalik");
  $max_x = 101;
   for ( $i = 0; $i < $ile_zdjec; $i++ )
   {
-  $parametry = getimagesize( $adres[$i] );  //sprawdzenie szeroko¶ci wczytanego zdjêcia
+  $parametry = getimagesize( $adres[$i] );  //sprawdzenie szerokoÅ›ci wczytanego zdjÄ™cia
   $szer = $parametry['0'];
   $wys = $parametry['1'];
    
@@ -257,7 +257,7 @@ echo("$metalik");
    $szerokosc = round( $szer * $max_x / $wys ); 
    $wysokosc = $max_y;
    }
-  echo('<td class="tab_dane_kolumny2">');     //promorcjonane zmniejszenie orygina³u
+  echo('<td class="tab_dane_kolumny2">');     //promorcjonalne zmniejszenie oryginaÅ‚u
   echo("<a href=\"$adres[$i]\"><img src=\"$adres[$i]\" width=\"$szerokosc\" height=\"$wysokosc\" border=\"0\" alt=\"\" /></a>"); 
   echo('</td>');
   }  //for-end 
@@ -267,7 +267,7 @@ echo("$metalik");
  }
 
 
-$auto_id = $autoID;  // $autoID - w kwerendzie na górze strony
+$auto_id = $autoID;  // $autoID - w kwerendzie na gÃ³rze strony
 $osoba_id = $_SESSION['id'];
 echo('<table width="440" border="0" align="center" cellpadding="0" cellspacing="0" >');
 echo('<tr>'); 
@@ -275,7 +275,7 @@ echo('<tr>');
  if ( $_SESSION['zalogowany'] == "" )
  {
  echo('<td>');
- echo("<h5>Zalogowani u¿ytkownicy mog± zarezerwowaæ auto na wybrany okres</h5>");
+ echo("<h5>Zalogowani uÅ¼ytkownicy mogÄ… zarezerwowaÄ‡ auto na wybrany okres</h5>");
 // echo("<p style=\"color: red;\">DEBUG: niezalogowany</p>");
  echo('</td></tr>');
  }
@@ -291,11 +291,11 @@ echo('<tr>');
 //       onsubmit="return pokaz()" >');
 
 
-  echo('<h4>Data pocz±tkowa:</h4>');
-  echo('<p class="akapit_wezszy">&nbsp;&nbsp;&nbsp; dzieñ &nbsp;-&nbsp;&nbsp; miesi±c &nbsp;&nbsp;-&nbsp;&nbsp; rok &nbsp;&nbsp;</p>');
+  echo('<h4>Data poczÄ…tkowa:</h4>');
+  echo('<p class="akapit_wezszy">&nbsp;&nbsp;&nbsp; dzieÅ„ &nbsp;-&nbsp;&nbsp; miesiÄ…c &nbsp;&nbsp;-&nbsp;&nbsp; rok &nbsp;&nbsp;</p>');
   echo('</td>');
-  echo('<td class="komorka_prawa"> <h4>Data koñcowa:</h4>');
-  echo('<p class="akapit_prawy_wezszy"> dzieñ &nbsp;-&nbsp;&nbsp; miesi±c &nbsp;&nbsp;-&nbsp;&nbsp; rok&nbsp;&nbsp;&nbsp;</p>');
+  echo('<td class="komorka_prawa"> <h4>Data koÅ„cowa:</h4>');
+  echo('<p class="akapit_prawy_wezszy"> dzieÅ„ &nbsp;-&nbsp;&nbsp; miesiÄ…c &nbsp;&nbsp;-&nbsp;&nbsp; rok&nbsp;&nbsp;&nbsp;</p>');
   echo('</td>');
  echo('</tr>');
 
@@ -303,7 +303,7 @@ echo('<tr>');
   
   				// -------------------------------------------------------- od kiedy rezerwacja
   echo('<td class="komorka_lewa">');
-//dzien pocz±tkowy rezerwacji  
+//dzien poczÄ…tkowy rezerwacji  
   echo '<select name="dzien_pocz" class="formularz_dodaj7	">';
    for ( $dzien_teraz = 1; $dzien_teraz <= 31; $dzien_teraz++ )
    {
@@ -324,24 +324,24 @@ echo('<tr>');
    }
   echo "</select>";
 
-//miesi±c pocz±tkowy rezerwacji  
+//miesiÄ…c poczÄ…tkowy rezerwacji  
   echo('-<select name="miesiac_pocz" class="formularz_dodaj5" >');
     for ( $miesiac = 1; $miesiac <= 12; $miesiac++ )
     {
      switch ( $miesiac )
      {  
-     case 1:  $miesiac_nazwa = "styczeñ"; break;
+     case 1:  $miesiac_nazwa = "styczeÅ„"; break;
      case 2:  $miesiac_nazwa = "luty"; break;
      case 3:  $miesiac_nazwa = "marzec"; break;
-     case 4:  $miesiac_nazwa = "kwiecieñ"; break;
+     case 4:  $miesiac_nazwa = "kwiecieÅ„"; break;
      case 5:  $miesiac_nazwa = "maj"; break;
      case 6:  $miesiac_nazwa = "czerwiec"; break;
      case 7:  $miesiac_nazwa = "lipiec"; break;
-     case 8:  $miesiac_nazwa = "sierpieñ"; break;
-     case 9:  $miesiac_nazwa = "wrzesieñ"; break;
-     case 10: $miesiac_nazwa = "pa¼dziernik"; break;
+     case 8:  $miesiac_nazwa = "sierpieÅ„"; break;
+     case 9:  $miesiac_nazwa = "wrzesieÅ„"; break;
+     case 10: $miesiac_nazwa = "paÄ½dziernik"; break;
      case 11: $miesiac_nazwa = "listopad"; break;
-     case 12: $miesiac_nazwa = "grudzieñ"; break;
+     case 12: $miesiac_nazwa = "grudzieÅ„"; break;
      } 
     $miesiac_teraz = date( 'm' );
      if ( $miesiac == $miesiac_teraz )
@@ -361,7 +361,7 @@ echo('<tr>');
     }    
   echo('</select>');
 
-//rok pocz±tkowy rezerwacji   
+//rok poczÄ…tkowy rezerwacji   
     echo '-<select name="rok_pocz" class="formularz_dodaj6" >';
      for ( $rok_teraz = date(Y); $rok_teraz <= ( date(Y) + 1 ); $rok_teraz++ )
      {
@@ -396,24 +396,24 @@ echo('<tr>');
     }
    echo "</select>";
 
-//miesi±c koñcowy rezerwacji  
+//miesiÄ…c koÅ„cowy rezerwacji  
    echo('-<select name="miesiac_kon" class="formularz_dodaj5" >');
     for ( $miesiac = 1; $miesiac <= 12; $miesiac++ )
     {
      switch ( $miesiac )
      {  
-     case 1:  $miesiac_nazwa = "styczeñ"; break;
+     case 1:  $miesiac_nazwa = "styczeÅ„"; break;
      case 2:  $miesiac_nazwa = "luty"; break;
      case 3:  $miesiac_nazwa = "marzec"; break;
-     case 4:  $miesiac_nazwa = "kwiecieñ"; break;
+     case 4:  $miesiac_nazwa = "kwiecieÅ„"; break;
      case 5:  $miesiac_nazwa = "maj"; break;
      case 6:  $miesiac_nazwa = "czerwiec"; break;
      case 7:  $miesiac_nazwa = "lipiec"; break;
-     case 8:  $miesiac_nazwa = "sierpieñ"; break;
-     case 9:  $miesiac_nazwa = "wrzesieñ"; break;
-     case 10: $miesiac_nazwa = "pa¼dziernik"; break;
+     case 8:  $miesiac_nazwa = "sierpieÅ„"; break;
+     case 9:  $miesiac_nazwa = "wrzesieÅ„"; break;
+     case 10: $miesiac_nazwa = "paÄ½dziernik"; break;
      case 11: $miesiac_nazwa = "listopad"; break;
-     case 12: $miesiac_nazwa = "grudzieñ"; break;
+     case 12: $miesiac_nazwa = "grudzieÅ„"; break;
      } 
     $miesiac_teraz = date( 'm' );
      if ( $miesiac == $miesiac_teraz )
@@ -456,13 +456,13 @@ echo('<tr>');
  echo('<td class="komorka_lewa">');
  echo("<input type=\"hidden\" name=\"rezerwuj_1_auto_id\" value=\"$auto_id\" />");
  echo("<input type=\"hidden\" name=\"rezerwuj_1_osoba_id\" value=\"$osoba_id\" />");
- echo("<input type=\"submit\" name=\"rezerwuj_1_auto\" value=\"Sprawd¼Ÿ termin\" class=\"przycisk1\" />");
+ echo("<input type=\"submit\" name=\"rezerwuj_1_auto\" value=\"SprawdÅº termin\" class=\"przycisk1\" />");
   
  echo('</form>');
  echo('</td>');
 
  echo('</tr>');
- //echo("<h5>Zalogowani u¿ytkownicy mog¹ zarezerwowaæ auto na wybrany okres</h5>");
+ //echo("<h5>Zalogowani uÅ¼ytkownicy mogÄ… zarezerwowaÄ‡ auto na wybrany okres</h5>");
  //echo("<p style=\"color: red;\">DEBUG: niezalogowany</p>");
  }
  

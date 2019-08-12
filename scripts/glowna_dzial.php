@@ -1,10 +1,10 @@
 <?php
 
-echo ("<h3>Strona g≥Ûwna</h3>");
-echo ("<p class=\"akapit_wezszy\">Proponujemy PaÒstwu wynajem samochodÛw osobowych.
-Profesjonalna obs≥uga, uproszczona procedura najmu oraz niska stawka dobowa to nasze g≥Ûwne atuty. Oferujemy wy≥±cznie nowe samochody z bogatym wyposaøeniem.<br /><br />"); 
-echo("Nasz± misj± jest zapewnienie moøliwo∂ci wypoøyczenia samochodu dla praktycznie kaødej, najmniejszej nawet Firmy, czy osoby indywidualnej. Niskie koszty w≥asne oraz wspÛ≥praca z najlepszymi na rynku motoryzacyjnym przek≥adaj± siÍ na atrakcyjn± cenÍ dla naszych KlientÛw."); 
-echo("<br /><br />Jeste∂my do PaÒstwa dyspozycji 24 godziny na dobÍ.<br /><br /></p>");
+echo ("<h3>Strona g≈Ç√≥wna</h3>");
+echo ("<p class=\"akapit_wezszy\">Proponujemy Pa≈Ñstwu wynajem samochod√≥w osobowych.
+Profesjonalna obs≈Çuga, uproszczona procedura najmu oraz niska stawka dobowa to nasze g≈Ç√≥wne atuty. Oferujemy wy≈ÇƒÖcznie nowe samochody z bogatym wyposa≈ºeniem.<br /><br />"); 
+echo("NaszƒÖ misjƒÖ jest zapewnienie mo≈ºliwo≈õci wypo≈ºyczenia samochodu dla praktycznie ka≈ºdej, najmniejszej nawet Firmy, czy osoby indywidualnej. Niskie koszty w≈Çasne oraz wsp√≥≈Çpraca z najlepszymi na rynku motoryzacyjnym przek≈ÇadajƒÖ siƒô na atrakcyjnƒÖ cenƒô dla naszych Klient√≥w."); 
+echo("<br /><br />Jeste≈õmy do Pa≈Ñstwa dyspozycji 24 godziny na dobƒô.<br /><br /></p>");
 /*
 $kwerenda = "SELECT id, nazwaFirmy FROM firma_tbl WHERE id";
 $rezultat = mysql_query( $kwerenda );
@@ -22,7 +22,7 @@ $firmy_nazwy = array();
  echo("Firma [$klucz]: $firma<br />");
  }
 */
-echo("<h3>Ostatnie wiadomo∂ci</h3>");
+echo("<h3>Ostatnie wiadomo≈õci</h3>");
 
 $kwerenda = "SELECT tytul, tresc, autorID, dataTresci, czasTresci, id FROM tresc_tbl WHERE trescRodzaj=1 ORDER BY id DESC LIMIT 3";
 
@@ -43,7 +43,7 @@ $rezultat = mysql_query ( $kwerenda, $db_link );
    $rezultat2 = mysql_query ( $kwerenda2, $db_link );
     if ( ! $rezultat2 )
 	{
-	echo ("<h1>B≥Ídy</h1>");
+	echo ("<h1>B≈Çƒôdy</h1>");
 	}
     else
 	{
@@ -53,7 +53,7 @@ $rezultat = mysql_query ( $kwerenda, $db_link );
 	echo('<table width="450" align="center" border="0" cellpadding="1" cellspacing="2" bgcolor="#82B8FB">');
 /*	echo("<tr><td><b>$tytul</b></td></tr>");
     echo("<tr bgcolor='white'><td>$tresc</td></tr>");
-	echo("<tr><td align=\"center\">Doda≥ <b>$autor_imie $autor_nazwisko</b>&nbsp;&nbsp; Dnia: <b>$data</b> &nbsp; Godzina: <b>$czas</b></td></tr>"); */
+	echo("<tr><td align=\"center\">Doda≈Ç <b>$autor_imie $autor_nazwisko</b>&nbsp;&nbsp; Dnia: <b>$data</b> &nbsp; Godzina: <b>$czas</b></td></tr>"); */
 	echo('<tr>');
 	echo("<td width=\"88%\"><b>$tytul</b></td>");
 	echo("<td align=\"right\">"); 
@@ -73,7 +73,7 @@ $rezultat = mysql_query ( $kwerenda, $db_link );
     echo("<tr bgcolor='white'><td colspan=\"2\">$tresc</td>");
 	echo("</tr>");
 //	echo("<tr><td>Ostatnia modyfikacja dnia: <b>$data</b> &nbsp; Godzina: <b>$czas</b> </td><td>Autor: <b>$autor_imie $autor_nazwisko</b></td></tr>");
-	echo("<tr><td colspan=\"2\" align=\"center\">Napisa≥: <b>$autor_imie $autor_nazwisko</b> w dniu: <b>$data</b> o godzinie: <b>$czas</b></td></tr>");
+	echo("<tr><td colspan=\"2\" align=\"center\">Napisa≈Ç: <b>$autor_imie $autor_nazwisko</b> w dniu: <b>$data</b> o godzinie: <b>$czas</b></td></tr>");
 	
 	echo("</table>");
 	echo("<br />");
@@ -86,11 +86,11 @@ $rezultat = mysql_query ( $kwerenda, $db_link );
   if ( isSet( $_SESSION['zalogowany'] ) )
   {
   $odnosnik = '<a href="./index.php?menu=allnews">'; 
-  echo("<p class=\"akapit_prawy_wezszy\">$odnosnik"."Wszystkie wiadomo∂ci</a><p>");
+  echo("<p class=\"akapit_prawy_wezszy\">$odnosnik"."Wszystkie wiadomo≈õci</a><p>");
   }
   else
   {
-  echo("<p class=\"akapit_prawy_wezszy\">Zalogowani uøytkownicy mog± obejrzeÊ wszystkie wiadomo∂ci.<p>");
+  echo("<p class=\"akapit_prawy_wezszy\">Zalogowani u≈ºytkownicy mogƒÖ obejrzeƒá wszystkie wiadomo≈õci.<p>");
   }
  }
 

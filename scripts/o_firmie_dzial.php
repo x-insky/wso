@@ -1,12 +1,12 @@
 <h3>O Firmie</h3>
 <br />
-<p class="akapit_wezszy">Firma WSO dzia³a na rynku wynajmu samochodów od 1999 roku. Jeste¶my dynamicznie rozwijaj±c± siê firm±, której g³ównym celem jest zadowolenie konsumenta. Dok³adamy wszelkich starañ, aby sprostaæ Pañstwa oczekiwaniom, dziêki czemu mo¿emy poszczyciæ siê du¿ym gronem sta³ych klientów. ¦wiadczymy wysokiej jako¶ci us³ugi, przy wyj±tkowo niskich cenach, dlatego warto skorzystaæ w³a¶nie z naszej oferty.<br />
+<p class="akapit_wezszy">Firma WSO dziaÅ‚a na rynku wynajmu samochodÃ³w od 1999 roku. JesteÅ›my dynamicznie rozwijajÄ…cÄ… siÄ™ firmÄ…, ktÃ³rej gÅ‚Ã³wnym celem jest zadowolenie konsumenta. DokÅ‚adamy wszelkich staraÅ„, aby sprostaÄ‡ PaÅ„stwa oczekiwaniom, dziÄ™ki czemu moÅ¼emy poszczyciÄ‡ siÄ™ duÅ¼ym gronem staÅ‚ych klientÃ³w. Â¦wiadczymy wysokiej jakoÅ›ci usÅ‚ugi, przy wyjÄ…tkowo niskich cenach, dlatego warto skorzystaÄ‡ wÅ‚aÅ›nie z naszej oferty.<br />
 <br />
-Na chwilê obecn± posiadamy bazê zlokalizowan± we Wroc³awiu oraz oddzia³y w najwiêszych polskich miastach.<br />
+Na chwilÄ™ obecnÄ… posiadamy bazÄ™ zlokalizowanÄ… we WrocÅ‚awiu oraz oddziaÅ‚y w najwiÄ™kszych polskich miastach.<br />
 <br />
-Dla naszych klientów, mi³o¶ników automatycznych skrzyñ biegów, mamy dobr± wiadomo¶æ - poczynaj±c od Klasy C, mamy bardzo bogaty wybór pojazdów z automatyczn± skrzyni± biegów, wiele z nich wyposa¿ona jest ponadto w automatyczn± klimatyzacjê.<br />
+Dla naszych klientÃ³w, miÅ‚oÅ›nikÃ³w automatycznych skrzyÅ„ biegÃ³w, mamy dobrÄ… wiadomoÅ›Ä‡ - poczynajÄ…c od Klasy C, mamy bardzo bogaty wybÃ³r pojazdÃ³w z automatycznÄ… skrzyniÄ… biegÃ³w, wiele z nich wyposaÅ¼ona jest ponadto w automatycznÄ… klimatyzacjÄ™.<br />
 <br />
-Korzystaj±c z naszych us³ug mo¿ecie byæ Pañstwo pewni serwisu najwy¿szej jako¶ci.<br />
+KorzystajÄ…c z naszych usÅ‚ug moÅ¼ecie byÄ‡ PaÅ„stwo pewni serwisu najwyÅ¼szej jakoÅ›ci.<br />
 <br />
 <br />
 

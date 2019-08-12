@@ -1,7 +1,7 @@
 <!--
-<div class="niebieskawe_tlo_prawe">dzi∂ jest
+<div class="niebieskawe_tlo_prawe">dzi≈õ jest
 -->
-<p class="tlo_niebieskawe_prawe">dzi∂ jest
+<p class="tlo_niebieskawe_prawe">dzi≈õ jest
 <?php
 $data_teraz_rok = date("Y"); 
 $data_teraz_miesiac = date("m");
@@ -16,8 +16,8 @@ $data_teraz_dzien = date("j");
   case 6: $data_teraz_miesiac_nazwa = "czerwca"; break;
   case 7: $data_teraz_miesiac_nazwa = "lipca"; break;
   case 8: $data_teraz_miesiac_nazwa = "sierpnia"; break;
-  case 9: $data_teraz_miesiac_nazwa = "wrze∂nia"; break;
-  case 10: $data_teraz_miesiac_nazwa = "paºdziernika"; break;
+  case 9: $data_teraz_miesiac_nazwa = "wrze≈õnia"; break;
+  case 10: $data_teraz_miesiac_nazwa = "pa≈∫dziernika"; break;
   case 11: $data_teraz_miesiac_nazwa = "listopada"; break;
   case 12: $data_teraz_miesiac_nazwa = "grudnia"; break;
  }
@@ -30,7 +30,7 @@ echo("$data_teraz_dzien. $data_teraz_miesiac_nazwa $data_teraz_rok");
   <tr>
   <td><img src="img/piksel.gif" alt="" width="50" height="100" border="0" /></td>
   <td> <a href="./index.php?link=main"><img src="img/logo.png" width="350" height="100" border="0" alt="WSO" /></a></td>
-  <td><h2 class="nazwa">Wypoøyczalnia SamochodÛw Osobowych</h2></td>
+  <td><h2 class="nazwa">Wypo≈ºyczalnia Samochod√≥w Osobowych</h2></td>
   </tr>  
   </table>
   <!-- <img src="img/piksel.gif" alt="" width="900" height="25" /> -->
@@ -39,7 +39,7 @@ echo("$data_teraz_dzien. $data_teraz_miesiac_nazwa $data_teraz_rok");
   <tr>
   <td width="5%"></td>
   <!-- <td width=170 class=bl onmouseover="onLink(this,'','bla')" onmouseout="offLink(this,'bl')" onclick="document.location='regulamin.php'">Regulamin</td> -->
-  <td width="15%" onmouseover="style.background='#ffffff'" onmouseout="style.background='#82B8FB'"><a href="./index.php?link=main">G≥Ûwna</a></td>
+  <td width="15%" onmouseover="style.background='#ffffff'" onmouseout="style.background='#82B8FB'"><a href="./index.php?link=main">G≈Ç√≥wna</a></td>
   <td width="15%" onmouseover="style.background='#ffffff'" onmouseout="style.background='#82B8FB'"><a href="./index.php?link=oferta">Samochody</a></td>  
   <td width="15%" onmouseover="style.background='#ffffff'" onmouseout="style.background='#82B8FB'"><a href="./index.php?link=promocje">Promocje</a></td>  
   <td width="15%" onmouseover="style.background='#ffffff'" onmouseout="style.background='#82B8FB'"><a href="./index.php?link=regulamin">Regulamin</a></td>

@@ -2,13 +2,13 @@
 
  <table width="150" border = "0" align="center" cellpadding="0" cellspacing="0" >
  <tr>
-  <td>Uøytkownik</td>
+  <td>U≈ºytkownik</td>
  </tr>
  <tr>
   <td><input type = "text" name = "uzytkownik" size="30" class="formularz1" /></td>
  </tr>
  <tr>
-  <td>Has≥o</td>
+  <td>Has≈Ço</td>
  </tr>
  <tr>
   <td><input type = "password" name = "haslo" size="30" class="formularz1" /></td>

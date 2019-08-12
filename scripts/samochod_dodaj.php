@@ -7,8 +7,8 @@
  <tr>
   <td class="tab_nazwa_kolumny2">Marka</td>
   <td>
-  <select name="marka" class="formularz_dodaj4" > 
-  <option style="color: red; "value="0"> Wybierz markê pojazdu...</option>
+  <select name="marka" class="formularz_dodaj4"> 
+   <option style="color: red; "value="0"> Wybierz markÄ™ pojazdu...</option>
 <?php  
   $kwerenda = "SELECT marka, id FROM auto_marka_tbl ORDER BY id";
   $rezultat = mysql_query( $kwerenda );
@@ -36,16 +36,19 @@
  </tr>
  <tr>
   <td class="tab_nazwa_kolumny2">Status pojazdu (opcja)</td>
-  <td><select name="status_pojazdu" class="formularz_dodaj4" />
-    <!--    <option style="color: red;" value="0"> Wybierz kategoriê pojazdu... </option>  -->
-     <option value="1"> Aktywny </option>
+  <td>
+    <select name="status_pojazdu" class="formularz_dodaj4">
+    <!--    <option style="color: red;" value="0"> Wybierz kategoriÄ™ pojazdu... </option>  -->
+     <option value="1">Aktywny</option>
+    </select>
   </td>
  </tr>
  <tr>
   <td class="tab_nazwa_kolumny2">Kategoria pojazdu</td>
-  <td><select name="kategoria" class="formularz_dodaj4" >
-    <!--    <optgroup label="Wybierz kategoriê pojazdu">  -->
-     <option style="color: red;" value="0"> Wybierz kategoriê pojazdu... </option>
+  <td>
+    <select name="kategoria" class="formularz_dodaj4">
+    <!--    <optgroup label="Wybierz kategoriÄ™ pojazdu">  -->
+     <option style="color: red;" value="0"> Wybierz kategoriÄ™ pojazdu... </option>
 <?php  
   $kwerenda = "SELECT nazwaKategorii, ID FROM auto_kategoria_tbl ORDER BY ID";
   $rezultat = mysql_query( $kwerenda );
@@ -59,10 +62,11 @@
    }
 ?>
    <!-- </optgroup> -->
-  </select></td>
+   </select>
+  </td>
  </tr>
  <tr>
-  <td class="tab_nazwa_kolumny2">Pojemno¶æ [cm^3]</td>
+  <td class="tab_nazwa_kolumny2">PojemnoÂ¶Ä‡ [cm^3]</td>
   <td><input type="text" name = "pojemnosc" size="5" maxlength="5" class="formularz_dodaj3" /></td>
  </tr>
  <tr>
@@ -70,10 +74,10 @@
   <td><input type="text" name = "moc" size="3" maxlength="3" class="formularz_dodaj3" /></td>
  </tr>
  <tr>
-  <td class="tab_nazwa_kolumny2">Skrzynia biegów</td>
+  <td class="tab_nazwa_kolumny2">Skrzynia biegÃ³w</td>
   <td>
-    <select name="skrzynia" class="formularz_dodaj4" > 
-     <option style="color: red; "value="0"> Wybierz rodzaj skrzyni biegów...</option>
+    <select name="skrzynia" class="formularz_dodaj4"> 
+     <option style="color: red; "value="0"> Wybierz rodzaj skrzyni biegÃ³w...</option>
 <?php  
       $kwerenda = "SELECT typSkrzyni, id FROM auto_skrzynia_tbl ORDER BY id";
       $rezultat = mysql_query( $kwerenda );
@@ -91,7 +95,7 @@
   <tr>
    <td class="tab_nazwa_kolumny2">Paliwo</td>
    <td>
-    <select name="paliwo" class="formularz_dodaj4" > 
+    <select name="paliwo" class="formularz_dodaj4"> 
      <option style="color: red; "value="0"> Wybierz rodzaj paliwa...</option>
 <?php  
       $kwerenda = "SELECT paliwo, id FROM auto_paliwo_tbl ORDER BY id";
@@ -110,7 +114,7 @@
  <tr>
   <td class="tab_nazwa_kolumny2">Typ nadwozia</td>
   <td>
-   <select name="nadwozie" class="formularz_dodaj4" > 
+   <select name="nadwozie" class="formularz_dodaj4"> 
     <option style="color: red; "value="0"> Wybierz typ nadwozia...</option>
 <?php  
       $kwerenda = "SELECT typNadwozia, id FROM auto_nadwozie_tbl ORDER BY id";
@@ -129,8 +133,8 @@
  <tr>
   <td class="tab_nazwa_kolumny2">Liczba drzwi</td>
   <td>
-   <select name="liczba_drzwi" class="formularz_dodaj4" > 
-    <option style="color: red; "value="0"> Wybierz ilo¶æ drzwi...</option>
+   <select name="liczba_drzwi" class="formularz_dodaj4"> 
+    <option style="color: red; "value="0"> Wybierz iloÂ¶Ä‡ drzwi...</option>
 <?php  
       $kwerenda = "SELECT liczbaDrzwi, id FROM auto_drzwi_tbl ORDER BY id";
       $rezultat = mysql_query( $kwerenda );
@@ -146,13 +150,13 @@
   </td>
  </tr>
  <tr>
-  <td class="tab_nazwa_kolumny2">Wyposa¿enie</td>
+  <td class="tab_nazwa_kolumny2">WyposaÅ¼enie</td>
   <td><input type="text" name = "wyposazenie" size="25" maxlength="50" class="formularz_dodaj3" /></td>
  </tr>
  <tr>
   <td class="tab_nazwa_kolumny2">Kolor</td>
   <td>  
-   <select name="kolor" class="formularz_dodaj4" > 
+   <select name="kolor" class="formularz_dodaj4"> 
     <option style="color: red; "value="0"> Wybierz kolor nadwozia...</option>
 <?php  
       $kwerenda = "SELECT kolor, id FROM auto_kolor_tbl ORDER BY id";
@@ -173,8 +177,9 @@
   <td><label><input type="checkbox" name = "metalik" value="metalik" />&nbsp;metalik</label></td>
  </tr>
  <tr>
-  <td class="tab_nazwa_kolumny2">Zdjêcia</td>
-  <td><input type="file" name="zdjecie1" size="30" value="" class="formularz_dodaj4" /><br />
+  <td class="tab_nazwa_kolumny2">ZdjÄ™cia</td>
+  <td>
+      <input type="file" name="zdjecie1" size="30" value="" class="formularz_dodaj4" /><br />
       <input type="file" name="zdjecie2" size="30" value="" class="formularz_dodaj4" /><br />
       <input type="file" name="zdjecie3" size="30" value="" class="formularz_dodaj4" /><br />
 	  <input type="file" name="zdjecie4" size="30" value="" class="formularz_dodaj4" />
@@ -191,5 +196,5 @@
  </table>
 
 <br />
-<p class="akapit_wezszy">Dodawanie zdjêæ do pojazdów <b>dzia³a</b>!</p>
+<p class="akapit_wezszy">Dodawanie zdjÄ™Ä‡ do pojazdÃ³w <b>dziaÅ‚a</b>!</p>
 </form>

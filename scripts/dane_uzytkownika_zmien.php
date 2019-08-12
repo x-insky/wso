@@ -6,7 +6,7 @@ echo ("value=\"$tytul\" class=\"formularz_dodaj\" />"); -->
 
 <table width="450" align="center" border="0" cellpadding="0" cellspacing="2" >
 <tr>
- <td class="tab_nazwa_kolumny">Imiê</td>
+ <td class="tab_nazwa_kolumny">ImiÄ™</td>
  <td class="tab_dane_kolumny"><?php echo($_SESSION['imie']); ?> </td>
 </tr>
 <tr>
@@ -39,5 +39,5 @@ echo ("value=\"$tytul\" class=\"formularz_dodaj\" />"); -->
 echo "<br />";
 echo("id = ");
 echo( $_SESSION['id']);
-echo('<p>Dane u¿ytkownika zmienia dowolny pracownik firmy.<br />Dane pracownika s± zmieniane przez administratora.');
+echo('<p>Dane uÅ¼ytkownika zmienia dowolny pracownik firmy.<br />Dane pracownika sÄ… zmieniane przez administratora.');
 ?>

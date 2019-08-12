@@ -24,7 +24,7 @@ $rezultat = mysql_query ( $kwerenda, $db_link );
    $rezultat2 = mysql_query ( $kwerenda2, $db_link );
     if ( ! $rezultat2 )
 	{
-	echo ("<h1>B³êdy</h1>");
+	echo ("<h1>BÅ‚Ä™dy</h1>");
 	}
     else
 	{

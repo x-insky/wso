@@ -1,11 +1,11 @@
-<h3>Administruj uøytkownikami</h3>
+<h3>Administruj u≈ºytkownikami</h3>
 <br />
 <table width="450" align="center" cellpadding="0" cellspacing="0">
 <tr>
  <td><h5>Numer</h5></td> 
- <td><h5>Uøytkownik</h5></td>
+ <td><h5>U≈ºytkownik</h5></td>
  <td><h5>Rola</h5></td>
- <td><h5>SzczegÛ≥y</h5></td> 
+ <td><h5>Szczeg√≥≈Çy</h5></td> 
  <td>&nbsp;</td> 
 </tr>
 <tr>
